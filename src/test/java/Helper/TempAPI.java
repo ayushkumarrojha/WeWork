@@ -4,17 +4,18 @@ import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import org.json.simple.JSONObject;
+import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 
 public class TempAPI {
 
     RequestSpecification httpRequest;
     Response response;
-    String url = "http://localhost:3000/";
-    String newurl = "https://topgeek.io/";
+    String url ="https://topgeek.io/";
+    String newurl = "http://localhost:3000/";
 
     @Test
-    public void testingAPI(){
+    public void testingAPI() {
         RestAssured.baseURI = url;
         httpRequest = RestAssured.given().auth().preemptive().basic("admin", "admin");
 
@@ -31,5 +32,10 @@ public class TempAPI {
 //        response = httpRequest.put("/api/teams/2");
         response = httpRequest.delete("/api/teams/2");
         response.prettyPrint();
+    }
+
+    @Test
+    public void testingWeb() {
+
     }
 }

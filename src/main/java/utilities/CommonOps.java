@@ -69,8 +69,8 @@ public class CommonOps extends Base {
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Long.parseLong(getData("Timeout")), TimeUnit.SECONDS);
         wait = new WebDriverWait(driver, Long.parseLong(getData("Timeout")));
-        driver.get(getData("newurl"));
-        ManagePages.initGrafana();
+        driver.get(getData("url"));
+//        ManagePages.initGrafana();
         action = new Actions(driver);
     }
 
@@ -202,6 +202,7 @@ public class CommonOps extends Base {
             if (!platform.equalsIgnoreCase("mobile"))
                 driver.quit();
             else
+                driver.quit();
                 mobileDriver.quit();
         }
     }
@@ -213,7 +214,7 @@ public class CommonOps extends Base {
     @AfterMethod
     public void afterMethod(){
         if (platform.equalsIgnoreCase("web"))
-            driver.get(getData("newurl"));
+            driver.get(getData("url"));
         else if (platform.equalsIgnoreCase("electron")){
             ElectronFlows.emptyList();
         }

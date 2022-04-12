@@ -1,5 +1,6 @@
 package sanity;
 
+import extensions.UIActions;
 import extensions.Verifications;
 import io.qameta.allure.Description;
 import org.testng.annotations.Listeners;
@@ -14,5 +15,6 @@ public class CreateWallet extends CommonOps {
     @Description("This test checks for the Create Wallet Button ")
     public void test01_verify_createWallet() {
         Verifications.elementIsVisible(walletMain.create_wallet);
+        UIActions.click(walletMain.create_wallet);
     }
 }

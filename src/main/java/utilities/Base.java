@@ -51,6 +51,7 @@ public class Base {
     protected static pageObjects.grafana.ServerAdminMainPage grafanaServerAdminMain;
     protected static pageObjects.grafana.AddNewUserPage grafanaAddNewUser;
     protected static pageObjects.grafana.UserInformationPage grafanaUserInformation;
+    protected static pageObjects.web.LandingPage webLogin;
 
     //Page Objects - Mobile - init via ManagePages
     protected static pageObjects.createWallet.MainPage walletMain;

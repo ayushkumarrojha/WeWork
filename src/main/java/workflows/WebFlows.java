@@ -64,6 +64,11 @@ public class WebFlows extends CommonOps {
         else
             throw new RuntimeException("Invalid Expected Output Option In Data Driven Testing: Should Be 'exists' or 'not-exists'");
         }
+
+    @Step("Open Website And Login")
+    public static void loadWebsite(){
+        UIActions.initBrowser("chrome");
+    }
     }
 
 
