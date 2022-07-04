@@ -72,6 +72,12 @@ public class Verifications extends CommonOps {
     public static void elementIsInvisible(WebElement elem) {
         wait.until(ExpectedConditions.invisibilityOf(elem)); }
 
+    @Step("Verify Page Title")
+    public static void verifyPageTitle(String actual, String expected){ assertEquals(actual, expected); }
+
+    @Step("Verify Page Title")
+    public static void verifyUrl(String actual, String expected){ assertEquals(actual, expected); }
+
 }
 
 

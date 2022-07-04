@@ -5,7 +5,8 @@ import pageObjects.grafana.AddNewUserPage;
 import pageObjects.grafana.ServerAdminMainPage;
 import pageObjects.grafana.ServerAdminMenuPage;
 import pageObjects.grafana.UserInformationPage;
-import pageObjects.web.LandingPage;
+import pageObjects.web.LodingPage;
+import pageObjects.web.LoginPage;
 // Class Name: ManagePages
 // Class Description: This class init the elements/objects of all tested applications, in all the required pages
 public class ManagePages extends Base {
@@ -18,7 +19,8 @@ public class ManagePages extends Base {
         grafanaServerAdminMain = PageFactory.initElements(driver, ServerAdminMainPage.class);
         grafanaAddNewUser = PageFactory.initElements(driver, AddNewUserPage.class);
         grafanaUserInformation = PageFactory.initElements(driver, UserInformationPage.class);
-        webLogin = PageFactory.initElements(driver, pageObjects.web.LandingPage.class);
+        webLogin = PageFactory.initElements(driver, LoginPage.class);
+        webLonding = PageFactory.initElements(driver, LodingPage.class);
     }
 
     public static void initWallet() {

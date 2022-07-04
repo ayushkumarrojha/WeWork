@@ -11,6 +11,8 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.sikuli.script.Screen;
 import org.testng.asserts.SoftAssert;
+import pageObjects.web.LodingPage;
+
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
@@ -51,7 +53,9 @@ public class Base {
     protected static pageObjects.grafana.ServerAdminMainPage grafanaServerAdminMain;
     protected static pageObjects.grafana.AddNewUserPage grafanaAddNewUser;
     protected static pageObjects.grafana.UserInformationPage grafanaUserInformation;
-    protected static pageObjects.web.LandingPage webLogin;
+    protected static pageObjects.web.LoginPage webLogin;
+    protected static pageObjects.web.LodingPage webLonding;
+
 
     //Page Objects - Mobile - init via ManagePages
     protected static pageObjects.createWallet.MainPage walletMain;

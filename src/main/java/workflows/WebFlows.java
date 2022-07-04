@@ -69,6 +69,7 @@ public class WebFlows extends CommonOps {
     public static void loadWebsite(){
         UIActions.initBrowser("chrome");
     }
-    }
+
+}
 
 

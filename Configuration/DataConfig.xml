@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Environment>
     <!-- Timeout -->
-    <Timeout>5</Timeout>
+    <Timeout>30</Timeout>
 
     <!-- Authorization -->
-    <Username>admin</Username>
-    <Password>admin</Password>
+    <Username>ayushk@geekyants.com</Username>
+    <Password>ojha@239</Password>
+    <user>Ayush Ojha</user>
+    <TS>https://wework.co.in/terms-and-conditions/</TS>
 
     <!-- Web -->
     <BrowserName>chrome</BrowserName>
-    <url>https://topgeek.io/</url>
+    <url>https://wework.co.in/</url>
     <ImageRepo>System.getProperty("user.dir")
         + "\\src\\test\\resources\\"</ImageRepo>
 

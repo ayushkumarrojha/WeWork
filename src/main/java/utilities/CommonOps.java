@@ -5,12 +5,14 @@ import io.appium.java_client.remote.MobileCapabilityType;
 import io.appium.java_client.windows.WindowsDriver;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import io.restassured.RestAssured;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.sikuli.script.Screen;
 import org.testng.annotations.*;
@@ -70,7 +72,7 @@ public class CommonOps extends Base {
         driver.manage().timeouts().implicitlyWait(Long.parseLong(getData("Timeout")), TimeUnit.SECONDS);
         wait = new WebDriverWait(driver, Long.parseLong(getData("Timeout")));
         driver.get(getData("url"));
-//        ManagePages.initGrafana();
+        ManagePages.initGrafana();
         action = new Actions(driver);
     }
 
@@ -203,7 +205,7 @@ public class CommonOps extends Base {
                 driver.quit();
             else
                 driver.quit();
-                mobileDriver.quit();
+                //mobileDriver.quit();
         }
     }
 
@@ -233,6 +235,11 @@ public class CommonOps extends Base {
                 e.printStackTrace();
             }
         }
+    }
+
+    public static void waitForLoad() {
+        new WebDriverWait(driver, 30).until((ExpectedCondition<Boolean>) wd ->
+                ((JavascriptExecutor) wd).executeScript("return document.readyState").equals("complete"));
     }
 }
 
