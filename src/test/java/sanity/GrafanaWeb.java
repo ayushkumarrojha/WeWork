@@ -11,7 +11,7 @@ import workflows.WebFlows;
 @Listeners(utilities.Listeners.class)
 public class GrafanaWeb extends CommonOps {
 
-    @Test(description = "Test01 - Verify Header")
+   /* @Test(description = "Test01 - Verify Header")
     @Description("This test verifies the main header")
     public void test01_verifyHeader() {
         WebFlows.login(getData("Username"), getData("Password"));
@@ -60,6 +60,6 @@ public class GrafanaWeb extends CommonOps {
     public void test07_searchUsers(String user, String shouldExist) {
         UIActions.mouseHover(grafanaLeftMenu.btn_server, grafanaServerAdmin.link_users);
         WebFlows.searchAndVerifyUser(user, shouldExist);
-    }
+    }*/
 }
 

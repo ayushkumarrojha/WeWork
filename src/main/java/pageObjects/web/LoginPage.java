@@ -16,18 +16,21 @@ public class LoginPage {
 //    @FindBy(how = How.CLASS_NAME, using = "css-5j8aew")
 //    public WebElement close_btn;
 
-    @FindBy(how = How.XPATH, using = "//*[@id=\"__next\"]/div[1]/div/div/div[2]/div/div[1]/div")
+    @FindBy(how = How.XPATH, using = "//div[contains(text(),'Login')]")
     public WebElement weWorkLoginButton;
 
-    @FindBy(how = How.XPATH, using = "//*[@id=\"1-email\"]")
+    @FindBy(how = How.XPATH, using = "//input[@name= 'email']")
     public WebElement emailTestField;
 
-    @FindBy(how = How.XPATH, using = "//*[@id=\"1-password\"]")
+    @FindBy(how = How.XPATH, using = "//input[@name= 'password']")
     public WebElement passwordTestField;
 
-    @FindBy(how = How.XPATH, using = "//*[@id=\"1-submit\"]/span")
+    @FindBy(how = How.XPATH, using = "//button[@name='submit']")
     public WebElement submitButton;
 
-    @FindBy(how = How.XPATH, using = "//*[@id=\"__next\"]/div[1]/div/div/div[2]/div/div[1]/div/div[2]/div[1]/p")
+    @FindBy(how = How.XPATH, using = "//div[contains(@class,'userName')]")
     public WebElement userName;
+    
+    
+    
 }

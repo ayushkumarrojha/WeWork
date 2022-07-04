@@ -4,9 +4,15 @@
     <Timeout>30</Timeout>
 
     <!-- Authorization -->
-    <Username>ayushk@geekyants.com</Username>
-    <Password>ojha@239</Password>
-    <user>Ayush Ojha</user>
+    <Username>testers@geekyants.com</Username>
+    <Password>Orchids@9</Password>
+    <user>Rohini</user>
+    <name>Varsha</name>
+    <email>testers@geekyants.com</email>
+    <phoneNumber>9999999999</phoneNumber>
+    
+    
+    
     <TS>https://wework.co.in/terms-and-conditions/</TS>
 
     <!-- Web -->

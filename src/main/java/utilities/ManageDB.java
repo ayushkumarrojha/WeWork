@@ -26,6 +26,10 @@ public class ManageDB extends CommonOps {
     // Method Parameters: None
     // Method Return: None
     public static void closeConnection(){
+    	if(con == null)
+    	{
+    		return;
+    	}
         try {
             con.close();
         } catch (Exception e) {

@@ -4,12 +4,22 @@ import extensions.DBActions;
 import extensions.UIActions;
 import extensions.Verifications;
 import io.qameta.allure.Step;
+import pageObjects.web.LodingPage;
 import utilities.CommonOps;
+
+import static extensions.UIActions.click;
+import static extensions.UIActions.getWindowHandel;
+import static extensions.UIActions.scrollToElement;
+import static extensions.UIActions.switchToLoginWindow;
+import static extensions.UIActions.switchToParentWindow;
+import static extensions.UIActions.updateText;
 
 import java.util.List;
 
-public class WebFlows extends CommonOps {
-    @Step("Business Flow: Login To Grafana")
+public class WebFlows extends CommonOps 
+{
+	
+   /* @Step("Business Flow: Login To Grafana")
     public static void newLogin(String user, String pass){
         UIActions.click(grafanaLogin.btn_close);
 //        UIActions.updateText(grafanaLogin.txt_username, user);
@@ -63,12 +73,36 @@ public class WebFlows extends CommonOps {
             Verifications.nonExistenceOfElement(grafanaServerAdminMain.rows);
         else
             throw new RuntimeException("Invalid Expected Output Option In Data Driven Testing: Should Be 'exists' or 'not-exists'");
-        }
+        }*/
 
     @Step("Open Website And Login")
     public static void loadWebsite(){
         UIActions.initBrowser("chrome");
     }
+    
+    @Step("Login to the application")
+    public static void loginToApplication()
+    {
+    	String currentWindow = getWindowHandel();
+        Verifications.elementIsVisible(webLogin.weWorkLoginButton);
+        click(webLogin.weWorkLoginButton);
+        switchToLoginWindow(currentWindow);
+        updateText(webLogin.emailTestField, getData("Username"));
+        updateText(webLogin.passwordTestField, getData("Password"));
+        click(webLogin.submitButton);
+        switchToParentWindow(currentWindow);
+        waitForLoad();
+        Verifications.verifyTextInElement(webLogin.userName, getData("user"));
+    }
+    
+    @Step("Logout of the application")
+    public static void logoutOfApplication() throws InterruptedException
+    {
+    	scrollToElement(LodingPage.logout);
+	    Verifications.elementIsVisible(LodingPage.logout);
+	    click(LodingPage.logout);
+    }
+    
 
 }
 
