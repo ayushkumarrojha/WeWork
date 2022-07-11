@@ -13,6 +13,7 @@ workflows/ApiFlows.class
 utilities/Listeners.class
 extensions/Verifications.class
 extensions/DBActions.class
+pageObjects/web/LoginPage.class
 workflows/ElectronFlows.class
 pageObjects/grafana/MainPage.class
 extensions/MobileActions.class

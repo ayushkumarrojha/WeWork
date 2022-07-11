@@ -10,8 +10,13 @@
     <name>Varsha</name>
     <email>testers@geekyants.com</email>
     <phoneNumber>9999999999</phoneNumber>
-    
-    
+    <lastName>R</lastName>
+    <companyName>GA</companyName>
+    <address>2nd main 4th cross HSR layout</address>
+    <landMark>Near J.P Nagar Metro Station</landMark>
+    <city>Bangalore</city>
+    <pincode>560063</pincode>
+    <couponCode>ABC123</couponCode>
     
     <TS>https://wework.co.in/terms-and-conditions/</TS>
 

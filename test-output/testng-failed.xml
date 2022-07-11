@@ -10,10 +10,10 @@
       <class name="sanity.WebAppTest">
         <methods>
           <include name="beforeMethod"/>
-          <include name="test04_VerifyWorkspace"/>
           <include name="afterMethod"/>
           <include name="closeSession"/>
           <include name="startSession"/>
+          <include name="test18_SelectConferenceRoom"/>
         </methods>
       </class> <!-- sanity.WebAppTest -->
     </classes>

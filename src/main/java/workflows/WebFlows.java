@@ -4,7 +4,7 @@ import extensions.DBActions;
 import extensions.UIActions;
 import extensions.Verifications;
 import io.qameta.allure.Step;
-import pageObjects.web.LodingPage;
+import pageObjects.web.webLoading;
 import utilities.CommonOps;
 
 import static extensions.UIActions.click;
@@ -81,7 +81,7 @@ public class WebFlows extends CommonOps
     }
     
     @Step("Login to the application")
-    public static void loginToApplication()
+    public static void loginToApplication() throws InterruptedException
     {
     	String currentWindow = getWindowHandel();
         Verifications.elementIsVisible(webLogin.weWorkLoginButton);
@@ -98,9 +98,9 @@ public class WebFlows extends CommonOps
     @Step("Logout of the application")
     public static void logoutOfApplication() throws InterruptedException
     {
-    	scrollToElement(LodingPage.logout);
-	    Verifications.elementIsVisible(LodingPage.logout);
-	    click(LodingPage.logout);
+    	scrollToElement(webLoading.logout);
+	    Verifications.elementIsVisible(webLoading.logout);
+	    click(webLoading.logout);
     }
     
 

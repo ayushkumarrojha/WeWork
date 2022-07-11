@@ -11,6 +11,9 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import utilities.CommonOps;
 
+import static extensions.UIActions.getWindowHandels333;
+import static extensions.UIActions.switchToParentWindow;
+
 import java.util.Iterator;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
@@ -76,9 +79,52 @@ public class UIActions extends CommonOps {
     }
 
     @Step("Switch to Parent Window")
-    public static void switchToParentWindow(String currentWindow){
+    public static void switchToParentWindow(String currentWindow) throws InterruptedException{
         driver.switchTo().window(currentWindow);
+        Thread.sleep(3000);
     }
+    
+    @Step("Get Current Window Handel")
+    public static String getWindowHandels(){
+        Set<String> windows =driver.getWindowHandles();
+        Iterator<String> window = windows.iterator();
+        String parentWindow = window.next();
+        String childWindow = window.next();
+        return childWindow;
+        
+    }
+    
+    @Step("Get Current Window Handel")
+    public static String getWindowHandels2(){
+        Set<String> windows =driver.getWindowHandles();
+        Iterator<String> window = windows.iterator();
+        String parentWindow = window.next();
+        String childWindow = window.next();
+        String childWindow2 = window.next();
+        return childWindow2;
+        
+    }
+    
+    @Step("Get Current Window Handel")
+    public static Iterator<String> getWindowHandels333(){
+        Set<String> windows =driver.getWindowHandles();
+        Iterator<String> window = windows.iterator();
+        return window;
+        
+    }
+    
+    @Step("Switch to Parent Window")
+    public static void switchToPaymentWindow() throws InterruptedException{
+    	Iterator<String> paymentWindow = getWindowHandels333();
+        if(paymentWindow.hasNext())
+        {
+      	  paymentWindow.next();
+      	  paymentWindow.next();
+      	  switchToParentWindow(paymentWindow.next());
+        }
+    }
+    
+    
 
     @Step("Get Current Window Handel")
     public static String getWindowHandel(){
@@ -98,7 +144,17 @@ public class UIActions extends CommonOps {
     @Step ("Scroll to Element")
     public static void scrollToElement (WebElement element) throws InterruptedException {
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
-        Thread.sleep(10000);
+        Thread.sleep(4000);
+    }
+    
+    @Step ("Clear text box")
+    public static void clearTextBox (WebElement element) throws InterruptedException {
+    	element.clear();
+    }
+    
+    @Step ("Get current page title")
+    public static void closeCurrentWindow(){
+         driver.close();
     }
 
 }

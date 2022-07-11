@@ -1,4 +1,5 @@
 sanity/GrafanaWebDB.class
+sanity/WebAppTest.class
 sanity/CalculatorDesktop.class
 sanity/CreateWallet.class
 Helper/TempAPI.class

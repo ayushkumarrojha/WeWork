@@ -8,27 +8,22 @@
 <body>
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
-<tr><th colspan="8">Mobile Suite</th></tr>
-<tr><td><a href="#t0">Mobile app test</a></td><td class="num">0</td><td class="num attn">1</td><td class="num">0</td><td class="num">0</td><td class="num">13,353</td><td></td><td></td></tr>
+<tr><th colspan="8">Web Suite</th></tr>
+<tr><td><a href="#t0">Web Tests</a></td><td class="num">12</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">528,123</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Mobile Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Mobile app test &#8212; failed (configuration methods)</th></tr><tr class="failedeven"><td rowspan="1">sanity.CreateWallet</td><td><a href="#m0">startSession</a></td><td rowspan="1">1649654495443</td><td rowspan="1">7855</td></tr><tr><th colspan="4">Mobile app test &#8212; skipped (configuration methods)</th></tr><tr class="skippedeven"><td rowspan="3">sanity.CreateWallet</td><td><a href="#m1">afterMethod</a></td><td rowspan="1">1649654508749</td><td rowspan="1">-1649654508749</td></tr><tr class="skippedeven"><td><a href="#m2">beforeMethod</a></td><td rowspan="1">1649654508721</td><td rowspan="1">-1649654508721</td></tr><tr class="skippedeven"><td><a href="#m3">closeSession</a></td><td rowspan="1">1649654508751</td><td rowspan="1">-1649654508751</td></tr><tr><th colspan="4">Mobile app test &#8212; skipped</th></tr><tr class="skippedeven"><td rowspan="1">sanity.CreateWallet</td><td><a href="#m4">test01_verify_createWallet</a></td><td rowspan="1">1649654508742</td><td rowspan="1">0</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Web Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Web Tests &#8212; passed</th></tr><tr class="passedeven"><td rowspan="12">sanity.WebAppTest</td><td><a href="#m0">test01_verifyWebsite</a></td><td rowspan="1">1657190707578</td><td rowspan="1">5061</td></tr><tr class="passedeven"><td><a href="#m1">test02_verifyLoginandLogout</a></td><td rowspan="1">1657190716273</td><td rowspan="1">21687</td></tr><tr class="passedeven"><td><a href="#m2">test03_verifyTermsAndConditions</a></td><td rowspan="1">1657190740712</td><td rowspan="1">13316</td></tr><tr class="passedeven"><td><a href="#m3">test04_VerifySelectWorkspace</a></td><td rowspan="1">1657190756828</td><td rowspan="1">44750</td></tr><tr class="passedeven"><td><a href="#m4">test05_VerifySelectenterprise</a></td><td rowspan="1">1657190804040</td><td rowspan="1">50280</td></tr><tr class="passedeven"><td><a href="#m5">test06_ContactUs</a></td><td rowspan="1">1657190857356</td><td rowspan="1">41039</td></tr><tr class="passedeven"><td><a href="#m6">test07_VerifyEventspace</a></td><td rowspan="1">1657190901363</td><td rowspan="1">40526</td></tr><tr class="passedeven"><td><a href="#m7">test08_BookATour</a></td><td rowspan="1">1657190945040</td><td rowspan="1">42127</td></tr><tr class="passedeven"><td><a href="#m8">test09_SelectDaypass</a></td><td rowspan="1">1657190989660</td><td rowspan="1">51643</td></tr><tr class="passedeven"><td><a href="#m9">test10_SelectHotDesk</a></td><td rowspan="1">1657191044062</td><td rowspan="1">52073</td></tr><tr class="passedeven"><td><a href="#m10">test11_SelectPrivateOfficespace</a></td><td rowspan="1">1657191098930</td><td rowspan="1">48139</td></tr><tr class="passedeven"><td><a href="#m11">test12_VerifySelectVirtualOffice</a></td><td rowspan="1">1657191149804</td><td rowspan="1">54972</td></tr></tbody>
 </table>
-<h2>Mobile app test</h2><h3 id="m0">sanity.CreateWallet#startSession</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>mobile</td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.NullPointerException
-	at java.base/java.util.Objects.requireNonNull(Objects.java:208)
-	at org.openqa.selenium.interactions.Actions.&lt;init&gt;(Actions.java:65)
-	at utilities.CommonOps.initMobile(CommonOps.java:123)
-	at utilities.CommonOps.startSession(CommonOps.java:179)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 27 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m1">sanity.CreateWallet#afterMethod</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m2">sanity.CreateWallet#beforeMethod</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m3">sanity.CreateWallet#closeSession</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m4">sanity.CreateWallet#test01_verify_createWallet</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.NullPointerException
-	at java.base/java.util.Objects.requireNonNull(Objects.java:208)
-	at org.openqa.selenium.interactions.Actions.&lt;init&gt;(Actions.java:65)
-	at utilities.CommonOps.initMobile(CommonOps.java:123)
-	at utilities.CommonOps.startSession(CommonOps.java:179)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 27 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>Web Tests</h2><h3 id="m0">sanity.WebAppTest#test01_verifyWebsite</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">sanity.WebAppTest#test02_verifyLoginandLogout</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">sanity.WebAppTest#test03_verifyTermsAndConditions</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m3">sanity.WebAppTest#test04_VerifySelectWorkspace</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m4">sanity.WebAppTest#test05_VerifySelectenterprise</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m5">sanity.WebAppTest#test06_ContactUs</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m6">sanity.WebAppTest#test07_VerifyEventspace</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m7">sanity.WebAppTest#test08_BookATour</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m8">sanity.WebAppTest#test09_SelectDaypass</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m9">sanity.WebAppTest#test10_SelectHotDesk</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m10">sanity.WebAppTest#test11_SelectPrivateOfficespace</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m11">sanity.WebAppTest#test12_VerifySelectVirtualOffice</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>
