@@ -1,0 +1,166 @@
+{
+  "uid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+  "children" : [ {
+    "name" : "LAPTOP-33T2KTK9",
+    "children" : [ {
+      "name" : "23416@LAPTOP-33T2KTK9.main(1)",
+      "children" : [ {
+        "name" : "Test07 - Search Users",
+        "uid" : "801a01d7fa80fe67",
+        "parentUid" : "7077f21014fed59fb8c538152c759a64",
+        "status" : "passed",
+        "time" : {
+          "start" : 1639962559632,
+          "stop" : 1639962572040,
+          "duration" : 12408
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ "web", "Tal", "not-exist" ]
+      }, {
+        "name" : "Test07 - Search Users",
+        "uid" : "2beb74dacb3f43cc",
+        "parentUid" : "7077f21014fed59fb8c538152c759a64",
+        "status" : "passed",
+        "time" : {
+          "start" : 1639962542693,
+          "stop" : 1639962546159,
+          "duration" : 3466
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ "web", "admin", "exist" ]
+      }, {
+        "name" : "Test07 - Search Users",
+        "uid" : "c74995ab6db9a0da",
+        "parentUid" : "7077f21014fed59fb8c538152c759a64",
+        "status" : "passed",
+        "time" : {
+          "start" : 1639962546387,
+          "stop" : 1639962559312,
+          "duration" : 12925
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ "web", "John", "not-exist" ]
+      }, {
+        "name" : "Test01 - Verify Header",
+        "uid" : "3482ff272a7ef3fd",
+        "parentUid" : "7077f21014fed59fb8c538152c759a64",
+        "status" : "failed",
+        "time" : {
+          "start" : 1639962532308,
+          "stop" : 1639962535835,
+          "duration" : 3527
+        },
+        "flaky" : false,
+        "newFailed" : true,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ "web" ]
+      }, {
+        "name" : "Test04 - Verify User Deletion",
+        "uid" : "cf25910e1617fee9",
+        "parentUid" : "7077f21014fed59fb8c538152c759a64",
+        "status" : "passed",
+        "time" : {
+          "start" : 1639962539487,
+          "stop" : 1639962540867,
+          "duration" : 1380
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ "web" ]
+      }, {
+        "name" : "Test06 - Verify Avatar Icon",
+        "uid" : "22ad526910a09610",
+        "parentUid" : "7077f21014fed59fb8c538152c759a64",
+        "status" : "passed",
+        "time" : {
+          "start" : 1639962541580,
+          "stop" : 1639962542439,
+          "duration" : 859
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ "web" ]
+      }, {
+        "name" : "Test03 - Verify New User",
+        "uid" : "8094e2ad0c330189",
+        "parentUid" : "7077f21014fed59fb8c538152c759a64",
+        "status" : "passed",
+        "time" : {
+          "start" : 1639962537135,
+          "stop" : 1639962539228,
+          "duration" : 2093
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ "web" ]
+      }, {
+        "name" : "Test02 - Verify Default users",
+        "uid" : "70e63854b51b322b",
+        "parentUid" : "7077f21014fed59fb8c538152c759a64",
+        "status" : "passed",
+        "time" : {
+          "start" : 1639962536140,
+          "stop" : 1639962536908,
+          "duration" : 768
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ "web" ]
+      }, {
+        "name" : "Test05 - Verify Progress Steps",
+        "uid" : "6d988cd42b722142",
+        "parentUid" : "7077f21014fed59fb8c538152c759a64",
+        "status" : "passed",
+        "time" : {
+          "start" : 1639962541125,
+          "stop" : 1639962541375,
+          "duration" : 250
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ "web" ]
+      } ],
+      "uid" : "7077f21014fed59fb8c538152c759a64"
+    } ],
+    "uid" : "6a8f35ee2b32ebd6679b9d2449a9a3d3"
+  } ],
+  "name" : "timeline"
+}

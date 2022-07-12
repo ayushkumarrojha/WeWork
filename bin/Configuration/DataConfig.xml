@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Environment>
+    <!-- Timeout -->
+    <Timeout>30</Timeout>
+
+    <!-- Authorization -->
+    <Username>testers@geekyants.com</Username>
+    <Password>Orchids@9</Password>
+    <user>Rohini</user>
+    <name>Varsha</name>
+    <email>testers@geekyants.com</email>
+    <phoneNumber>9999999999</phoneNumber>
+    <lastName>R</lastName>
+    <companyName>GA</companyName>
+    <address>2nd main 4th cross HSR layout</address>
+    <landMark>Near J.P Nagar Metro Station</landMark>
+    <city>Bangalore</city>
+    <pincode>560063</pincode>
+    <couponCode>ABC123</couponCode>
+    
+    <TS>https://wework.co.in/terms-and-conditions/</TS>
+
+    <!-- Web -->
+    <BrowserName>chrome</BrowserName>
+    <url>https://wework.co.in/</url>
+    <ImageRepo>System.getProperty("user.dir")
+        + "\\src\\test\\resources\\"</ImageRepo>
+
+    <!-- Data Driven Testing -->
+    <DDTFile>./DDTFiles/users.csv</DDTFile>
+
+    <!-- Mobile -->
+    <UDID>emulator-5554</UDID>
+    <AppPackage>com.mydoge.android</AppPackage>
+    <AppActivity>com.mydoge.android.MainActivity</AppActivity>
+    <AppiumServer>http://localhost:4723/wd/hub</AppiumServer>
+
+    <!-- API -->
+    <urlAPI>http://localhost:3000/</urlAPI>
+    <newUrlAPI>https://topgeek.io/</newUrlAPI>
+    <!-- Electron -->
+    <ElectronDriverPath>./Drivers/electrondriver.exe</ElectronDriverPath>
+    <ElectronAppPath>C:/Users/talra/AppData/Local/Programs/todolist/Todolist.exe</ElectronAppPath>
+
+    <!-- Desktop -->
+    <CalculatorApp>Microsoft.WindowsCalculator_8wekyb3d8bbwe!App</CalculatorApp>
+    <AppiumServerDesktop>http://127.0.0.1:4723</AppiumServerDesktop>
+
+    <!-- Database -->
+    <DBURL>jdbc:mysql://remotemysql.com:3306/WbxUTF7qNP</DBURL>
+    <DBUsername>WbxUTF7qNP</DBUsername>
+    <DBPassword>YqpAQBMH5h</DBPassword>
+
+</Environment>
