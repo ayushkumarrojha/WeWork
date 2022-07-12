@@ -65,6 +65,12 @@ public class webLoading extends CommonOps{
     @FindBy(how = How.XPATH, using = "//p[contains(text(),'Hot desk')]")
     public WebElement hotDeskOptn;
     
+    @FindBy(how = How.XPATH, using = "//p[contains(text(),'private offices')]")
+    public WebElement privateOfficeOptn;
+    
+    @FindBy(how = How.XPATH, using = "//p[contains(text(),'All Access')]")
+    public WebElement AllAccessOptn;
+    
     @FindBy(how = How.XPATH, using = "//button[contains(text(),'Book Now')]")
     public  WebElement bookNowBtn;
     
@@ -245,5 +251,13 @@ public class webLoading extends CommonOps{
     @FindBy(how = How.XPATH, using = "(//input[@placeholder='Phone number*'])[2]")
     public  WebElement userPhnNumber;
     
+    @FindBy(how = How.XPATH, using = "(//*[name()='path'][@stroke='#0000FF'])[1]")
+    public  WebElement leftArrow;
+    
+    @FindBy(how = How.XPATH, using = "(//*[name()='path'][@stroke='#0000FF'])[2]")
+    public  WebElement rightArrow;
+    
   
+    
+    
 }

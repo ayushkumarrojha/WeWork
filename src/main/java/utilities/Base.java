@@ -59,6 +59,7 @@ public class Base {
     protected static pageObjects.web.VirtualOfficePage virtualOffice;
     protected static pageObjects.web.PaymentPage payment;
     protected static pageObjects.web.ConferenceroomPage conferenceRoom;
+    protected static pageObjects.web.EventsPage events;
 
     //Page Objects - Mobile - init via ManagePages
     protected static pageObjects.createWallet.MainPage walletMain;

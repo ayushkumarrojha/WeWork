@@ -10,10 +10,10 @@
       <class name="sanity.WebAppTest">
         <methods>
           <include name="beforeMethod"/>
+          <include name="test31_SelectAllAccessInMumbai" invocation-numbers="11"/>
           <include name="afterMethod"/>
           <include name="closeSession"/>
           <include name="startSession"/>
-          <include name="test18_SelectConferenceRoom"/>
         </methods>
       </class> <!-- sanity.WebAppTest -->
     </classes>

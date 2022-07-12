@@ -207,8 +207,8 @@ public class WebAppTest extends CommonOps
     	
     }
 	
-	@Test(description = "Test10 - Verify User is able to select day pass")
-    @Description("This test verifies that User is able to select day pass")
+	@Test(description = "Test10 - Verify User is able to select hot desk option")
+    @Description("This test verifies that User is able to select hot desk option")
     public void test10_SelectHotDesk() throws InterruptedException
     {
     	WebFlows.loginToApplication();
@@ -234,9 +234,9 @@ public class WebAppTest extends CommonOps
        
     }
 	
-	@Test(description = "Test11 - Verify User is able to select day pass")
-    @Description("This test verifies that User is able to select day pass")
-    public void test11_SelectPrivateOfficespace() throws InterruptedException
+	@Test(description = "Test11 - Verify User is able to select private offices")
+    @Description("This test verifies that User is able to select private offices")
+    public void test11_SelectPrivateOfficeSpace() throws InterruptedException
     {
     	WebFlows.loginToApplication();
     	click(webLoading.workspace);
@@ -357,8 +357,8 @@ public class WebAppTest extends CommonOps
 
     }
 
-	@Test(description = "Test13 - Verify User is able to select day pass" )
-    @Description("This test verifies that User is able to select day pass")
+	@Test(description = "Test13 - Verify User is able to select why wework option" )
+    @Description("This test verifies that User is able to select why wework option")
     public void test13_SelectWhyWework() throws InterruptedException
     {
 		WebFlows.loginToApplication();
@@ -384,7 +384,7 @@ public class WebAppTest extends CommonOps
         
     }
 	
-	@Test(description = "Test14 - Verify User is able to select subscriptions" ,dataProvider = "Subscripptions")
+	@Test(description = "Test14 - Verify User is able to select subscriptions" ,dataProvider = "Subscriptions")
     @Description("This test verifies that User is able to select subscriptions")
     public void test14_SelectSubscriptions(String officeType , String selectOption) throws InterruptedException
     {
@@ -411,9 +411,9 @@ public class WebAppTest extends CommonOps
         
     }
 	
-	@Test(description = "Test15 - Verify User is able to select workspace in Pune" ,dataProvider = "PuneWorkspaces")
-    @Description("This test verifies that User is able to select workspace in Pune")
-    public void test15_SelectWorkspaceInPune(String city , String location, String buildingName) throws InterruptedException
+	@Test(description = "Test15 - Verify User is able to select Hotdesk in Pune" ,dataProvider = "PuneHotdeskWorkspaces")
+    @Description("This test verifies that User is able to select Hotdesk in Pune")
+    public void test15_SelectHotdeskInPune(String city , String location, String buildingName) throws InterruptedException
     {
 		WebFlows.loginToApplication();
 		scrollToElement(webLoading.workspaceBtn);
@@ -439,9 +439,9 @@ public class WebAppTest extends CommonOps
         
     }
 	
-	@Test(description = "Test16 - Verify User is able to select workspace in Hyderabad" ,dataProvider = "HyderabadWorkspaces")
-    @Description("This test verifies that User is able to select workspace in Hyderabad")
-    public void test16_SelectWorkspaceInHyderabad(String city , String location, String buildingName) throws InterruptedException
+	@Test(description = "Test16 - Verify User is able to select Hotdesk in Hyderabad" ,dataProvider = "HyderabadHotdeskWorkspaces")
+    @Description("This test verifies that User is able to select Hotdesk in Hyderabad")
+    public void test16_SelectHotdeskInHyderabad(String city , String location, String buildingName) throws InterruptedException
     {
 		WebFlows.loginToApplication();
 		scrollToElement(webLoading.workspaceBtn);
@@ -467,9 +467,9 @@ public class WebAppTest extends CommonOps
         
     }
 	
-	@Test(description = "Test17 - Verify User is able to select workspace in Delhi-NCR" ,dataProvider = "DelhiNCRWorkspaces")
-    @Description("This test verifies that User is able to select workspace in Delhi-NCR")
-    public void test17_SelectWorkspaceInDelhiNCR(String city , String location, String buildingName) throws InterruptedException
+	@Test(description = "Test17 - Verify User is able to select Hotdesk in Delhi-NCR" ,dataProvider = "DelhiNCRHotdeskWorkspaces")
+    @Description("This test verifies that User is able to select Hotdesk in Delhi-NCR")
+    public void test17_SelectHotdeskInDelhiNCR(String city , String location, String buildingName) throws InterruptedException
     {
 		//WebFlows.loginToApplication();
 		scrollToElement(webLoading.workspaceBtn);
@@ -495,9 +495,9 @@ public class WebAppTest extends CommonOps
         
     }
 	
-	@Test(description = "Test18 - Verify User is able to select workspace in Bengaluru" ,dataProvider = "BengaluruWorkspaces")
-    @Description("This test verifies that User is able to select workspace in Bengaluru")
-    public void test18_SelectWorkspaceInBengaluru(String city , String location, String buildingName) throws InterruptedException
+	@Test(description = "Test18 - Verify User is able to select Hotdesk in Bengaluru" ,dataProvider = "BengaluruHotdeskWorkspaces")
+    @Description("This test verifies that User is able to select Hotdesk in Bengaluru")
+    public void test18_SelectHotdeskInBengaluru(String city , String location, String buildingName) throws InterruptedException
     {
 		//WebFlows.loginToApplication();
 		scrollToElement(webLoading.workspaceBtn);
@@ -525,9 +525,9 @@ public class WebAppTest extends CommonOps
         
     } 
 	
-	@Test(description = "Test19 - Verify User is able to select workspace in Mumbai" ,dataProvider = "MumbaiWorkspaces")
-    @Description("This test verifies that User is able to select workspace in Mumbai")
-    public void test19_SelectWorkspaceInMumbai(String city , String location, String buildingName) throws InterruptedException
+	@Test(description = "Test19 - Verify User is able to select Hotdesk in Mumbai" ,dataProvider = "MumbaiHotdeskWorkspaces")
+    @Description("This test verifies that User is able to select Hotdesk in Mumbai")
+    public void test19_SelectHotdeskInMumbai(String city , String location, String buildingName) throws InterruptedException
     {
 		//WebFlows.loginToApplication();
 		scrollToElement(webLoading.workspaceBtn);
@@ -630,11 +630,363 @@ public class WebAppTest extends CommonOps
     {
 		WebFlows.loginToApplication();
         click(webLoading.workspace);
+        click(webLoading.opt("Event and shoot spaces"));
+        click(webLoading.getInTouchButton);
+        scrollToElement(events.select("Name*"));
+        updateText(events.opt("Name*"), getData("name"));
+        updateText(events.opt("Email*"), getData("email"));
+        updateText(events.opt("Company name*"), getData("companyName"));
+        updateText(events.opt("Phone*"), getData("phoneNumber"));
+        mouseHover(events.noRadioBtn1);
+        Thread.sleep(4000);
+        click(events.calendarIcon);
+        click(events.selectDate("29"));
+        click(events.clockIcon);
+        scrollToElement(events.selectHour("6 hours"));
+        mouseHover(events.selectHour("6 hours"));
+       // click(events.selectHour("6"));
+        scrollToElement(events.selectMinute("40 minutes"));
+        mouseHover(events.selectMinute("40 minutes"));
+       // click(events.selectMinute("30"));
+        click(events.plusIcon);
+        mouseHover(events.cityDropdown);
+       // click(events.cityDropdown);
+        //scrollToElement(events.select("Pune"));
+        mouseHover(events.selectlocation("Pune"));
+        scrollToElement(events.buildingDropdown);
+        mouseHover(events.buildingDropdown);
+        mouseHover(events.selectlocation("Panchshil Futura"));
+        Thread.sleep(2000);
+        mouseHover(events.yesRadioBtn2);
+       // scrollToElement(events.select("Panchshil Futura"));
+       
+        scrollToElement(events.eventTypeDropdown);
+        mouseHover(events.eventTypeDropdown);
+        scrollToElement(events.select("Shoots"));
+        mouseHover(events.select("Shoots"));
+        Thread.sleep(2000);
+        mouseHover(events.yesRadioBtn3);
+        mouseHover(events.productionRadioBtn);
+        mouseHover(events.select("Submit Enquiry"));
+       
         
     }
 	
+	@Test(description = "Test22 - Verify User is able to select private office in Pune",dataProvider = "PuneHotdeskWorkspaces")
+    @Description("This test verifies that User is able to select private office in Pune")
+    public void test22_SelectPrivateOfficeInPune(String city , String location, String buildingName) throws InterruptedException
+    {
+        
+      //WebFlows.loginToApplication();
+      scrollToElement(webLoading.workspaceBtn);
+      click(webLoading.cityDropdown);
+      click(webLoading.select(city));
+      click(webLoading.buildingsDropdown);
+      click(webLoading.select(location));
+      click(webLoading.select(buildingName));
+      click(webLoading.exploreBtn);
+      click(webLoading.privateOfficeOptn);
+      click(webLoading.bookNowBtn);
+      updateText(webLoading.username, getData("Username"));
+      updateText(webLoading.userEmail, getData("email"));
+      updateText(webLoading.userPhnNumber, getData("phoneNumber"));
+      click(webLoading.plusIcon);
+      click(webLoading.calendarIcon);
+      click(webLoading.date("30"));
+      click(webLoading.continueBtn);
+      String actualText = webLoading.thankyouText.getText();
+      Verifications.elementIsVisible(webLoading.thankyouText);
+      Verifications.verifyText(actualText,"Thank you for contacting WeWork");
+      click(webLoading.backToHomePageBtn);
+      Thread.sleep(4000);
+   // WebFlows.logoutOfApplication();
+        
+    }
 	
-	@DataProvider(name="Subscripptions")
+	@Test(description = "Test23 - Verify User is able to select private office in Hyderabad",dataProvider = "HyderabadHotdeskWorkspaces")
+    @Description("This test verifies that User is able to select private office in Hyderabad")
+    public void test23_SelectPrivateOfficeInHyderabad(String city , String location, String buildingName) throws InterruptedException
+    {
+        
+      //WebFlows.loginToApplication();
+      scrollToElement(webLoading.workspaceBtn);
+      click(webLoading.cityDropdown);
+      click(webLoading.select(city));
+      click(webLoading.buildingsDropdown);
+      click(webLoading.select(location));
+      click(webLoading.select(buildingName));
+      click(webLoading.exploreBtn);
+      click(webLoading.privateOfficeOptn);
+      click(webLoading.bookNowBtn);
+      updateText(webLoading.username, getData("Username"));
+      updateText(webLoading.userEmail, getData("email"));
+      updateText(webLoading.userPhnNumber, getData("phoneNumber"));
+      click(webLoading.plusIcon);
+      click(webLoading.calendarIcon);
+      click(webLoading.date("30"));
+      click(webLoading.continueBtn);
+      String actualText = webLoading.thankyouText.getText();
+      Verifications.elementIsVisible(webLoading.thankyouText);
+      Verifications.verifyText(actualText,"Thank you for contacting WeWork");
+      click(webLoading.backToHomePageBtn);
+      Thread.sleep(4000);
+   // WebFlows.logoutOfApplication();
+        
+    }
+	
+	@Test(description = "Test24 - Verify User is able to select private office in Delhi",dataProvider = "DelhiNCRHotdeskWorkspaces")
+    @Description("This test verifies that User is able to select private office in Delhi")
+    public void test24_SelectPrivateOfficeInDelhi(String city , String location, String buildingName) throws InterruptedException
+    {
+        
+      //WebFlows.loginToApplication();
+      scrollToElement(webLoading.workspaceBtn);
+      click(webLoading.cityDropdown);
+      click(webLoading.select(city));
+      click(webLoading.buildingsDropdown);
+      click(webLoading.select(location));
+      click(webLoading.select(buildingName));
+      click(webLoading.exploreBtn);
+      click(webLoading.privateOfficeOptn);
+      click(webLoading.bookNowBtn);
+      updateText(webLoading.username, getData("Username"));
+      updateText(webLoading.userEmail, getData("email"));
+      updateText(webLoading.userPhnNumber, getData("phoneNumber"));
+      click(webLoading.plusIcon);
+      click(webLoading.calendarIcon);
+      click(webLoading.date("30"));
+      click(webLoading.continueBtn);
+      String actualText = webLoading.thankyouText.getText();
+      Verifications.elementIsVisible(webLoading.thankyouText);
+      Verifications.verifyText(actualText,"Thank you for contacting WeWork");
+      click(webLoading.backToHomePageBtn);
+      Thread.sleep(4000);
+   // WebFlows.logoutOfApplication();
+        
+    }
+	
+	@Test(description = "Test25 - Verify User is able to select private office in Bengaluru",dataProvider = "BengaluruHotdeskWorkspaces")
+    @Description("This test verifies that User is able to select private office in Bengaluru")
+    public void test25_SelectPrivateOfficeInBengaluru(String city , String location, String buildingName) throws InterruptedException
+    {
+        
+      //WebFlows.loginToApplication();
+      scrollToElement(webLoading.workspaceBtn);
+      click(webLoading.cityDropdown);
+      click(webLoading.select(city));
+      click(webLoading.buildingsDropdown);
+      click(webLoading.select(location));
+      click(webLoading.select(buildingName));
+      click(webLoading.exploreBtn);
+      click(webLoading.privateOfficeOptn);
+      click(webLoading.bookNowBtn);
+      updateText(webLoading.username, getData("Username"));
+      updateText(webLoading.userEmail, getData("email"));
+      updateText(webLoading.userPhnNumber, getData("phoneNumber"));
+      click(webLoading.plusIcon);
+      click(webLoading.calendarIcon);
+      click(webLoading.date("30"));
+      click(webLoading.continueBtn);
+      String actualText = webLoading.thankyouText.getText();
+      Verifications.elementIsVisible(webLoading.thankyouText);
+      Verifications.verifyText(actualText,"Thank you for contacting WeWork");
+      click(webLoading.backToHomePageBtn);
+      Thread.sleep(4000);
+   // WebFlows.logoutOfApplication();
+        
+    }
+	
+	@Test(description = "Test26 - Verify User is able to select private office in Mumbai",dataProvider = "MumbaiHotdeskWorkspaces")
+    @Description("This test verifies that User is able to select private office in Mumbai")
+    public void test26_SelectPrivateOfficeInMumbai(String city , String location, String buildingName) throws InterruptedException
+    {
+		//WebFlows.loginToApplication();
+				scrollToElement(webLoading.workspaceBtn);
+		        click(webLoading.cityDropdown);
+		        click(webLoading.select(city));
+		        click(webLoading.buildingsDropdown);
+		        scrollToElement(webLoading.select(location));
+		        click(webLoading.select(location));
+		        scrollToElement(webLoading.select(buildingName));
+		        click(webLoading.select(buildingName));
+		        scrollToElement(webLoading.exploreBtn);
+		        click(webLoading.exploreBtn);
+		        click(webLoading.privateOfficeOptn);
+		        click(webLoading.bookNowBtn);
+		        updateText(webLoading.username, getData("Username"));
+		        updateText(webLoading.userEmail, getData("email"));
+		        updateText(webLoading.userPhnNumber, getData("phoneNumber"));
+		        click(webLoading.plusIcon);
+		        click(webLoading.calendarIcon);
+		        click(webLoading.date("30"));
+		        click(webLoading.continueBtn);
+		        String actualText = webLoading.thankyouText.getText();
+		        Verifications.elementIsVisible(webLoading.thankyouText);
+		        Verifications.verifyText(actualText,"Thank you for contacting WeWork");
+		        click(webLoading.backToHomePageBtn);
+		        Thread.sleep(4000);
+		       // WebFlows.logoutOfApplication();             
+     
+        
+    }
+	
+	@Test(description = "Test27 - Verify User is able to select all access in Pune",dataProvider = "PuneHotdeskWorkspaces")
+    @Description("This test verifies that User is able to select all access in Pune")
+    public void test27_SelectAllAccessInPune(String city , String location, String buildingName) throws InterruptedException
+    {
+        
+      //WebFlows.loginToApplication();
+      scrollToElement(webLoading.workspaceBtn);
+      click(webLoading.cityDropdown);
+      click(webLoading.select(city));
+      click(webLoading.buildingsDropdown);
+      click(webLoading.select(location));
+      click(webLoading.select(buildingName));
+      click(webLoading.exploreBtn);
+      click(webLoading.AllAccessOptn);
+      click(webLoading.bookNowBtn);
+      updateText(webLoading.username, getData("Username"));
+      updateText(webLoading.userEmail, getData("email"));
+      updateText(webLoading.userPhnNumber, getData("phoneNumber"));
+      click(webLoading.plusIcon);
+      click(webLoading.calendarIcon);
+      click(webLoading.date("30"));
+      click(webLoading.continueBtn);
+      String actualText = webLoading.thankyouText.getText();
+      Verifications.elementIsVisible(webLoading.thankyouText);
+      Verifications.verifyText(actualText,"Thank you for contacting WeWork");
+      click(webLoading.backToHomePageBtn);
+      Thread.sleep(4000);
+   // WebFlows.logoutOfApplication();
+        
+    }
+	
+	@Test(description = "Test28 - Verify User is able to select all access in Hyderabad",dataProvider = "HyderabadHotdeskWorkspaces")
+    @Description("This test verifies that User is able to select all access in Hyderabad")
+    public void test28_SelectAllAccessInHyderabad(String city , String location, String buildingName) throws InterruptedException
+    {
+        
+      //WebFlows.loginToApplication();
+      scrollToElement(webLoading.workspaceBtn);
+      click(webLoading.cityDropdown);
+      click(webLoading.select(city));
+      click(webLoading.buildingsDropdown);
+      click(webLoading.select(location));
+      click(webLoading.select(buildingName));
+      click(webLoading.exploreBtn);
+      click(webLoading.AllAccessOptn);
+      click(webLoading.bookNowBtn);
+      updateText(webLoading.username, getData("Username"));
+      updateText(webLoading.userEmail, getData("email"));
+      updateText(webLoading.userPhnNumber, getData("phoneNumber"));
+      click(webLoading.plusIcon);
+      click(webLoading.calendarIcon);
+      click(webLoading.date("30"));
+      click(webLoading.continueBtn);
+      String actualText = webLoading.thankyouText.getText();
+      Verifications.elementIsVisible(webLoading.thankyouText);
+      Verifications.verifyText(actualText,"Thank you for contacting WeWork");
+      click(webLoading.backToHomePageBtn);
+      Thread.sleep(4000);
+   // WebFlows.logoutOfApplication();
+        
+    }
+	
+	@Test(description = "Test29 - Verify User is able to select all access in Delhi",dataProvider = "DelhiNCRHotdeskWorkspaces")
+    @Description("This test verifies that User is able to select all access in Delhi")
+    public void test29_SelectAllAccessInDelhi(String city , String location, String buildingName) throws InterruptedException
+    {
+        
+      //WebFlows.loginToApplication();
+      scrollToElement(webLoading.workspaceBtn);
+      click(webLoading.cityDropdown);
+      click(webLoading.select(city));
+      click(webLoading.buildingsDropdown);
+      click(webLoading.select(location));
+      click(webLoading.select(buildingName));
+      click(webLoading.exploreBtn);
+      click(webLoading.AllAccessOptn);
+      click(webLoading.bookNowBtn);
+      updateText(webLoading.username, getData("Username"));
+      updateText(webLoading.userEmail, getData("email"));
+      updateText(webLoading.userPhnNumber, getData("phoneNumber"));
+      click(webLoading.plusIcon);
+      click(webLoading.calendarIcon);
+      click(webLoading.date("30"));
+      click(webLoading.continueBtn);
+      String actualText = webLoading.thankyouText.getText();
+      Verifications.elementIsVisible(webLoading.thankyouText);
+      Verifications.verifyText(actualText,"Thank you for contacting WeWork");
+      click(webLoading.backToHomePageBtn);
+      Thread.sleep(4000);
+   // WebFlows.logoutOfApplication();
+        
+    }
+	
+	@Test(description = "Test29 - Verify User is able to select all access in Bengaluru",dataProvider = "BengaluruHotdeskWorkspaces")
+    @Description("This test verifies that User is able to select all access in Bengaluru")
+    public void test30_SelectAllAccessInBengaluru(String city , String location, String buildingName) throws InterruptedException
+    {
+        
+      //WebFlows.loginToApplication();
+      scrollToElement(webLoading.workspaceBtn);
+      click(webLoading.cityDropdown);
+      click(webLoading.select(city));
+      click(webLoading.buildingsDropdown);
+      click(webLoading.select(location));
+      click(webLoading.select(buildingName));
+      click(webLoading.exploreBtn);
+      click(webLoading.AllAccessOptn);
+      click(webLoading.bookNowBtn);
+      updateText(webLoading.username, getData("Username"));
+      updateText(webLoading.userEmail, getData("email"));
+      updateText(webLoading.userPhnNumber, getData("phoneNumber"));
+      click(webLoading.plusIcon);
+      click(webLoading.calendarIcon);
+      click(webLoading.date("30"));
+      click(webLoading.continueBtn);
+      String actualText = webLoading.thankyouText.getText();
+      Verifications.elementIsVisible(webLoading.thankyouText);
+      Verifications.verifyText(actualText,"Thank you for contacting WeWork");
+      click(webLoading.backToHomePageBtn);
+      Thread.sleep(4000);
+   // WebFlows.logoutOfApplication();
+        
+    }
+	
+	@Test(description = "Test29 - Verify User is able to select all access in Mumbai",dataProvider = "MumbaiHotdeskWorkspaces")
+    @Description("This test verifies that User is able to select all access in Mumbai")
+    public void test31_SelectAllAccessInMumbai(String city , String location, String buildingName) throws InterruptedException
+    {
+        
+      //WebFlows.loginToApplication();
+      scrollToElement(webLoading.workspaceBtn);
+      click(webLoading.cityDropdown);
+      click(webLoading.select(city));
+      click(webLoading.buildingsDropdown);
+      click(webLoading.select(location));
+      click(webLoading.select(buildingName));
+      click(webLoading.exploreBtn);
+      click(webLoading.AllAccessOptn);
+      click(webLoading.bookNowBtn);
+      updateText(webLoading.username, getData("Username"));
+      updateText(webLoading.userEmail, getData("email"));
+      updateText(webLoading.userPhnNumber, getData("phoneNumber"));
+      click(webLoading.plusIcon);
+      click(webLoading.calendarIcon);
+      click(webLoading.date("30"));
+      click(webLoading.continueBtn);
+      String actualText = webLoading.thankyouText.getText();
+      Verifications.elementIsVisible(webLoading.thankyouText);
+      Verifications.verifyText(actualText,"Thank you for contacting WeWork");
+      click(webLoading.backToHomePageBtn);
+      Thread.sleep(4000);
+   // WebFlows.logoutOfApplication();
+        
+    }
+	
+
+	@DataProvider(name="Subscriptions")
 	public Object[][] data()
 	{
 		return new Object[][] { 
@@ -646,8 +998,8 @@ public class WebAppTest extends CommonOps
 		
 	}
 	
-	@DataProvider(name="PuneWorkspaces")
-	public Object[][] puneWorkspaces()
+	@DataProvider(name="PuneHotdeskWorkspaces")
+	public Object[][] puneHotdeskWorkspaces()
 	{
 		return new Object[][] { 
 			{"Pune","Kharadi","World Trade Center"},
@@ -656,8 +1008,8 @@ public class WebAppTest extends CommonOps
 		
 	}
 	
-	@DataProvider(name="HyderabadWorkspaces")
-	public Object[][] hyderabadWorkspaces()
+	@DataProvider(name="HyderabadHotdeskWorkspaces")
+	public Object[][] hyderabadHotdeskWorkspaces()
 	{
 		return new Object[][] { 
 			{"Hyderabad","Financial District","Rajapushpa Summit"},
@@ -666,8 +1018,8 @@ public class WebAppTest extends CommonOps
 		
 	}
 	
-	@DataProvider(name="DelhiNCRWorkspaces")
-	public Object[][] delhiNCRWorkspaces()
+	@DataProvider(name="DelhiNCRHotdeskWorkspaces")
+	public Object[][] delhiNCRHotdeskWorkspaces()
 	{
 		return new Object[][] { 
 			{"Delhi-NCR","Sector 15 Gurgaon","32nd Milestone"},
@@ -680,8 +1032,8 @@ public class WebAppTest extends CommonOps
 			};
 	}
 	
-	@DataProvider(name="BengaluruWorkspaces")
-	public Object[][] bengaluruWorkspaces()
+	@DataProvider(name="BengaluruHotdeskWorkspaces")
+	public Object[][] bengaluruHotdeskWorkspaces()
 	{
 		return new Object[][] { 
 			{"Bengaluru","Koramangala","Prestige Atlanta"},
@@ -695,8 +1047,8 @@ public class WebAppTest extends CommonOps
 			
 			{"Bengaluru","Infantry Road","Prestige Central"},
 			
-			//{"Bengaluru","Domlur","Sunriver, EGL"},
-			//{"Bengaluru","Domlur","Cinnabar Hills, EGL"},
+			{"Bengaluru","Domlur","Sunriver, EGL"}, //hotdesk not available
+			//{"Bengaluru","Domlur","Cinnabar Hills, EGL"}, //hotdesk not available
 			
 			{"Bengaluru","Bellandur","Embassy TechVillage"},
 			{"Bengaluru","Bellandur","Vaishnavi Signature"},
@@ -708,8 +1060,8 @@ public class WebAppTest extends CommonOps
 			};
 	}
 	
-	@DataProvider(name="MumbaiWorkspaces")
-	public Object[][] mumbaiWorkspaces()
+	@DataProvider(name="MumbaiHotdeskWorkspaces")
+	public Object[][] mumbaiHotdeskWorkspaces()
 	{
 		return new Object[][] { 
 			{"Mumbai","Nariman Point","Express Towers"},
