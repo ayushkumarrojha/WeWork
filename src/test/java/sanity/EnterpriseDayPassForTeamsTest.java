@@ -70,6 +70,7 @@ public class EnterpriseDayPassForTeamsTest extends CommonOps
         scrollToElement(getInTouch.noRadioBtn);
         mouseHover(getInTouch.noRadioBtn);
         click(getInTouch.getInTouchButton);
+        Verifications.elementIsVisible(webLoading.FormSubbmittedMsg);
         String actualText = webLoading.FormSubbmittedMsg.getText();
         Verifications.verifyText(actualText,"Form Submitted Successfully");
         click(webLoading.closeIcon);
