@@ -11,13 +11,12 @@
             <class name="sanity.SelectHotDeskTest" /> 
             <class name="sanity.SelectPrivateOfficeTest" />
             <class name="sanity.SelectAllAccessWrkspaceTest" /> 
-            
             <class name="sanity.SelectVirtualOfficeTest" />
+            <class name="sanity.SelectDayPassTest" />
+            <class name="sanity.SelectConferenceRoomTest" />
             -->
-             <class name="sanity.SelectDayPassTest" />
             
-            
-            
+            <class name="sanity.EnterpriseDayPassForTeamsTest" />
         </classes>
     </test>
 </suite>

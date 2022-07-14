@@ -62,6 +62,8 @@ public class Base {
     protected static pageObjects.web.EventsPage events;
     protected static pageObjects.web.DashboardPage dashboard;
     protected static pageObjects.web.DayPassPage dayPass;
+    protected static pageObjects.web.GetInTouchPage getInTouch;
+    
 
     //Page Objects - Mobile - init via ManagePages
     protected static pageObjects.createWallet.MainPage walletMain;

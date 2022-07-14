@@ -84,7 +84,7 @@ public class WebAppTest extends CommonOps
     @Description("This test verifies that User is able to Select Enterprise (Day pass option)")
     public void test05_VerifySelectenterprise() throws InterruptedException
     {
-    	WebFlows.loginToApplication();
+		WebFlows.loginToApplication();
     	scrollToElement(webLoading.enterpriseBtn);
     	click(webLoading.enterpriseBtn);
     	click(webLoading.locationDropdown);
@@ -95,15 +95,15 @@ public class WebAppTest extends CommonOps
     	click(webLoading.exploreSolnBtn);
     	click(webLoading.dayPassOptn);
     	click(webLoading.getInTouchButton);
-    	updateText(webLoading.name, getData("Username"));
-        updateText(webLoading.workemail, getData("email"));
-        updateText(webLoading.phoneNumber, getData("phoneNumber"));
-        scrollToElement(webLoading.companySizeDrpdwn);
-        click(webLoading.companySizeDrpdwn);
-        click(webLoading.optnOne);
-        scrollToElement(webLoading.brokerRadioBtn);
-        mouseHover(webLoading.brokerRadioBtn);
-        click(webLoading.getInTouchButton);
+    	updateText(getInTouch.fullName, getData("Username"));
+        updateText(getInTouch.workEmail, getData("email"));
+        updateText(getInTouch.phoneNumber, getData("phoneNumber"));
+        scrollToElement(getInTouch.companySizeDrpdwn);
+        click(getInTouch.companySizeDrpdwn);
+        click(getInTouch.CompanySize50);
+        scrollToElement(getInTouch.noRadioBtn);
+        mouseHover(getInTouch.noRadioBtn);
+        click(getInTouch.getInTouchButton);
         String actualText = webLoading.FormSubbmittedMsg.getText();
         Verifications.verifyText(actualText,"Form Submitted Successfully");
         click(webLoading.closeIcon);

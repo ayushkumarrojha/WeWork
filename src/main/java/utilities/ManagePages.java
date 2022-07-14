@@ -10,6 +10,7 @@ import pageObjects.web.ConferenceroomPage;
 import pageObjects.web.DashboardPage;
 import pageObjects.web.DayPassPage;
 import pageObjects.web.EventsPage;
+import pageObjects.web.GetInTouchPage;
 import pageObjects.web.HomePage;
 import pageObjects.web.LoginPage;
 import pageObjects.web.PaymentPage;
@@ -35,6 +36,7 @@ public class ManagePages extends Base {
         events = PageFactory.initElements(driver, EventsPage.class);
         dashboard = PageFactory.initElements(driver, DashboardPage.class);
         dayPass = PageFactory.initElements(driver, DayPassPage.class);
+        getInTouch = PageFactory.initElements(driver, GetInTouchPage.class);
          
     }
 
