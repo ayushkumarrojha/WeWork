@@ -7,7 +7,17 @@
     <test name="Web Tests">
         <parameter name="PlatformName" value="web" />
         <classes>
-            <class name="sanity.WebAppTest" />
+           <!-- <class name="sanity.WebAppTest" /> 
+            <class name="sanity.SelectHotDeskTest" /> 
+            <class name="sanity.SelectPrivateOfficeTest" />
+            <class name="sanity.SelectAllAccessWrkspaceTest" /> 
+            
+            <class name="sanity.SelectVirtualOfficeTest" />
+            -->
+             <class name="sanity.SelectDayPassTest" />
+            
+            
+            
         </classes>
     </test>
 </suite>

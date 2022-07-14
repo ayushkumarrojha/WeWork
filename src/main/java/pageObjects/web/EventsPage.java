@@ -25,8 +25,6 @@ public class EventsPage extends CommonOps
 		return driver.findElement(By.xpath("//input[@placeholder='"+locator+"']"));
 	}
 	
-	
-	
 	public WebElement selectDate(String locator) 
 	{
 		return driver.findElement(By.xpath("//button[text()='"+locator+"']"));
@@ -34,7 +32,6 @@ public class EventsPage extends CommonOps
 	
 	public WebElement selectHour(String locator) 
 	{
-		//span[contains(text(),'5')] //span[@aria-label='4 hours']
 		return driver.findElement(By.xpath("//span[@aria-label='"+locator+"']"));
 	}
 	
@@ -47,7 +44,6 @@ public class EventsPage extends CommonOps
 	{
 		return driver.findElement(By.xpath("//li[contains(text(),'"+locator+"')]"));
 	}
-	//li[contains(text(),'Pune')]
 	
 	
     @FindBy(how = How.XPATH, using = "(//*[name()='svg'][@data-testid='RadioButtonUncheckedIcon'])[1]")

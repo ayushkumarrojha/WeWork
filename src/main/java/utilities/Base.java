@@ -60,6 +60,8 @@ public class Base {
     protected static pageObjects.web.PaymentPage payment;
     protected static pageObjects.web.ConferenceroomPage conferenceRoom;
     protected static pageObjects.web.EventsPage events;
+    protected static pageObjects.web.DashboardPage dashboard;
+    protected static pageObjects.web.DayPassPage dayPass;
 
     //Page Objects - Mobile - init via ManagePages
     protected static pageObjects.createWallet.MainPage walletMain;

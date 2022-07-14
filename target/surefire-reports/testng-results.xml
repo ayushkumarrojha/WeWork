@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="12" passed="12" failed="0" skipped="0">
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-07-07T16:14:40 IST" name="Web Suite" finished-at="2022-07-07T16:23:28 IST" duration-ms="528123">
+  <suite started-at="2022-07-14T14:13:21 IST" name="Web Suite" finished-at="2022-07-14T14:15:50 IST" duration-ms="149422">
     <groups>
     </groups>
-    <test started-at="2022-07-07T16:14:40 IST" name="Web Tests" finished-at="2022-07-07T16:23:28 IST" duration-ms="528123">
-      <class name="sanity.WebAppTest">
-        <test-method is-config="true" signature="startSession(java.lang.String)[pri:0, instance:sanity.WebAppTest@5a56cdac]" started-at="2022-07-07T16:14:40 IST" name="startSession" finished-at="2022-07-07T16:15:07 IST" duration-ms="26914" status="PASS">
+    <test started-at="2022-07-14T14:13:21 IST" name="Web Tests" finished-at="2022-07-14T14:15:50 IST" duration-ms="149422">
+      <class name="sanity.SelectDayPassTest">
+        <test-method is-config="true" signature="startSession(java.lang.String)[pri:0, instance:sanity.SelectDayPassTest@3a44431a]" started-at="2022-07-14T14:13:21 IST" name="startSession" finished-at="2022-07-14T14:13:48 IST" duration-ms="27377" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -18,239 +18,66 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- startSession -->
-        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:sanity.WebAppTest@5a56cdac]" started-at="2022-07-07T16:15:07 IST" name="beforeMethod" finished-at="2022-07-07T16:15:07 IST" duration-ms="73" status="PASS">
+        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:sanity.SelectDayPassTest@3a44431a]" started-at="2022-07-14T14:13:48 IST" name="beforeMethod" finished-at="2022-07-14T14:13:49 IST" duration-ms="932" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[public void sanity.WebAppTest.test01_verifyWebsite() throws java.lang.InterruptedException]]>
+                <![CDATA[public void sanity.SelectDayPassTest.test01_SelectDaypass() throws java.lang.InterruptedException]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="test01_verifyWebsite()[pri:0, instance:sanity.WebAppTest@5a56cdac]" started-at="2022-07-07T16:15:07 IST" name="test01_verifyWebsite" description="Test01 - Verify Website Opens on Chrome Browser" finished-at="2022-07-07T16:15:12 IST" duration-ms="5061" status="PASS">
+        <test-method signature="test01_SelectDaypass()[pri:0, instance:sanity.SelectDayPassTest@3a44431a]" started-at="2022-07-14T14:13:50 IST" name="test01_SelectDaypass" description="Test01 - Verify User is able to select day pass.(Navigate to header in home page and select Day Pass option from workspace dropdown)" finished-at="2022-07-14T14:14:45 IST" duration-ms="55026" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test01_verifyWebsite -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:sanity.WebAppTest@5a56cdac]" started-at="2022-07-07T16:15:12 IST" name="afterMethod" finished-at="2022-07-07T16:15:16 IST" duration-ms="3313" status="PASS">
+        </test-method> <!-- test01_SelectDaypass -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:sanity.SelectDayPassTest@3a44431a]" started-at="2022-07-14T14:14:45 IST" name="afterMethod" finished-at="2022-07-14T14:14:48 IST" duration-ms="2986" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:sanity.WebAppTest@5a56cdac]" started-at="2022-07-07T16:15:16 IST" name="beforeMethod" finished-at="2022-07-07T16:15:16 IST" duration-ms="11" status="PASS">
+        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:sanity.SelectDayPassTest@3a44431a]" started-at="2022-07-14T14:14:48 IST" name="beforeMethod" finished-at="2022-07-14T14:14:48 IST" duration-ms="10" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[public void sanity.WebAppTest.test02_verifyLoginandLogout() throws java.lang.InterruptedException]]>
+                <![CDATA[public void sanity.SelectDayPassTest.test02_SelectDayPassInPune(java.lang.String,java.lang.String,java.lang.String) throws java.lang.InterruptedException]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="test02_verifyLoginandLogout()[pri:0, instance:sanity.WebAppTest@5a56cdac]" started-at="2022-07-07T16:15:16 IST" name="test02_verifyLoginandLogout" description="Test02 - Verify User is able to Login and logout" finished-at="2022-07-07T16:15:37 IST" duration-ms="21687" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test02_verifyLoginandLogout -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:sanity.WebAppTest@5a56cdac]" started-at="2022-07-07T16:15:38 IST" name="afterMethod" finished-at="2022-07-07T16:15:40 IST" duration-ms="2358" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:sanity.WebAppTest@5a56cdac]" started-at="2022-07-07T16:15:40 IST" name="beforeMethod" finished-at="2022-07-07T16:15:40 IST" duration-ms="11" status="PASS">
+        <test-method signature="test02_SelectDayPassInPune(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:sanity.SelectDayPassTest@3a44431a]" started-at="2022-07-14T14:14:48 IST" name="test02_SelectDayPassInPune" description="Test02 - Verify User is able to select day pass in Pune. (In  home page navigate to workspaces and select day pass)" data-provider="PuneDayPassWorkspaces" finished-at="2022-07-14T14:15:47 IST" duration-ms="58534" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[public void sanity.WebAppTest.test03_verifyTermsAndConditions() throws java.lang.InterruptedException]]>
+                <![CDATA[Pune]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Kharadi]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[World Trade Center]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method signature="test03_verifyTermsAndConditions()[pri:0, instance:sanity.WebAppTest@5a56cdac]" started-at="2022-07-07T16:15:40 IST" name="test03_verifyTermsAndConditions" description="Test03 - Verify User is able to navigate to terms and services" finished-at="2022-07-07T16:15:54 IST" duration-ms="13316" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test03_verifyTermsAndConditions -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:sanity.WebAppTest@5a56cdac]" started-at="2022-07-07T16:15:54 IST" name="afterMethod" finished-at="2022-07-07T16:15:56 IST" duration-ms="2398" status="PASS">
+        </test-method> <!-- test02_SelectDayPassInPune -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:sanity.SelectDayPassTest@3a44431a]" started-at="2022-07-14T14:15:47 IST" name="afterMethod" finished-at="2022-07-14T14:15:49 IST" duration-ms="2624" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:sanity.WebAppTest@5a56cdac]" started-at="2022-07-07T16:15:56 IST" name="beforeMethod" finished-at="2022-07-07T16:15:56 IST" duration-ms="12" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[public void sanity.WebAppTest.test04_VerifySelectWorkspace() throws java.lang.InterruptedException]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method signature="test04_VerifySelectWorkspace()[pri:0, instance:sanity.WebAppTest@5a56cdac]" started-at="2022-07-07T16:15:56 IST" name="test04_VerifySelectWorkspace" description="Test04 - Verify User is able to Select Workspace" finished-at="2022-07-07T16:16:41 IST" duration-ms="44750" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test04_VerifySelectWorkspace -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:sanity.WebAppTest@5a56cdac]" started-at="2022-07-07T16:16:41 IST" name="afterMethod" finished-at="2022-07-07T16:16:44 IST" duration-ms="2141" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:sanity.WebAppTest@5a56cdac]" started-at="2022-07-07T16:16:44 IST" name="beforeMethod" finished-at="2022-07-07T16:16:44 IST" duration-ms="11" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[public void sanity.WebAppTest.test05_VerifySelectenterprise() throws java.lang.InterruptedException]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method signature="test05_VerifySelectenterprise()[pri:0, instance:sanity.WebAppTest@5a56cdac]" started-at="2022-07-07T16:16:44 IST" name="test05_VerifySelectenterprise" description="Test05 - Verify User is able to Select Enterprise" finished-at="2022-07-07T16:17:34 IST" duration-ms="50280" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test05_VerifySelectenterprise -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:sanity.WebAppTest@5a56cdac]" started-at="2022-07-07T16:17:34 IST" name="afterMethod" finished-at="2022-07-07T16:17:37 IST" duration-ms="2445" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:sanity.WebAppTest@5a56cdac]" started-at="2022-07-07T16:17:37 IST" name="beforeMethod" finished-at="2022-07-07T16:17:37 IST" duration-ms="8" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[public void sanity.WebAppTest.test06_ContactUs() throws java.lang.InterruptedException]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method signature="test06_ContactUs()[pri:0, instance:sanity.WebAppTest@5a56cdac]" started-at="2022-07-07T16:17:37 IST" name="test06_ContactUs" description="Test06 - Verify User is able to Select contact us option" finished-at="2022-07-07T16:18:18 IST" duration-ms="41039" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test06_ContactUs -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:sanity.WebAppTest@5a56cdac]" started-at="2022-07-07T16:18:18 IST" name="afterMethod" finished-at="2022-07-07T16:18:21 IST" duration-ms="2602" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:sanity.WebAppTest@5a56cdac]" started-at="2022-07-07T16:18:21 IST" name="beforeMethod" finished-at="2022-07-07T16:18:21 IST" duration-ms="8" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[public void sanity.WebAppTest.test07_VerifyEventspace() throws java.lang.InterruptedException]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method signature="test07_VerifyEventspace()[pri:0, instance:sanity.WebAppTest@5a56cdac]" started-at="2022-07-07T16:18:21 IST" name="test07_VerifyEventspace" description="Test07 - Verify User is able to Select Event spaces" finished-at="2022-07-07T16:19:01 IST" duration-ms="40526" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test07_VerifyEventspace -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:sanity.WebAppTest@5a56cdac]" started-at="2022-07-07T16:19:02 IST" name="afterMethod" finished-at="2022-07-07T16:19:05 IST" duration-ms="2610" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:sanity.WebAppTest@5a56cdac]" started-at="2022-07-07T16:19:05 IST" name="beforeMethod" finished-at="2022-07-07T16:19:05 IST" duration-ms="9" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[public void sanity.WebAppTest.test08_BookATour() throws java.lang.InterruptedException]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method signature="test08_BookATour()[pri:0, instance:sanity.WebAppTest@5a56cdac]" started-at="2022-07-07T16:19:05 IST" name="test08_BookATour" description="Test08 - Verify User is able to Book a Tour" finished-at="2022-07-07T16:19:47 IST" duration-ms="42127" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test08_BookATour -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:sanity.WebAppTest@5a56cdac]" started-at="2022-07-07T16:19:47 IST" name="afterMethod" finished-at="2022-07-07T16:19:49 IST" duration-ms="2147" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:sanity.WebAppTest@5a56cdac]" started-at="2022-07-07T16:19:49 IST" name="beforeMethod" finished-at="2022-07-07T16:19:49 IST" duration-ms="7" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[public void sanity.WebAppTest.test09_SelectDaypass() throws java.lang.InterruptedException]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method signature="test09_SelectDaypass()[pri:0, instance:sanity.WebAppTest@5a56cdac]" started-at="2022-07-07T16:19:49 IST" name="test09_SelectDaypass" description="Test09 - Verify User is able to select day pass" finished-at="2022-07-07T16:20:41 IST" duration-ms="51643" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test09_SelectDaypass -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:sanity.WebAppTest@5a56cdac]" started-at="2022-07-07T16:20:41 IST" name="afterMethod" finished-at="2022-07-07T16:20:44 IST" duration-ms="2449" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:sanity.WebAppTest@5a56cdac]" started-at="2022-07-07T16:20:44 IST" name="beforeMethod" finished-at="2022-07-07T16:20:44 IST" duration-ms="6" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[public void sanity.WebAppTest.test10_SelectHotDesk() throws java.lang.InterruptedException]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method signature="test10_SelectHotDesk()[pri:0, instance:sanity.WebAppTest@5a56cdac]" started-at="2022-07-07T16:20:44 IST" name="test10_SelectHotDesk" description="Test10 - Verify User is able to select day pass" finished-at="2022-07-07T16:21:36 IST" duration-ms="52073" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test10_SelectHotDesk -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:sanity.WebAppTest@5a56cdac]" started-at="2022-07-07T16:21:36 IST" name="afterMethod" finished-at="2022-07-07T16:21:38 IST" duration-ms="2465" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:sanity.WebAppTest@5a56cdac]" started-at="2022-07-07T16:21:38 IST" name="beforeMethod" finished-at="2022-07-07T16:21:38 IST" duration-ms="7" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[public void sanity.WebAppTest.test11_SelectPrivateOfficespace() throws java.lang.InterruptedException]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method signature="test11_SelectPrivateOfficespace()[pri:0, instance:sanity.WebAppTest@5a56cdac]" started-at="2022-07-07T16:21:38 IST" name="test11_SelectPrivateOfficespace" description="Test11 - Verify User is able to select day pass" finished-at="2022-07-07T16:22:27 IST" duration-ms="48139" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test11_SelectPrivateOfficespace -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:sanity.WebAppTest@5a56cdac]" started-at="2022-07-07T16:22:27 IST" name="afterMethod" finished-at="2022-07-07T16:22:29 IST" duration-ms="2399" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:sanity.WebAppTest@5a56cdac]" started-at="2022-07-07T16:22:29 IST" name="beforeMethod" finished-at="2022-07-07T16:22:29 IST" duration-ms="7" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[public void sanity.WebAppTest.test12_VerifySelectVirtualOffice() throws java.lang.InterruptedException]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method signature="test12_VerifySelectVirtualOffice()[pri:0, instance:sanity.WebAppTest@5a56cdac]" started-at="2022-07-07T16:22:29 IST" name="test12_VerifySelectVirtualOffice" description="Test12 - Verify User is able to Select virtual office" finished-at="2022-07-07T16:23:24 IST" duration-ms="54972" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test12_VerifySelectVirtualOffice -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:sanity.WebAppTest@5a56cdac]" started-at="2022-07-07T16:23:25 IST" name="afterMethod" finished-at="2022-07-07T16:23:27 IST" duration-ms="2247" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="closeSession()[pri:0, instance:sanity.WebAppTest@5a56cdac]" started-at="2022-07-07T16:23:27 IST" name="closeSession" finished-at="2022-07-07T16:23:28 IST" duration-ms="1111" status="PASS">
+        <test-method is-config="true" signature="closeSession()[pri:0, instance:sanity.SelectDayPassTest@3a44431a]" started-at="2022-07-14T14:15:49 IST" name="closeSession" finished-at="2022-07-14T14:15:50 IST" duration-ms="922" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeSession -->
-      </class> <!-- sanity.WebAppTest -->
+      </class> <!-- sanity.SelectDayPassTest -->
     </test> <!-- Web Tests -->
   </suite> <!-- Web Suite -->
 </testng-results>

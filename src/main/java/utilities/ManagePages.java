@@ -7,6 +7,8 @@ import pageObjects.grafana.ServerAdminMenuPage;
 import pageObjects.grafana.UserInformationPage;
 import pageObjects.web.webLoading;
 import pageObjects.web.ConferenceroomPage;
+import pageObjects.web.DashboardPage;
+import pageObjects.web.DayPassPage;
 import pageObjects.web.EventsPage;
 import pageObjects.web.HomePage;
 import pageObjects.web.LoginPage;
@@ -31,6 +33,9 @@ public class ManagePages extends Base {
         payment = PageFactory.initElements(driver, PaymentPage.class);
         conferenceRoom = PageFactory.initElements(driver, ConferenceroomPage.class);
         events = PageFactory.initElements(driver, EventsPage.class);
+        dashboard = PageFactory.initElements(driver, DashboardPage.class);
+        dayPass = PageFactory.initElements(driver, DayPassPage.class);
+         
     }
 
     public static void initWallet() {

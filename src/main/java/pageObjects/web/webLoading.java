@@ -1,5 +1,8 @@
 package pageObjects.web;
 
+import static extensions.UIActions.click;
+import static extensions.UIActions.scrollToElement;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -31,7 +34,7 @@ public class webLoading extends CommonOps{
 	
     @FindBy(how = How.XPATH, using = "//*[@id=\"__next\"]/div[3]/div/div/div/div[3]/div/a[2]")
     public WebElement termsAndServices;
-	
+    
 	@FindBy(how = How.XPATH, using = "(//div[@class='ray-dropdown'])[1]")
     public  WebElement cityDropdown;
     
@@ -70,6 +73,14 @@ public class webLoading extends CommonOps{
     
     @FindBy(how = How.XPATH, using = "//p[contains(text(),'All Access')]")
     public WebElement AllAccessOptn;
+    
+    @FindBy(how = How.XPATH, using = "(//p[contains(text(),'Day pass')])[1]")
+    public WebElement dayPassBtn;
+    
+    @FindBy(how = How.XPATH, using = "//p[contains(text(),'Virtual Office')]")
+    public WebElement VirtualOfficeOptn;
+  
+    
     
     @FindBy(how = How.XPATH, using = "//button[contains(text(),'Book Now')]")
     public  WebElement bookNowBtn;
@@ -225,7 +236,7 @@ public class webLoading extends CommonOps{
     public  WebElement checkoutBtn; */
     
     @FindBy(how = How.XPATH, using = "(//div[@class='navWithIcon'])[2]")
-    public  WebElement workspace;
+    public  WebElement workspaceDrpdwn;
     
     @FindBy(how = How.XPATH, using = "//button[@class='ray-button ray-button--primary jss2']")
     public  WebElement continueButton;
@@ -257,7 +268,33 @@ public class webLoading extends CommonOps{
     @FindBy(how = How.XPATH, using = "(//*[name()='path'][@stroke='#0000FF'])[2]")
     public  WebElement rightArrow;
     
+    @FindBy(how = How.XPATH, using = "//span[contains(text(),'Buy a bundle')]")
+    public  WebElement buyABundleLink;
+    
+    
+    @FindBy(how = How.XPATH, using = "(//span[contains(text(),'+')])[1]")
+    public  WebElement add5DayPassesBundle;
+    
+    @FindBy(how = How.XPATH, using = "(//span[contains(text(),'+')])[2]")
+    public  WebElement add10DayPassesBundle;
+    
+    
+    @FindBy(how = How.XPATH, using = "(//div[@class='summary_unit'])[1] //span[2]")
+    public  WebElement fiveDaypassAmount;
+    
+    @FindBy(how = How.XPATH, using = "(//div[@class='summary_unit'])[2] //span[2]")
+    public  WebElement tenDaypassAmount;
+    
+    @FindBy(how = How.XPATH, using = "(//span[contains(text(),'+')])[5]")
+    public  WebElement plusBtnToAdd10daypass;
+    
+    @FindBy(how = How.XPATH, using = "(//div[@class='summary_unit'])[3] //span[2]")
+    public  WebElement discount;
+    
+    @FindBy(how = How.XPATH, using = "(//div[@class='total']) //span[2]")
+    public  WebElement totalAmount;
+    
+    
+    
   
-    
-    
 }

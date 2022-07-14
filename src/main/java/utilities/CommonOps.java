@@ -52,6 +52,21 @@ public class CommonOps extends Base {
             return doc.getElementsByTagName(nodeName).item(0).getTextContent();
         }
     }
+    
+    // Method Name: beforeMethod
+    // Method Description: This method performs actions (start recording) at the beginning of method execution
+    // Method Parameters: Method
+    // Method Return: None
+    @BeforeMethod
+    public void beforeMethod(Method method) {
+        if (!platform.equalsIgnoreCase("api")) {
+            try {
+                MonteScreenRecorder.startRecord(method.getName());
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
 
     // Method Name: initBrowser
     // Method Description: This method init the web browser according to its type
@@ -217,25 +232,13 @@ public class CommonOps extends Base {
     public void afterMethod(){
         if (platform.equalsIgnoreCase("web"))
             driver.get(getData("url"));
+        	
         else if (platform.equalsIgnoreCase("electron")){
             ElectronFlows.emptyList();
         }
     }
 
-    // Method Name: beforeMethod
-    // Method Description: This method performs actions (start recording) at the beginning of method execution
-    // Method Parameters: Method
-    // Method Return: None
-    @BeforeMethod
-    public void beforeMethod(Method method) {
-        if (!platform.equalsIgnoreCase("api")) {
-            try {
-                MonteScreenRecorder.startRecord(method.getName());
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
-    }
+   
 
     public static void waitForLoad() {
         new WebDriverWait(driver, 30).until((ExpectedCondition<Boolean>) wd ->

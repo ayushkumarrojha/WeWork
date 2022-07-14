@@ -1,20 +1,19 @@
 package workflows;
 
-import extensions.DBActions;
 import extensions.UIActions;
 import extensions.Verifications;
 import io.qameta.allure.Step;
-import pageObjects.web.webLoading;
 import utilities.CommonOps;
 
+import static extensions.UIActions.clearTextBox;
 import static extensions.UIActions.click;
 import static extensions.UIActions.getWindowHandel;
+import static extensions.UIActions.mouseHover;
 import static extensions.UIActions.scrollToElement;
 import static extensions.UIActions.switchToLoginWindow;
 import static extensions.UIActions.switchToParentWindow;
+import static extensions.UIActions.updateDropDown;
 import static extensions.UIActions.updateText;
-
-import java.util.List;
 
 public class WebFlows extends CommonOps 
 {
@@ -104,6 +103,46 @@ public class WebFlows extends CommonOps
     }
     
 
+    @Step("Proceed with payment")
+    public static void proceedWithPayment() throws InterruptedException
+    {
+
+        click(payment.checkoutEmail);
+        clearTextBox(payment.checkoutEmail);
+        updateText(payment.checkoutEmail, getData("email"));
+        click(payment.emailMeCheckbox);
+        updateDropDown(payment.countryDropdown, "India");
+        clearTextBox(payment.firstName);
+        updateText(payment.firstName, getData("name"));
+        clearTextBox(payment.lastName);
+        updateText(payment.lastName, getData("lastName"));
+        clearTextBox(payment.companyName);
+        updateText(payment.companyName, getData("companyName"));
+        clearTextBox(payment.address);
+        updateText(payment.address, getData("address"));
+        clearTextBox(payment.landmark);
+        updateText(payment.landmark, getData("landMark"));
+        clearTextBox(payment.city);
+        updateText(payment.city, getData("city"));
+        updateDropDown(payment.state, "Karnataka");
+        clearTextBox(payment.PINcode);
+        updateText(payment.PINcode, getData("pincode"));
+        clearTextBox(payment.phoneNumber);
+        updateText(payment.phoneNumber, getData("phoneNumber"));
+        click(payment.saveInfoCheckbox);
+//        updateText(payment.coupon, getData("couponCode"));
+//        click(payment.applyBtn);
+//        String actualText = payment.couponValidationMsg.getText();
+//        Verifications.verifyText(actualText,"Enter a valid discount code or gift card");
+//        clearTextBox(payment.coupon);
+//        Thread.sleep(4000);
+        scrollToElement(payment.continuePayment);
+        mouseHover(payment.continuePayment);
+        scrollToElement(payment.completeOrder);
+        mouseHover(payment.completeOrder);
+    	
+    }
+    
 }
 
 
