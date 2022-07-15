@@ -15,8 +15,8 @@
             <class name="sanity.SelectDayPassTest" />
             <class name="sanity.SelectConferenceRoomTest" />
             -->
-            
             <class name="sanity.EnterpriseDayPassForTeamsTest" />
+            
         </classes>
     </test>
 </suite>

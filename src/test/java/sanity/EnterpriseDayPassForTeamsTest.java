@@ -54,27 +54,27 @@ public class EnterpriseDayPassForTeamsTest extends CommonOps
     	scrollToElement(webLoading.enterpriseBtn);
     	click(webLoading.enterpriseBtn);
     	click(webLoading.locationDropdown);
-    	click(webLoading.select(city));
-    	click(webLoading.select(buildingName));
-    	click(webLoading.noOfPplDrpdwn);
-    	click(webLoading.noOfPpl);
-    	click(webLoading.exploreSolnBtn);
-    	click(webLoading.dayPassOptn);
-    	click(webLoading.getInTouchButton);
-    	updateText(getInTouch.fullName, getData("Username"));
-        updateText(getInTouch.workEmail, getData("email"));
-        updateText(getInTouch.phoneNumber, getData("phoneNumber"));
-        scrollToElement(getInTouch.companySizeDrpdwn);
-        click(getInTouch.companySizeDrpdwn);
-        click(getInTouch.CompanySize50);
-        scrollToElement(getInTouch.noRadioBtn);
-        mouseHover(getInTouch.noRadioBtn);
-        click(getInTouch.getInTouchButton);
-        Verifications.elementIsVisible(webLoading.FormSubbmittedMsg);
-        String actualText = webLoading.FormSubbmittedMsg.getText();
-        Verifications.verifyText(actualText,"Form Submitted Successfully");
-        click(webLoading.closeIcon);
-        WebFlows.logoutOfApplication();
+//    	click(webLoading.select(city));
+//    	click(webLoading.select(buildingName));
+//    	click(webLoading.noOfPplDrpdwn);
+//    	click(webLoading.noOfPpl);
+//    	click(webLoading.exploreSolnBtn);
+//    	click(webLoading.dayPassOptn);
+//    	click(webLoading.getInTouchButton);
+//    	updateText(getInTouch.fullName, getData("Username"));
+//        updateText(getInTouch.workEmail, getData("email"));
+//        updateText(getInTouch.phoneNumber, getData("phoneNumber"));
+//        scrollToElement(getInTouch.companySizeDrpdwn);
+//        click(getInTouch.companySizeDrpdwn);
+//        click(getInTouch.CompanySize50);
+//        scrollToElement(getInTouch.noRadioBtn);
+//        mouseHover(getInTouch.noRadioBtn);
+//        click(getInTouch.getInTouchButton);
+//        Verifications.elementIsVisible(webLoading.FormSubbmittedMsg);
+//        String actualText = webLoading.FormSubbmittedMsg.getText();
+//        Verifications.verifyText(actualText,"Form Submitted Successfully");
+//        click(webLoading.closeIcon);
+       // WebFlows.logoutOfApplication();
     }
 	
 	/*@Test(description = "Test03 - Verify User is able to Select Enterprise in Hyderabad(Day pass option)",dataProvider = "HyderabadDayPassWorkspaces")

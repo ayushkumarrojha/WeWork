@@ -231,7 +231,11 @@ public class CommonOps extends Base {
     @AfterMethod
     public void afterMethod(){
         if (platform.equalsIgnoreCase("web"))
-            driver.get(getData("url"));
+        {driver.get(getData("url")); 
+    	//driver.close();
+        	
+        }
+            
         	
         else if (platform.equalsIgnoreCase("electron")){
             ElectronFlows.emptyList();
