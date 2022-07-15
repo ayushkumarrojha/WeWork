@@ -15,11 +15,11 @@ import workflows.WebFlows;
 public class SelectEventsAndWorkspacesTest extends CommonOps
 {
 
-	@Test(description = "Test21 - Verify User is able to select events and workspaces")
+	@Test(description = "Test01 - Verify User is able to select events and workspaces")
     @Description("This test verifies that User is able to select events and workspaces")
-    public void test21_SelectEventsAndWorkspaces() throws InterruptedException
-    {
-		
+    public void test01_SelectEventsAndWorkspaces() throws InterruptedException
+    {	//yet to complete
+		WebFlows.loadWebsite();
 		WebFlows.loginToApplication();
         click(webLoading.workspaceDrpdwn);
         click(webLoading.opt("Event and shoot spaces"));

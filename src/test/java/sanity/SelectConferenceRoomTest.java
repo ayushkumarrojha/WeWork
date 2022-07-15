@@ -1,15 +1,11 @@
 package sanity;
 
-import static extensions.UIActions.clearTextBox;
 import static extensions.UIActions.click;
 import static extensions.UIActions.getWindowHandel;
 import static extensions.UIActions.getWindowHandels;
 import static extensions.UIActions.mouseHover;
 import static extensions.UIActions.scrollToElement;
 import static extensions.UIActions.switchToParentWindow;
-import static extensions.UIActions.updateDropDown;
-import static extensions.UIActions.updateText;
-
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
@@ -28,6 +24,7 @@ public class SelectConferenceRoomTest extends CommonOps
     @Description("This test verifies that User is able to select conference room")
     public void test01_SelectConferenceRoom() throws InterruptedException
     {
+		WebFlows.loadWebsite();
 		WebFlows.loginToApplication();
         click(webLoading.workspaceDrpdwn);
         click(webLoading.opt("Conference room"));
@@ -63,6 +60,7 @@ public class SelectConferenceRoomTest extends CommonOps
     @Description("This test verifies that User is able to select conference room in Pune")
     public void test02_SelectConferenceRoomInPune(String city , String buildingName) throws InterruptedException
     {
+		WebFlows.loadWebsite();
 		WebFlows.loginToApplication();
         click(webLoading.workspaceDrpdwn);
         click(webLoading.opt("Conference room"));
@@ -98,6 +96,7 @@ public class SelectConferenceRoomTest extends CommonOps
     @Description("This test verifies that User is able to select conference room in Hyderabad")
     public void test03_SelectConferenceRoomInHyderabad(String city , String buildingName) throws InterruptedException
     {
+		WebFlows.loadWebsite();
 		WebFlows.loginToApplication();
         click(webLoading.workspaceDrpdwn);
         click(webLoading.opt("Conference room"));
@@ -133,6 +132,7 @@ public class SelectConferenceRoomTest extends CommonOps
     @Description("This test verifies that User is able to select conference room in Delhi")
     public void test04_SelectConferenceRoomInDelhi(String city , String buildingName) throws InterruptedException
     {
+		WebFlows.loadWebsite();
 		WebFlows.loginToApplication();
         click(webLoading.workspaceDrpdwn);
         click(webLoading.opt("Conference room"));
@@ -170,6 +170,7 @@ public class SelectConferenceRoomTest extends CommonOps
     @Description("This test verifies that User is able to select conference room in Bengaluru")
     public void test05_SelectConferenceRoomInBengaluru(String city , String buildingName) throws InterruptedException
     {
+		WebFlows.loadWebsite();
 		WebFlows.loginToApplication();
         click(webLoading.workspaceDrpdwn);
         click(webLoading.opt("Conference room"));
@@ -207,6 +208,7 @@ public class SelectConferenceRoomTest extends CommonOps
     @Description("This test verifies that User is able to select conference room in Mumbai")
     public void test06_SelectConferenceRoomInMumbai(String city , String buildingName) throws InterruptedException
     {
+		WebFlows.loadWebsite();
 		WebFlows.loginToApplication();
         click(webLoading.workspaceDrpdwn);
         click(webLoading.opt("Conference room"));

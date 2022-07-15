@@ -9,46 +9,12 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">Web Suite</th></tr>
-<tr><td><a href="#t0">Web Tests</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">126,494</td><td></td><td></td></tr>
+<tr><td><a href="#t0">Web Tests</a></td><td class="num">3</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">307,748</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Web Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Web Tests &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">sanity.EnterpriseDayPassForTeamsTest</td><td><a href="#m0">test02_SelectDayPassForTeamsInPune</a></td><td rowspan="1">1657863816190</td><td rowspan="1">65146</td></tr><tr><th colspan="4">Web Tests &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">sanity.EnterpriseDayPassForTeamsTest</td><td><a href="#m1">test02_SelectDayPassForTeamsInPune</a></td><td rowspan="1">1657863782799</td><td rowspan="1">28000</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Web Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Web Tests &#8212; passed</th></tr><tr class="passedeven"><td rowspan="3">sanity.SelectVirtualOfficeTest</td><td><a href="#m0">test01_VerifySelectVirtualOfficeWithoutLogginIn</a></td><td rowspan="1">1657881145253</td><td rowspan="1">107869</td></tr><tr class="passedeven"><td><a href="#m1">test02_VerifySelectVirtualOfficeInPune</a></td><td rowspan="2">1657881324772</td><td rowspan="2">105854</td></tr><tr class="passedeven"><td><a href="#m2">test02_VerifySelectVirtualOfficeInPune</a></td></tr></tbody>
 </table>
-<h2>Web Tests</h2><h3 id="m0">sanity.EnterpriseDayPassForTeamsTest#test02_SelectDayPassForTeamsInPune</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>Pune</td><td>Magarpatta</td></tr><tr><th colspan="2">Exception</th></tr><tr><td colspan="2"><div class="stacktrace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator &apos;By.xpath: //div[contains(text(),&apos;Login&apos;)]&apos; (tried for 30 second(s) with 500 milliseconds interval)
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
-	at extensions.Verifications.elementIsVisible(Verifications.java:68)
-	at workflows.WebFlows.loginToApplication(WebFlows.java:86)
-	at sanity.EnterpriseDayPassForTeamsTest.test02_SelectDayPassForTeamsInPune(EnterpriseDayPassForTeamsTest.java:53)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//div[contains(text(),&apos;Login&apos;)]&quot;}
-  (Session info: chrome=103.0.5060.114)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;Varsha-R-Yattinahalli-B632s-MacBook-Pro.local&apos;, ip: &apos;192.168.29.112&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;12.3.1&apos;, java.version: &apos;17.0.2&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 103.0.5060.114, chrome: {chromedriverVersion: 103.0.5060.53 (a1711811edd7..., userDataDir: /var/folders/16/r7_qv8_12dv...}, goog:chromeOptions: {debuggerAddress: localhost:53651}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 013a461d1258a6dc22283f4c5b05d273
-*** Element info: {Using=xpath, value=//div[contains(text(),&apos;Login&apos;)]}
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy18.isDisplayed(Unknown Source)
-	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:314)
-	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:43)
-	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:300)
-	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:297)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
-	... 31 more
-... Removed 32 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m1">sanity.EnterpriseDayPassForTeamsTest#test02_SelectDayPassForTeamsInPune</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>Pune</td><td>Kharadi</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>Web Tests</h2><h3 id="m0">sanity.SelectVirtualOfficeTest#test01_VerifySelectVirtualOfficeWithoutLogginIn</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">sanity.SelectVirtualOfficeTest#test02_VerifySelectVirtualOfficeInPune</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th></tr><tr class="param stripe"><td>Pune</td><td>Magarpatta</td><td>Panchshil Futura</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">sanity.SelectVirtualOfficeTest#test02_VerifySelectVirtualOfficeInPune</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th></tr><tr class="param stripe"><td>Pune</td><td>Kharadi</td><td>World Trade Center</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

@@ -232,7 +232,7 @@ public class CommonOps extends Base {
     public void afterMethod(){
         if (platform.equalsIgnoreCase("web"))
         {driver.get(getData("url")); 
-    	//driver.close();
+    	 driver.quit();
         	
         }
             
@@ -248,6 +248,7 @@ public class CommonOps extends Base {
         new WebDriverWait(driver, 30).until((ExpectedCondition<Boolean>) wd ->
                 ((JavascriptExecutor) wd).executeScript("return document.readyState").equals("complete"));
     }
+    
 }
 
 

@@ -26,7 +26,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite, 1 failed test</span>
+      <span class="top-banner-font-1">1 suite</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -40,7 +40,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-Web_Suite" class="navigator-link">
-              <span class="suite-name border-failed">Web Suite</span>
+              <span class="suite-name border-passed">Web Suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -93,21 +93,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">2 methods, 1 failed,   1 passed</span>
-                  </li>
-                  <li>
-                    <span class="method-list-title failed">Failed methods</span>
-                    <span class="show-or-hide-methods failed">
-                      <a href="#" panel-name="suite-Web_Suite" class="hide-methods failed suite-Web_Suite"> (hide)</a> <!-- hide-methods failed suite-Web_Suite -->
-                      <a href="#" panel-name="suite-Web_Suite" class="show-methods failed suite-Web_Suite"> (show)</a> <!-- show-methods failed suite-Web_Suite -->
-                    </span>
-                    <div class="method-list-content failed suite-Web_Suite">
-                      <span>
-                        <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Web_Suite" title="sanity.EnterpriseDayPassForTeamsTest" class="method navigator-link" hash-for-method="test02_SelectDayPassForTeamsInPune(Pune, Magarpatta)">test02_SelectDayPassForTeamsInPune(Pune, Magarpatta)</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                    </div> <!-- method-list-content failed suite-Web_Suite -->
+                    <span class="method-stats">3 methods,   3 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -118,7 +104,17 @@
                     <div class="method-list-content passed suite-Web_Suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Web_Suite" title="sanity.EnterpriseDayPassForTeamsTest" class="method navigator-link" hash-for-method="test02_SelectDayPassForTeamsInPune(Pune, Kharadi)">test02_SelectDayPassForTeamsInPune(Pune, Kharadi)</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Web_Suite" title="sanity.SelectVirtualOfficeTest" class="method navigator-link" hash-for-method="test01_VerifySelectVirtualOfficeWithoutLogginIn">test01_VerifySelectVirtualOfficeWithoutLogginIn</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Web_Suite" title="sanity.SelectVirtualOfficeTest" class="method navigator-link" hash-for-method="test02_VerifySelectVirtualOfficeInPune(Pune, Magarpatta, Panchshil Futura)">test02_VerifySelectVirtualOfficeInPune(Pune, Magarpatta, Panchshil Futura)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Web_Suite" title="sanity.SelectVirtualOfficeTest" class="method navigator-link" hash-for-method="test02_VerifySelectVirtualOfficeInPune(Pune, Kharadi, World Trade Center)">test02_VerifySelectVirtualOfficeInPune(Pune, Kharadi, World Trade Center)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Web_Suite -->
@@ -133,75 +129,39 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Web_Suite" class="panel Web_Suite">
-          <div class="suite-Web_Suite-class-failed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="failed.png"/>
-              <span class="class-name">sanity.EnterpriseDayPassForTeamsTest</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="test02_SelectDayPassForTeamsInPune(Pune, Magarpatta)">
-                  </a> <!-- test02_SelectDayPassForTeamsInPune(Pune, Magarpatta) -->
-                  <span class="method-name">test02_SelectDayPassForTeamsInPune</span>
-                  <span class="parameters">(Pune, Magarpatta)</span>
-                  <div class="stack-trace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator &apos;By.xpath: //div[contains(text(),&apos;Login&apos;)]&apos; (tried for 30 second(s) with 500 milliseconds interval)
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
-	at extensions.Verifications.elementIsVisible(Verifications.java:68)
-	at workflows.WebFlows.loginToApplication(WebFlows.java:86)
-	at sanity.EnterpriseDayPassForTeamsTest.test02_SelectDayPassForTeamsInPune(EnterpriseDayPassForTeamsTest.java:53)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//div[contains(text(),&apos;Login&apos;)]&quot;}
-  (Session info: chrome=103.0.5060.114)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;Varsha-R-Yattinahalli-B632s-MacBook-Pro.local&apos;, ip: &apos;192.168.29.112&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;12.3.1&apos;, java.version: &apos;17.0.2&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 103.0.5060.114, chrome: {chromedriverVersion: 103.0.5060.53 (a1711811edd7..., userDataDir: /var/folders/16/r7_qv8_12dv...}, goog:chromeOptions: {debuggerAddress: localhost:53651}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 013a461d1258a6dc22283f4c5b05d273
-*** Element info: {Using=xpath, value=//div[contains(text(),&apos;Login&apos;)]}
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy18.isDisplayed(Unknown Source)
-	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:314)
-	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:43)
-	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:300)
-	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:297)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
-	... 31 more
-... Removed 32 stack frames
-</div> <!-- stack-trace -->
-                  <em>
-(Test02 - Verify User is able to Select Enterprise in Pune(Day pass option))                  </em>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Web_Suite-class-failed -->
           <div class="suite-Web_Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">sanity.EnterpriseDayPassForTeamsTest</span>
+              <span class="class-name">sanity.SelectVirtualOfficeTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="test02_SelectDayPassForTeamsInPune(Pune, Kharadi)">
-                  </a> <!-- test02_SelectDayPassForTeamsInPune(Pune, Kharadi) -->
-                  <span class="method-name">test02_SelectDayPassForTeamsInPune</span>
-                  <span class="parameters">(Pune, Kharadi)</span>
+                  <a name="test01_VerifySelectVirtualOfficeWithoutLogginIn">
+                  </a> <!-- test01_VerifySelectVirtualOfficeWithoutLogginIn -->
+                  <span class="method-name">test01_VerifySelectVirtualOfficeWithoutLogginIn</span>
                   <em>
-(Test02 - Verify User is able to Select Enterprise in Pune(Day pass option))                  </em>
+(Test01 - Verify User is able to Select virtual office)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="test02_VerifySelectVirtualOfficeInPune(Pune, Magarpatta, Panchshil Futura)">
+                  </a> <!-- test02_VerifySelectVirtualOfficeInPune(Pune, Magarpatta, Panchshil Futura) -->
+                  <span class="method-name">test02_VerifySelectVirtualOfficeInPune</span>
+                  <span class="parameters">(Pune, Magarpatta, Panchshil Futura)</span>
+                  <em>
+(Test02 - Verify User is able to Select virtual office in Pune)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="test02_VerifySelectVirtualOfficeInPune(Pune, Kharadi, World Trade Center)">
+                  </a> <!-- test02_VerifySelectVirtualOfficeInPune(Pune, Kharadi, World Trade Center) -->
+                  <span class="method-name">test02_VerifySelectVirtualOfficeInPune</span>
+                  <span class="parameters">(Pune, Kharadi, World Trade Center)</span>
+                  <em>
+(Test02 - Verify User is able to Select virtual office in Pune)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -222,7 +182,7 @@ Session ID: 013a461d1258a6dc22283f4c5b05d273
   &lt;test thread-count=&quot;5&quot; name=&quot;Web Tests&quot;&gt;
     &lt;parameter name=&quot;PlatformName&quot; value=&quot;web&quot;/&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;sanity.EnterpriseDayPassForTeamsTest&quot;/&gt;
+      &lt;class name=&quot;sanity.SelectVirtualOfficeTest&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Web Tests --&gt;
 &lt;/suite&gt; &lt;!-- Web Suite --&gt;
@@ -262,20 +222,24 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(2);
+data.addRows(3);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'test02_SelectDayPassForTeamsInPune')
-data.setCell(0, 2, 'sanity.EnterpriseDayPassForTeamsTest')
-data.setCell(0, 3, 65146);
+data.setCell(0, 1, 'test01_VerifySelectVirtualOfficeWithoutLogginIn')
+data.setCell(0, 2, 'sanity.SelectVirtualOfficeTest')
+data.setCell(0, 3, 107869);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'test02_SelectDayPassForTeamsInPune')
-data.setCell(1, 2, 'sanity.EnterpriseDayPassForTeamsTest')
-data.setCell(1, 3, 28000);
+data.setCell(1, 1, 'test02_VerifySelectVirtualOfficeInPune')
+data.setCell(1, 2, 'sanity.SelectVirtualOfficeTest')
+data.setCell(1, 3, 105854);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'test02_VerifySelectVirtualOfficeInPune')
+data.setCell(2, 2, 'sanity.SelectVirtualOfficeTest')
+data.setCell(2, 3, 62745);
 window.suiteTableData['Web_Suite']= { tableData: data, tableDiv: 'times-div-Web_Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 1 minutes</span>
+              <span class="suite-total-time">Total running time: 4 minutes</span>
               <div id="times-div-Web_Suite">
               </div> <!-- times-div-Web_Suite -->
             </div> <!-- times-div -->
@@ -301,40 +265,50 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">sanity.EnterpriseDayPassForTeamsTest</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">sanity.SelectVirtualOfficeTest</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">startSession(web)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-class before -->
               <div class="configuration-method before">
-                <span class="method-name">beforeMethod(public void sanity.EnterpriseDayPassForTeamsTest.test02_SelectDayPassForTeamsInPune(java.lang.String...)</span>
-                <span class="method-start">16764 ms</span>
+                <span class="method-name">beforeMethod(public void sanity.SelectVirtualOfficeTest.test01_VerifySelectVirtualOfficeWithoutLogginIn() throws ...)</span>
+                <span class="method-start">17427 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">test02_SelectDayPassForTeamsInPune(Pune, Kharadi)</span>
-                <span class="method-start">16992 ms</span>
+                <span class="method-name">test01_VerifySelectVirtualOfficeWithoutLogginIn</span>
+                <span class="method-start">17718 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">afterMethod</span>
-                <span class="method-start">45522 ms</span>
+                <span class="method-start">126197 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
-                <span class="method-name">beforeMethod(public void sanity.EnterpriseDayPassForTeamsTest.test02_SelectDayPassForTeamsInPune(java.lang.String...)</span>
-                <span class="method-start">50371 ms</span>
+                <span class="method-name">beforeMethod(public void sanity.SelectVirtualOfficeTest.test02_VerifySelectVirtualOfficeInPune(java.lang.String,j...)</span>
+                <span class="method-start">130381 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <img src="failed.png">
-                </img>
-                <span class="method-name">test02_SelectDayPassForTeamsInPune(Pune, Magarpatta)</span>
-                <span class="method-start">50383 ms</span>
+                <span class="method-name">test02_VerifySelectVirtualOfficeInPune(Pune, Kharadi, World Trade Center)</span>
+                <span class="method-start">130393 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">afterMethod</span>
-                <span class="method-start">120688 ms</span>
+                <span class="method-start">193623 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">beforeMethod(public void sanity.SelectVirtualOfficeTest.test02_VerifySelectVirtualOfficeInPune(java.lang.String,j...)</span>
+                <span class="method-start">197223 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">test02_VerifySelectVirtualOfficeInPune(Pune, Magarpatta, Panchshil Futura)</span>
+                <span class="method-start">197237 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">afterMethod</span>
+                <span class="method-start">303503 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-class after">
                 <span class="method-name">closeSession</span>
-                <span class="method-start">125515 ms</span>
+                <span class="method-start">307707 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

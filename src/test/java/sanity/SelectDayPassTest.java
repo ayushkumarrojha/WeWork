@@ -1,15 +1,11 @@
 package sanity;
 
-import static extensions.UIActions.clearTextBox;
 import static extensions.UIActions.click;
 import static extensions.UIActions.getWindowHandel;
 import static extensions.UIActions.getWindowHandels;
 import static extensions.UIActions.mouseHover;
 import static extensions.UIActions.scrollToElement;
 import static extensions.UIActions.switchToParentWindow;
-import static extensions.UIActions.updateDropDown;
-import static extensions.UIActions.updateText;
-
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Listeners;
@@ -28,6 +24,7 @@ public class SelectDayPassTest extends CommonOps
     @Description("This test verifies that User is able to select day pass. (Navigate to header in home page and select Day Pass option from workspace dropdown)")
     public void test01_SelectDaypass() throws InterruptedException
     {
+		WebFlows.loadWebsite();
     	WebFlows.loginToApplication();
     	String currentWindow = getWindowHandel();
     	click(webLoading.workspaceDrpdwn);
@@ -54,6 +51,7 @@ public class SelectDayPassTest extends CommonOps
     @Description("This test verifies that User is able to select day pass in Pune. (In  home page navigate to workspaces and select day pass)")
     public void test02_SelectDayPassInPune(String city , String location, String buildingName) throws InterruptedException
     {
+		WebFlows.loadWebsite();
 		WebFlows.loginToApplication();
 		scrollToElement(webLoading.workspaceBtn);
 		click(webLoading.cityDropdown);
@@ -81,10 +79,11 @@ public class SelectDayPassTest extends CommonOps
        
     }
 	
-	/*@Test(description = "Test03 - Verify User is able to select day pass in Hyderabad. (In  home page navigate to workspaces and select day pass)",dataProvider = "HyderabadDayPassWorkspaces")
+	@Test(description = "Test03 - Verify User is able to select day pass in Hyderabad. (In  home page navigate to workspaces and select day pass)",dataProvider = "HyderabadDayPassWorkspaces")
     @Description("This test verifies that User is able to select day pass in Hyderabad. (In  home page navigate to workspaces and select day pass)")
     public void test03_SelectDayPassInHyderabad(String city , String location, String buildingName) throws InterruptedException
     {
+		WebFlows.loadWebsite();
 		WebFlows.loginToApplication();
 		scrollToElement(webLoading.workspaceBtn);
 		click(webLoading.cityDropdown);
@@ -116,6 +115,7 @@ public class SelectDayPassTest extends CommonOps
     @Description("This test verifies that User is able to select day pass in Delhi. (In  home page navigate to workspaces and select day pass)")
     public void test04_SelectDayPassInDelhi(String city , String location, String buildingName) throws InterruptedException
     {
+		WebFlows.loadWebsite();
 		WebFlows.loginToApplication();
 		scrollToElement(webLoading.workspaceBtn);
 		click(webLoading.cityDropdown);
@@ -147,6 +147,7 @@ public class SelectDayPassTest extends CommonOps
     @Description("This test verifies that User is able to select day pass in Bengaluru. (In  home page navigate to workspaces and select day pass)")
     public void test05_SelectDayPassInBengaluru(String city , String location, String buildingName) throws InterruptedException
     {
+		WebFlows.loadWebsite();
 		WebFlows.loginToApplication();
 		scrollToElement(webLoading.workspaceBtn);
 		click(webLoading.cityDropdown);
@@ -178,6 +179,7 @@ public class SelectDayPassTest extends CommonOps
     @Description("This test verifies that User is able to select day pass in Mumbai. (In  home page navigate to workspaces and select day pass)")
     public void test06_SelectDayPassInMumbai(String city , String location, String buildingName) throws InterruptedException
     {
+		WebFlows.loadWebsite();
 		WebFlows.loginToApplication();
 		scrollToElement(webLoading.workspaceBtn);
 		click(webLoading.workspaceBtn);
@@ -211,7 +213,7 @@ public class SelectDayPassTest extends CommonOps
     @Description("This test verifies that User is able to select day pass with budnles for Pune")
     public void test07_SelectDayPasswithBundlesforPune(String city , String location, String buildingName) throws InterruptedException
     {
-       
+		WebFlows.loadWebsite();
 		WebFlows.loginToApplication();
 		click(webLoading.workspaceDrpdwn);
 		Thread.sleep(2000);
@@ -306,7 +308,7 @@ public class SelectDayPassTest extends CommonOps
     @Description("This test verifies that User is able to select day pass with budnles (navigate to user's dashboard and select day pass)")
     public void test08_SelectDayPasswithBundlesfromDashboard() throws InterruptedException
     {
-       
+		WebFlows.loadWebsite();
 		WebFlows.loginToApplication();
 		click(webLogin.userName);
 		Thread.sleep(4000);
@@ -405,7 +407,7 @@ public class SelectDayPassTest extends CommonOps
     @Description("This test verifies that User is able to select day pass with budnles (In  home page navigate to workspaces and select day pass)")
     public void test09_SelectDayPasswithBundlesfromWrkspaces(String city , String location, String buildingName) throws InterruptedException
     {
-       
+		  WebFlows.loadWebsite();
 		  WebFlows.loginToApplication();
 	      scrollToElement(webLoading.workspaceBtn);
 	      click(webLoading.cityDropdown);
@@ -496,7 +498,7 @@ public class SelectDayPassTest extends CommonOps
 	        click(webLoading.closeIcon);
 	        WebFlows.logoutOfApplication();
 	        
-    }*/
+    }
 	
 	@DataProvider(name="PuneDayPassWorkspaces")
 	public Object[][] puneDayPassWorkspaces()

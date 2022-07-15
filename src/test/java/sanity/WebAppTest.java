@@ -21,7 +21,7 @@ public class WebAppTest extends CommonOps
     @Test(description = "Test02 - Verify User is able to Login and logout")
     @Description("This test verifies that User is able to login and logout")
     public void test02_verifyLoginandLogout() throws InterruptedException{
-       
+    	WebFlows.loadWebsite();
         String currentWindow = getWindowHandel();
         Verifications.elementIsVisible(webLogin.weWorkLoginButton);
         click(webLogin.weWorkLoginButton);
@@ -41,7 +41,7 @@ public class WebAppTest extends CommonOps
     @Test(description = "Test03 - Verify User is able to navigate to terms and services")
     @Description("This test verifies that User is able to navigate to terms and services")
     public void test03_verifyTermsAndConditions() throws InterruptedException {
-        
+    	WebFlows.loadWebsite();
         scrollToElement(webLoading.termsAndServices);
         Verifications.elementIsVisible(webLoading.termsAndServices);
         click(webLoading.termsAndServices);
@@ -54,7 +54,7 @@ public class WebAppTest extends CommonOps
     @Test(description = "Test04 - Verify User is able to Select hotdesk Workspace")
     @Description("This test verifies that User is able to Select hotdesk  Workspace")
     public void test04_VerifySelectHotDeskWorkspace() throws InterruptedException {
-        
+    	WebFlows.loadWebsite();
     	WebFlows.loginToApplication();
         scrollToElement(webLoading.cityDropdown);
         click(webLoading.cityDropdown);
@@ -84,6 +84,7 @@ public class WebAppTest extends CommonOps
     @Description("This test verifies that User is able to Select Enterprise (Day pass option)")
     public void test05_VerifySelectenterprise() throws InterruptedException
     {
+		WebFlows.loadWebsite();
 		WebFlows.loginToApplication();
     	scrollToElement(webLoading.enterpriseBtn);
     	click(webLoading.enterpriseBtn);
@@ -116,6 +117,7 @@ public class WebAppTest extends CommonOps
     @Description("This test verifies that User is able to Select Event spaces")
     public void test06_VerifyEventspace() throws InterruptedException
     {
+		WebFlows.loadWebsite();
     	WebFlows.loginToApplication();
     	scrollToElement(webLoading.eventSpacesBtn);
     	click(webLoading.eventSpacesBtn);
@@ -138,6 +140,7 @@ public class WebAppTest extends CommonOps
     @Description("This test verifies that User is able to Book a Tour")
     public void test07_VerifyBookATour() throws InterruptedException
     {
+    	WebFlows.loadWebsite();
     	WebFlows.loginToApplication();
     	scrollToElement(webLoading.bookATourBtn);
     	click(webLoading.bookATourBtn);
@@ -165,6 +168,7 @@ public class WebAppTest extends CommonOps
     @Description("This test verifies that User is able to select why wework option")
     public void test08_SelectWhyWework() throws InterruptedException
     {
+		WebFlows.loadWebsite();
 		WebFlows.loginToApplication();
 		click(webhome.whyWEWorkButton);
 		click(webLoading.select("Discover workspaces"));
@@ -192,6 +196,7 @@ public class WebAppTest extends CommonOps
     @Description("This test verifies that User is able to Select contact us option")
     public void test09_VerifyContactUsFeature() throws InterruptedException
     {
+		WebFlows.loadWebsite();
     	WebFlows.loginToApplication();
     	click(webLoading.contactUsBtn);
     	scrollToElement(webLoading.fullName);

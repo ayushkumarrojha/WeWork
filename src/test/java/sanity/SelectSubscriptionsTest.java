@@ -17,8 +17,9 @@ public class SelectSubscriptionsTest extends CommonOps
 {
 	@Test(description = "Test01 - Verify User is able to select subscriptions" ,dataProvider = "Subscriptions")
     @Description("This test verifies that User is able to select subscriptions")
-    public void test01_SelectSubscriptions(String officeType , String selectOption) throws InterruptedException
+    public void test01_SelectSubscriptionsForDelhi(String officeType , String selectOption) throws InterruptedException
     {
+		WebFlows.loadWebsite();
     	WebFlows.loginToApplication();
     	click(webLoading.workspaceDrpdwn);
     	click(webLoading.opt(officeType));

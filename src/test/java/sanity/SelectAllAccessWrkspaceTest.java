@@ -11,6 +11,7 @@ import org.testng.annotations.Test;
 import extensions.Verifications;
 import io.qameta.allure.Description;
 import utilities.CommonOps;
+import workflows.WebFlows;
 
 @Listeners(utilities.Listeners.class)
 public class SelectAllAccessWrkspaceTest extends CommonOps 
@@ -20,7 +21,7 @@ public class SelectAllAccessWrkspaceTest extends CommonOps
 	public void test01_SelectAllAccessInPune(String city, String location, String buildingName)
 			throws InterruptedException 
 	{
-
+		WebFlows.loadWebsite();
 		// WebFlows.loginToApplication();
 		scrollToElement(webLoading.workspaceBtn);
 		click(webLoading.cityDropdown);
@@ -52,7 +53,7 @@ public class SelectAllAccessWrkspaceTest extends CommonOps
 	public void test02_SelectAllAccessInHyderabad(String city, String location, String buildingName)
 			throws InterruptedException 
 	{
-
+		WebFlows.loadWebsite();
 		// WebFlows.loginToApplication();
 		scrollToElement(webLoading.workspaceBtn);
 		click(webLoading.cityDropdown);
@@ -84,7 +85,7 @@ public class SelectAllAccessWrkspaceTest extends CommonOps
 	public void test03_SelectAllAccessInDelhi(String city, String location, String buildingName)
 			throws InterruptedException 
 	{
-
+		WebFlows.loadWebsite();
 		// WebFlows.loginToApplication();
 		scrollToElement(webLoading.workspaceBtn);
 		click(webLoading.cityDropdown);
@@ -116,7 +117,7 @@ public class SelectAllAccessWrkspaceTest extends CommonOps
 	public void test04_SelectAllAccessInBengaluru(String city, String location, String buildingName)
 			throws InterruptedException 
 	{
-
+		WebFlows.loadWebsite();
 		// WebFlows.loginToApplication();
 		scrollToElement(webLoading.workspaceBtn);
 		click(webLoading.cityDropdown);
@@ -148,7 +149,7 @@ public class SelectAllAccessWrkspaceTest extends CommonOps
 	public void test05_SelectAllAccessInMumbai(String city, String location, String buildingName)
 			throws InterruptedException 
 	{
-
+		WebFlows.loadWebsite();
 		// WebFlows.loginToApplication();
 		scrollToElement(webLoading.workspaceBtn);
 		click(webLoading.cityDropdown);

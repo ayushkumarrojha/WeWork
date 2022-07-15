@@ -21,6 +21,7 @@ public class SelectHotDeskTest extends CommonOps
 	@Description("This test verifies that User is able to select hot desk option. (Navigate to header in home page and select hotdesk option from workspace dropdown)")
 	public void test01_SelectHotDesk() throws InterruptedException 
 	{
+		WebFlows.loadWebsite();
 		WebFlows.loginToApplication();
 		Thread.sleep(4000);
 		click(webLoading.workspaceDrpdwn);
@@ -37,6 +38,7 @@ public class SelectHotDeskTest extends CommonOps
 		click(webLoading.calendarIcon);
 		click(webLoading.clickOnDate);
 		click(webLoading.continueBtn);
+		Verifications.elementIsVisible(webLoading.thankyouText);
 		String actualText = webLoading.thankyouText.getText();
 		Verifications.verifyText(actualText, "Thank you for contacting WeWork");
 		click(webLoading.backToHomePageBtn);
@@ -49,6 +51,7 @@ public class SelectHotDeskTest extends CommonOps
 	public void test02_SelectHotdeskInPune(String city, String location, String buildingName)
 			throws InterruptedException 
 	{
+		WebFlows.loadWebsite();
 		WebFlows.loginToApplication();
 		scrollToElement(webLoading.workspaceBtn);
 		click(webLoading.cityDropdown);
@@ -66,6 +69,7 @@ public class SelectHotDeskTest extends CommonOps
 		click(webLoading.calendarIcon);
 		click(webLoading.date("30"));
 		click(webLoading.continueBtn);
+		Verifications.elementIsVisible(webLoading.thankyouText);
 		String actualText = webLoading.thankyouText.getText();
 		Verifications.verifyText(actualText, "Thank you for contacting WeWork");
 		click(webLoading.backToHomePageBtn);
@@ -78,6 +82,7 @@ public class SelectHotDeskTest extends CommonOps
 	public void test03_SelectHotdeskInHyderabad(String city, String location, String buildingName)
 			throws InterruptedException 
 	{
+		WebFlows.loadWebsite();
 		WebFlows.loginToApplication();
 		scrollToElement(webLoading.workspaceBtn);
 		click(webLoading.cityDropdown);
@@ -95,6 +100,7 @@ public class SelectHotDeskTest extends CommonOps
 		click(webLoading.calendarIcon);
 		click(webLoading.date("30"));
 		click(webLoading.continueBtn);
+		Verifications.elementIsVisible(webLoading.thankyouText);
 		String actualText = webLoading.thankyouText.getText();
 		Verifications.verifyText(actualText, "Thank you for contacting WeWork");
 		click(webLoading.backToHomePageBtn);
@@ -107,6 +113,7 @@ public class SelectHotDeskTest extends CommonOps
 	public void test04_SelectHotdeskInDelhiNCR(String city, String location, String buildingName)
 			throws InterruptedException 
 	{
+		WebFlows.loadWebsite();
 		// WebFlows.loginToApplication();
 		scrollToElement(webLoading.workspaceBtn);
 		click(webLoading.cityDropdown);
@@ -124,6 +131,7 @@ public class SelectHotDeskTest extends CommonOps
 		click(webLoading.calendarIcon);
 		click(webLoading.date("30"));
 		click(webLoading.continueBtn);
+		Verifications.elementIsVisible(webLoading.thankyouText);
 		String actualText = webLoading.thankyouText.getText();
 		Verifications.verifyText(actualText, "Thank you for contacting WeWork");
 		click(webLoading.backToHomePageBtn);
@@ -136,6 +144,7 @@ public class SelectHotDeskTest extends CommonOps
 	public void test05_SelectHotdeskInBengaluru(String city, String location, String buildingName)
 			throws InterruptedException 
 	{
+		WebFlows.loadWebsite();
 		// WebFlows.loginToApplication();
 		scrollToElement(webLoading.workspaceBtn);
 		click(webLoading.cityDropdown);
@@ -153,6 +162,7 @@ public class SelectHotDeskTest extends CommonOps
 		click(webLoading.calendarIcon);
 		click(webLoading.date("30"));
 		click(webLoading.continueBtn);
+		Verifications.elementIsVisible(webLoading.thankyouText);
 		String actualText = webLoading.thankyouText.getText();
 		Verifications.elementIsVisible(webLoading.thankyouText);
 		Verifications.verifyText(actualText, "Thank you for contacting WeWork");
@@ -167,6 +177,7 @@ public class SelectHotDeskTest extends CommonOps
 	public void test06_SelectHotdeskInMumbai(String city, String location, String buildingName)
 			throws InterruptedException 
 	{
+		WebFlows.loadWebsite();
 		// WebFlows.loginToApplication();
 		scrollToElement(webLoading.workspaceBtn);
 		click(webLoading.cityDropdown);
@@ -187,6 +198,7 @@ public class SelectHotDeskTest extends CommonOps
 		click(webLoading.calendarIcon);
 		click(webLoading.date("30"));
 		click(webLoading.continueBtn);
+		Verifications.elementIsVisible(webLoading.thankyouText);
 		String actualText = webLoading.thankyouText.getText();
 		Verifications.elementIsVisible(webLoading.thankyouText);
 		Verifications.verifyText(actualText, "Thank you for contacting WeWork");

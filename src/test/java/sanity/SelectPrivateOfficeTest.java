@@ -18,7 +18,9 @@ public class SelectPrivateOfficeTest extends CommonOps
 {
 	@Test(description = "Test01 - Verify User is able to select private offices. (Navigate to header in home page and select private office option from workspace dropdown)")
 	@Description("This test verifies that User is able to select private offices. (Navigate to header in home page and select private office option from workspace dropdown)")
-	public void test01_SelectPrivateOfficeSpace() throws InterruptedException {
+	public void test01_SelectPrivateOfficeSpace() throws InterruptedException 
+	{
+		WebFlows.loadWebsite();
 		WebFlows.loginToApplication();
 		click(webLoading.workspaceDrpdwn);
 		click(webLoading.opt("Ready-to-move-in private offices"));
@@ -45,8 +47,9 @@ public class SelectPrivateOfficeTest extends CommonOps
 	@Test(description = "Test02 - Verify User is able to select private office in Pune. (Scroll down in home page and select workspaces)", dataProvider = "PunePrivateOfficeWorkspaces")
 	@Description("This test verifies that User is able to select private office in Pune. (Scroll down in home page and select workspaces)")
 	public void test02_SelectPrivateOfficeInPune(String city, String location, String buildingName)
-			throws InterruptedException {
-
+			throws InterruptedException 
+	{
+		WebFlows.loadWebsite();
 		// WebFlows.loginToApplication();
 		scrollToElement(webLoading.workspaceBtn);
 		click(webLoading.cityDropdown);
@@ -76,8 +79,9 @@ public class SelectPrivateOfficeTest extends CommonOps
 	@Test(description = "Test03 - Verify User is able to select private office in Hyderabad. (Scroll down in home page and select workspaces)", dataProvider = "HyderabadPrivateOfficeWorkspaces")
 	@Description("This test verifies that User is able to select private office in Hyderabad. (Scroll down in home page and select workspaces)")
 	public void test03_SelectPrivateOfficeInHyderabad(String city, String location, String buildingName)
-			throws InterruptedException {
-
+			throws InterruptedException 
+	{
+		WebFlows.loadWebsite();
 		// WebFlows.loginToApplication();
 		scrollToElement(webLoading.workspaceBtn);
 		click(webLoading.cityDropdown);
@@ -107,8 +111,9 @@ public class SelectPrivateOfficeTest extends CommonOps
 	@Test(description = "Test04 - Verify User is able to select private office in Delhi. (Scroll down in home page and select workspaces)", dataProvider = "DelhiNCRPrivateOfficeWorkspaces")
 	@Description("This test verifies that User is able to select private office in Delhi. (Scroll down in home page and select workspaces)")
 	public void test04_SelectPrivateOfficeInDelhi(String city, String location, String buildingName)
-			throws InterruptedException {
-
+			throws InterruptedException 
+	{
+		WebFlows.loadWebsite();
 		// WebFlows.loginToApplication();
 		scrollToElement(webLoading.workspaceBtn);
 		click(webLoading.cityDropdown);
@@ -138,8 +143,9 @@ public class SelectPrivateOfficeTest extends CommonOps
 	@Test(description = "Test05 - Verify User is able to select private office in Bengaluru. (Scroll down in home page and select workspaces)", dataProvider = "BengaluruPrivateOfficeWorkspaces")
 	@Description("This test verifies that User is able to select private office in Bengaluru. (Scroll down in home page and select workspaces)")
 	public void test05_SelectPrivateOfficeInBengaluru(String city, String location, String buildingName)
-			throws InterruptedException {
-
+			throws InterruptedException 
+	{
+		WebFlows.loadWebsite();
 		// WebFlows.loginToApplication();
 		scrollToElement(webLoading.workspaceBtn);
 		click(webLoading.cityDropdown);
@@ -169,7 +175,9 @@ public class SelectPrivateOfficeTest extends CommonOps
 	@Test(description = "Test06 - Verify User is able to select private office in Mumbai. (Scroll down in home page and select workspaces)", dataProvider = "MumbaiPrivateOfficeWorkspaces")
 	@Description("This test verifies that User is able to select private office in Mumbai. (Scroll down in home page and select workspaces)")
 	public void test06_SelectPrivateOfficeInMumbai(String city, String location, String buildingName)
-			throws InterruptedException {
+			throws InterruptedException 
+	{
+		WebFlows.loadWebsite();
 		// WebFlows.loginToApplication();
 		scrollToElement(webLoading.workspaceBtn);
 		click(webLoading.cityDropdown);

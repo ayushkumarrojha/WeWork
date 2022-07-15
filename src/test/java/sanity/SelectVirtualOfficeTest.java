@@ -9,11 +9,9 @@ import static extensions.UIActions.scrollToElement;
 import static extensions.UIActions.switchToLoginWindow;
 import static extensions.UIActions.switchToParentWindow;
 import static extensions.UIActions.updateText;
-
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
-
 import extensions.UIActions;
 import extensions.Verifications;
 import io.qameta.allure.Description;
@@ -28,6 +26,7 @@ public class SelectVirtualOfficeTest extends CommonOps
     @Description("This test verifies that User is able to Select virtual office")
     public void test01_VerifySelectVirtualOfficeWithoutLogginIn() throws InterruptedException
     {
+		WebFlows.loadWebsite();
     	scrollToElement(webLoading.cityDropdown);
         click(webLoading.cityDropdown);
         click(webLoading.select("Bengaluru"));
@@ -36,63 +35,72 @@ public class SelectVirtualOfficeTest extends CommonOps
         click(webLoading.select("Galaxy"));
         click(webLoading.exploreBtn);
         String currentWindow = getWindowHandel();
-        scrollToElement(webLoading.virtualOffice);
-        click(webLoading.virtualOffice);
-        click(webLoading.bookNowBtn);
-        switchToLoginWindow(currentWindow);
-        updateText(webLogin.emailTestField, getData("Username"));
-        updateText(webLogin.passwordTestField, getData("Password"));
-        click(webLogin.submitButton);
-        switchToParentWindow(currentWindow);
-        mouseHover(webLoading.bookNowBtn);
-        String VirtualOfficeWindow = getWindowHandels();
-        switchToParentWindow(VirtualOfficeWindow);
-        
-        click(webLoading.select("Select Building"));
-        Verifications.elementIsVisible(webLoading.select("Prestige Cube, Koramangala"));
-        if(virtualOffice.nextBtn.isEnabled()) //next btn
-        {
-      			mouseHover(virtualOffice.nextBtn);
-        }
-        else
-        {
-        	click(webLoading.select("Prestige Cube, Koramangala"));
-        	mouseHover(virtualOffice.nextBtn);
-        }
-        Verifications.elementIsVisible(webLoading.select("24 Months"));
-        if(virtualOffice.checkoutBtn.isEnabled()) //checkout btn
-        {
-        		click(webLoading.select("Checkout"));
-        }
-        else
-        {
-        	click(webLoading.select("24 Months"));
-        	mouseHover(virtualOffice.checkoutBtn);
-        }
-        Verifications.elementIsVisible(webLoading.select("Proceed to Payment"));
-        scrollToElement(webLoading.select("Proceed to Payment"));
-        click(webLoading.select("Proceed to Payment"));
-        String paymentWindow = getWindowHandels2();
-        switchToParentWindow(paymentWindow);
-        
-        click(payment.changeBtn1);
-        WebFlows.proceedWithPayment();
-        Thread.sleep(2000);
-        UIActions.closeCurrentWindow();
-        switchToParentWindow(VirtualOfficeWindow);
-        UIActions.closeCurrentWindow();
-        switchToParentWindow(currentWindow);
-        click(webLoading.closeIcon);
-        WebFlows.logoutOfApplication();
+		scrollToElement(webLoading.VirtualOfficeOptn);
+		String virtualOfficeBtn = webLoading.VirtualOfficeOptn.getAttribute("class");
+		if(virtualOfficeBtn.contains("disabled"))
+		{
+			mouseHover(webLoading.closeIcon);
+		}
+		else
+		{
+	        scrollToElement(webLoading.virtualOffice);
+	        click(webLoading.virtualOffice);
+	        click(webLoading.bookNowBtn);
+	        switchToLoginWindow(currentWindow);
+	        updateText(webLogin.emailTestField, getData("Username"));
+	        updateText(webLogin.passwordTestField, getData("Password"));
+	        click(webLogin.submitButton);
+	        switchToParentWindow(currentWindow);
+	        mouseHover(webLoading.bookNowBtn);
+	        String VirtualOfficeWindow = getWindowHandels();
+	        switchToParentWindow(VirtualOfficeWindow);
+	        
+	        click(webLoading.select("Select Building"));
+	        Verifications.elementIsVisible(webLoading.select("Prestige Cube, Koramangala"));
+	        if(virtualOffice.nextBtn.isEnabled()) //next btn
+	        {
+	      			mouseHover(virtualOffice.nextBtn);
+	        }
+	        else
+	        {
+	        	click(webLoading.select("Prestige Cube, Koramangala"));
+	        	mouseHover(virtualOffice.nextBtn);
+	        }
+	        Verifications.elementIsVisible(webLoading.select("24 Months"));
+	        if(virtualOffice.checkoutBtn.isEnabled()) //checkout btn
+	        {
+	        		click(webLoading.select("Checkout"));
+	        }
+	        else
+	        {
+	        	click(webLoading.select("24 Months"));
+	        	mouseHover(virtualOffice.checkoutBtn);
+	        }
+	        Verifications.elementIsVisible(webLoading.select("Proceed to Payment"));
+	        scrollToElement(webLoading.select("Proceed to Payment"));
+	        click(webLoading.select("Proceed to Payment"));
+	        String paymentWindow = getWindowHandels2();
+	        switchToParentWindow(paymentWindow);
+	        click(payment.changeBtn1);
+	        WebFlows.proceedWithPayment();
+	        Thread.sleep(2000);
+	        UIActions.closeCurrentWindow();
+	        switchToParentWindow(VirtualOfficeWindow);
+	        UIActions.closeCurrentWindow();
+	        switchToParentWindow(currentWindow);
+	        click(webLoading.closeIcon);
+	        WebFlows.logoutOfApplication();
+		}
     }
 	
-	@Test(description = "Test02 - Verify User is able to Select virtual office in Pune", dataProvider = "PuneDayPassWorkspaces")
+	@Test(description = "Test02 - Verify User is able to Select virtual office in Pune", dataProvider = "PuneVirtualOfficeWorkspaces")
     @Description("This test verifies that User is able to Select virtual office in Pune")
-    public void test02_VerifySelectVirtualOfficeInPune(String city , String location, String buildingName, String building ) throws InterruptedException
+    public void test02_VerifySelectVirtualOfficeInPune(String city , String location, String buildingName ) throws InterruptedException
     {
-    
+		WebFlows.loadWebsite();
         WebFlows.loginToApplication();
 		scrollToElement(webLoading.workspaceBtn);
+		Verifications.elementIsVisible(webLoading.cityDropdown);
 		click(webLoading.cityDropdown);
 		click(webLoading.select(city));
 		click(webLoading.buildingsDropdown);
@@ -100,60 +108,68 @@ public class SelectVirtualOfficeTest extends CommonOps
 		click(webLoading.select(buildingName));
 		click(webLoading.exploreBtn);
 		String currentWindow = getWindowHandel();
-		click(webLoading.VirtualOfficeOptn);
-		click(webLoading.bookNowBtn);
-        Thread.sleep(4000);
-        String VirtualOfficeWindow = getWindowHandels();
-        switchToParentWindow(VirtualOfficeWindow);
-        
-        click(webLoading.select("Select Building"));
-        Verifications.elementIsVisible(webLoading.select(building));
-        scrollToElement(webLoading.select(building));
-        Thread.sleep(5000);
-        if(virtualOffice.nextBtn.isEnabled()) //next btn
-        {
-      			mouseHover(virtualOffice.nextBtn);
-        }
-        else
-        {
-        	click(webLoading.select(building));
-        	mouseHover(virtualOffice.nextBtn);
-        }
-        Verifications.elementIsVisible(webLoading.select("24 Months"));
-        if(virtualOffice.checkoutBtn.isEnabled()) //checkout btn
-        {
-        		click(webLoading.select("Checkout"));
-        }
-        else
-        {
-        	click(webLoading.select("24 Months"));
-        	mouseHover(virtualOffice.checkoutBtn);
-        }
-        Verifications.elementIsVisible(webLoading.select("Proceed to Payment"));
-        scrollToElement(webLoading.select("Proceed to Payment"));
-        click(webLoading.select("Proceed to Payment"));
-        String paymentWindow = getWindowHandels2();
-        switchToParentWindow(paymentWindow);
-        
-        click(payment.changeBtn1);
-        WebFlows.proceedWithPayment();
-        Thread.sleep(2000);
-        UIActions.closeCurrentWindow();
-        switchToParentWindow(VirtualOfficeWindow);
-        UIActions.closeCurrentWindow();
-        switchToParentWindow(currentWindow);
-        click(webLoading.closeIcon);
-        WebFlows.logoutOfApplication();
-        
+		scrollToElement(webLoading.VirtualOfficeOptn);
+		String virtualOfficeBtn = webLoading.VirtualOfficeOptn.getAttribute("class");
+		if(virtualOfficeBtn.contains("disabled"))
+		{
+			mouseHover(webLoading.closeIcon);
+			WebFlows.logoutOfApplication();
+		}
+		else
+		{
+			click(webLoading.VirtualOfficeOptn);
+			click(webLoading.bookNowBtn);
+	        Thread.sleep(4000);
+	        String VirtualOfficeWindow = getWindowHandels();
+	        switchToParentWindow(VirtualOfficeWindow);
+	        
+	        click(webLoading.select("Select Building"));
+	        Verifications.elementIsVisible(webLoading.select(location));
+	        scrollToElement(webLoading.select(location));
+	        if(virtualOffice.nextBtn.isEnabled()) //next btn
+	        {
+	      			mouseHover(virtualOffice.nextBtn);
+	        }
+	        else
+	        {
+	        	click(webLoading.select(location));
+	        	mouseHover(virtualOffice.nextBtn);
+	        }
+	        Verifications.elementIsVisible(webLoading.select("24 Months"));
+	        if(virtualOffice.checkoutBtn.isEnabled()) //checkout btn
+	        {
+	        		click(webLoading.select("Checkout"));
+	        }
+	        else
+	        {
+	        	click(webLoading.select("24 Months"));
+	        	mouseHover(virtualOffice.checkoutBtn);
+	        }
+	        Verifications.elementIsVisible(webLoading.select("Proceed to Payment"));
+	        scrollToElement(webLoading.select("Proceed to Payment"));
+	        click(webLoading.select("Proceed to Payment"));
+	        String paymentWindow = getWindowHandels2();
+	        switchToParentWindow(paymentWindow);
+	        click(payment.changeBtn1);
+	        WebFlows.proceedWithPayment();
+	        Thread.sleep(2000);
+	        UIActions.closeCurrentWindow();
+	        switchToParentWindow(VirtualOfficeWindow);
+	        UIActions.closeCurrentWindow();
+	        switchToParentWindow(currentWindow);
+		    mouseHover(webLoading.closeIcon);
+            WebFlows.logoutOfApplication(); 
+		} 
     }
 	
-	@Test(description = "Test03 - Verify User is able to Select virtual office in Hyderabad", dataProvider = "HyderabadVirtualOfficeWorkspaces")
+	/*@Test(description = "Test03 - Verify User is able to Select virtual office in Hyderabad", dataProvider = "HyderabadVirtualOfficeWorkspaces")
     @Description("This test verifies that User is able to Select virtual office in Hyderabad")
     public void test03_VerifySelectVirtualOfficeInHyderabad(String city , String location, String buildingName, String building ) throws InterruptedException
     {
-    
+		WebFlows.loadWebsite();
         WebFlows.loginToApplication();
 		scrollToElement(webLoading.workspaceBtn);
+		Verifications.elementIsVisible(webLoading.cityDropdown);
 		click(webLoading.cityDropdown);
 		click(webLoading.select(city));
 		click(webLoading.buildingsDropdown);
@@ -161,60 +177,68 @@ public class SelectVirtualOfficeTest extends CommonOps
 		click(webLoading.select(buildingName));
 		click(webLoading.exploreBtn);
 		String currentWindow = getWindowHandel();
-		click(webLoading.VirtualOfficeOptn);
-		click(webLoading.bookNowBtn);
-        Thread.sleep(4000);
-        String VirtualOfficeWindow = getWindowHandels();
-        switchToParentWindow(VirtualOfficeWindow);
-        
-        click(webLoading.select("Select Building"));
-        Verifications.elementIsVisible(webLoading.select(building));
-        scrollToElement(webLoading.select(building));
-        Thread.sleep(5000);
-        if(virtualOffice.nextBtn.isEnabled()) //next btn
-        {
-      			mouseHover(virtualOffice.nextBtn);
-        }
-        else
-        {
-        	click(webLoading.select(building));
-        	mouseHover(virtualOffice.nextBtn);
-        }
-        Verifications.elementIsVisible(webLoading.select("24 Months"));
-        if(virtualOffice.checkoutBtn.isEnabled()) //checkout btn
-        {
-        		click(webLoading.select("Checkout"));
-        }
-        else
-        {
-        	click(webLoading.select("24 Months"));
-        	mouseHover(virtualOffice.checkoutBtn);
-        }
-        Verifications.elementIsVisible(webLoading.select("Proceed to Payment"));
-        scrollToElement(webLoading.select("Proceed to Payment"));
-        click(webLoading.select("Proceed to Payment"));
-        String paymentWindow = getWindowHandels2();
-        switchToParentWindow(paymentWindow);
-        
-        click(payment.changeBtn1);
-        WebFlows.proceedWithPayment();
-        Thread.sleep(2000);
-        UIActions.closeCurrentWindow();
-        switchToParentWindow(VirtualOfficeWindow);
-        UIActions.closeCurrentWindow();
-        switchToParentWindow(currentWindow);
-        click(webLoading.closeIcon);
-        WebFlows.logoutOfApplication();
-        
+		scrollToElement(webLoading.VirtualOfficeOptn);
+		String virtualOfficeBtn = webLoading.VirtualOfficeOptn.getAttribute("class");
+		if(virtualOfficeBtn.contains("disabled"))
+		{
+			mouseHover(webLoading.closeIcon);
+			WebFlows.logoutOfApplication();
+		}
+		else
+		{
+			click(webLoading.VirtualOfficeOptn);
+			click(webLoading.bookNowBtn);
+	        Thread.sleep(4000);
+	        String VirtualOfficeWindow = getWindowHandels();
+	        switchToParentWindow(VirtualOfficeWindow);
+	        
+	        click(webLoading.select("Select Building"));
+	        Verifications.elementIsVisible(webLoading.select(location));
+	        scrollToElement(webLoading.select(location));
+	        if(virtualOffice.nextBtn.isEnabled()) //next btn
+	        {
+	      			mouseHover(virtualOffice.nextBtn);
+	        }
+	        else
+	        {
+	        	click(webLoading.select(location));
+	        	mouseHover(virtualOffice.nextBtn);
+	        }
+	        Verifications.elementIsVisible(webLoading.select("24 Months"));
+	        if(virtualOffice.checkoutBtn.isEnabled()) //checkout btn
+	        {
+	        		click(webLoading.select("Checkout"));
+	        }
+	        else
+	        {
+	        	click(webLoading.select("24 Months"));
+	        	mouseHover(virtualOffice.checkoutBtn);
+	        }
+	        Verifications.elementIsVisible(webLoading.select("Proceed to Payment"));
+	        scrollToElement(webLoading.select("Proceed to Payment"));
+	        click(webLoading.select("Proceed to Payment"));
+	        String paymentWindow = getWindowHandels2();
+	        switchToParentWindow(paymentWindow);
+	        click(payment.changeBtn1);
+	        WebFlows.proceedWithPayment();
+	        Thread.sleep(2000);
+	        UIActions.closeCurrentWindow();
+	        switchToParentWindow(VirtualOfficeWindow);
+	        UIActions.closeCurrentWindow();
+	        switchToParentWindow(currentWindow);
+		    mouseHover(webLoading.closeIcon);
+            WebFlows.logoutOfApplication(); 
+		}
     }
 	
 	@Test(description = "Test04 - Verify User is able to Select virtual office in Delhi", dataProvider = "DelhiNCRVirtualOfficeWorkspaces")
     @Description("This test verifies that User is able to Select virtual office in Delhi")
     public void test04_VerifySelectVirtualOfficeInDelhi(String city , String location, String buildingName, String building ) throws InterruptedException
     {
-    
+		WebFlows.loadWebsite();
         WebFlows.loginToApplication();
 		scrollToElement(webLoading.workspaceBtn);
+		Verifications.elementIsVisible(webLoading.cityDropdown);
 		click(webLoading.cityDropdown);
 		click(webLoading.select(city));
 		click(webLoading.buildingsDropdown);
@@ -222,60 +246,68 @@ public class SelectVirtualOfficeTest extends CommonOps
 		click(webLoading.select(buildingName));
 		click(webLoading.exploreBtn);
 		String currentWindow = getWindowHandel();
-		click(webLoading.VirtualOfficeOptn);
-		click(webLoading.bookNowBtn);
-        Thread.sleep(4000);
-        String VirtualOfficeWindow = getWindowHandels();
-        switchToParentWindow(VirtualOfficeWindow);
-        
-        click(webLoading.select("Select Building"));
-        Verifications.elementIsVisible(webLoading.select(building));
-        scrollToElement(webLoading.select(building));
-        Thread.sleep(5000);
-        if(virtualOffice.nextBtn.isEnabled()) //next btn
-        {
-      			mouseHover(virtualOffice.nextBtn);
-        }
-        else
-        {
-        	click(webLoading.select(building));
-        	mouseHover(virtualOffice.nextBtn);
-        }
-        Verifications.elementIsVisible(webLoading.select("24 Months"));
-        if(virtualOffice.checkoutBtn.isEnabled()) //checkout btn
-        {
-        		click(webLoading.select("Checkout"));
-        }
-        else
-        {
-        	click(webLoading.select("24 Months"));
-        	mouseHover(virtualOffice.checkoutBtn);
-        }
-        Verifications.elementIsVisible(webLoading.select("Proceed to Payment"));
-        scrollToElement(webLoading.select("Proceed to Payment"));
-        click(webLoading.select("Proceed to Payment"));
-        String paymentWindow = getWindowHandels2();
-        switchToParentWindow(paymentWindow);
-        
-        click(payment.changeBtn1);
-        WebFlows.proceedWithPayment();
-        Thread.sleep(2000);
-        UIActions.closeCurrentWindow();
-        switchToParentWindow(VirtualOfficeWindow);
-        UIActions.closeCurrentWindow();
-        switchToParentWindow(currentWindow);
-        click(webLoading.closeIcon);
-        WebFlows.logoutOfApplication();
-        
+		scrollToElement(webLoading.VirtualOfficeOptn);
+		String virtualOfficeBtn = webLoading.VirtualOfficeOptn.getAttribute("class");
+		if(virtualOfficeBtn.contains("disabled"))
+		{
+			mouseHover(webLoading.closeIcon);
+			WebFlows.logoutOfApplication();
+		}
+		else
+		{
+			click(webLoading.VirtualOfficeOptn);
+			click(webLoading.bookNowBtn);
+	        Thread.sleep(4000);
+	        String VirtualOfficeWindow = getWindowHandels();
+	        switchToParentWindow(VirtualOfficeWindow);
+	        
+	        click(webLoading.select("Select Building"));
+	        Verifications.elementIsVisible(webLoading.select(location));
+	        scrollToElement(webLoading.select(location));
+	        if(virtualOffice.nextBtn.isEnabled()) //next btn
+	        {
+	      			mouseHover(virtualOffice.nextBtn);
+	        }
+	        else
+	        {
+	        	click(webLoading.select(location));
+	        	mouseHover(virtualOffice.nextBtn);
+	        }
+	        Verifications.elementIsVisible(webLoading.select("24 Months"));
+	        if(virtualOffice.checkoutBtn.isEnabled()) //checkout btn
+	        {
+	        		click(webLoading.select("Checkout"));
+	        }
+	        else
+	        {
+	        	click(webLoading.select("24 Months"));
+	        	mouseHover(virtualOffice.checkoutBtn);
+	        }
+	        Verifications.elementIsVisible(webLoading.select("Proceed to Payment"));
+	        scrollToElement(webLoading.select("Proceed to Payment"));
+	        click(webLoading.select("Proceed to Payment"));
+	        String paymentWindow = getWindowHandels2();
+	        switchToParentWindow(paymentWindow);
+	        click(payment.changeBtn1);
+	        WebFlows.proceedWithPayment();
+	        Thread.sleep(2000);
+	        UIActions.closeCurrentWindow();
+	        switchToParentWindow(VirtualOfficeWindow);
+	        UIActions.closeCurrentWindow();
+	        switchToParentWindow(currentWindow);
+		    mouseHover(webLoading.closeIcon);
+            WebFlows.logoutOfApplication(); 
+		}
     }
 	
 	@Test(description = "Test05 - Verify User is able to Select virtual office in Bengaluru", dataProvider = "BengaluruVirtualOfficeWorkspaces")
     @Description("This test verifies that User is able to Select virtual office in Bengaluru")
     public void test05_VerifySelectVirtualOfficeInBengaluru(String city , String location, String buildingName, String building ) throws InterruptedException
     {
-    
+		WebFlows.loadWebsite();
         WebFlows.loginToApplication();
 		scrollToElement(webLoading.workspaceBtn);
+		Verifications.elementIsVisible(webLoading.cityDropdown);
 		click(webLoading.cityDropdown);
 		click(webLoading.select(city));
 		click(webLoading.buildingsDropdown);
@@ -283,125 +315,136 @@ public class SelectVirtualOfficeTest extends CommonOps
 		click(webLoading.select(buildingName));
 		click(webLoading.exploreBtn);
 		String currentWindow = getWindowHandel();
-		click(webLoading.VirtualOfficeOptn);
-		click(webLoading.bookNowBtn);
-        Thread.sleep(4000);
-        String VirtualOfficeWindow = getWindowHandels();
-        switchToParentWindow(VirtualOfficeWindow);
-        
-        click(webLoading.select("Select Building"));
-        Verifications.elementIsVisible(webLoading.select(building));
-        scrollToElement(webLoading.select(building));
-        Thread.sleep(5000);
-        if(virtualOffice.nextBtn.isEnabled()) //next btn
-        {
-      			mouseHover(virtualOffice.nextBtn);
-        }
-        else
-        {
-        	click(webLoading.select(building));
-        	mouseHover(virtualOffice.nextBtn);
-        }
-        Verifications.elementIsVisible(webLoading.select("24 Months"));
-        if(virtualOffice.checkoutBtn.isEnabled()) //checkout btn
-        {
-        		click(webLoading.select("Checkout"));
-        }
-        else
-        {
-        	click(webLoading.select("24 Months"));
-        	mouseHover(virtualOffice.checkoutBtn);
-        }
-        Verifications.elementIsVisible(webLoading.select("Proceed to Payment"));
-        scrollToElement(webLoading.select("Proceed to Payment"));
-        click(webLoading.select("Proceed to Payment"));
-        String paymentWindow = getWindowHandels2();
-        switchToParentWindow(paymentWindow);
-        
-        click(payment.changeBtn1);
-        WebFlows.proceedWithPayment();
-        Thread.sleep(2000);
-        UIActions.closeCurrentWindow();
-        switchToParentWindow(VirtualOfficeWindow);
-        UIActions.closeCurrentWindow();
-        switchToParentWindow(currentWindow);
-        click(webLoading.closeIcon);
-        WebFlows.logoutOfApplication();
-        
+		scrollToElement(webLoading.VirtualOfficeOptn);
+		String virtualOfficeBtn = webLoading.VirtualOfficeOptn.getAttribute("class");
+		if(virtualOfficeBtn.contains("disabled"))
+		{
+			mouseHover(webLoading.closeIcon);
+			WebFlows.logoutOfApplication();
+		}
+		else
+		{
+			click(webLoading.VirtualOfficeOptn);
+			click(webLoading.bookNowBtn);
+	        Thread.sleep(4000);
+	        String VirtualOfficeWindow = getWindowHandels();
+	        switchToParentWindow(VirtualOfficeWindow);
+	        
+	        click(webLoading.select("Select Building"));
+	        Verifications.elementIsVisible(webLoading.select(location));
+	        scrollToElement(webLoading.select(location));
+	        if(virtualOffice.nextBtn.isEnabled()) //next btn
+	        {
+	      			mouseHover(virtualOffice.nextBtn);
+	        }
+	        else
+	        {
+	        	click(webLoading.select(location));
+	        	mouseHover(virtualOffice.nextBtn);
+	        }
+	        Verifications.elementIsVisible(webLoading.select("24 Months"));
+	        if(virtualOffice.checkoutBtn.isEnabled()) //checkout btn
+	        {
+	        		click(webLoading.select("Checkout"));
+	        }
+	        else
+	        {
+	        	click(webLoading.select("24 Months"));
+	        	mouseHover(virtualOffice.checkoutBtn);
+	        }
+	        Verifications.elementIsVisible(webLoading.select("Proceed to Payment"));
+	        scrollToElement(webLoading.select("Proceed to Payment"));
+	        click(webLoading.select("Proceed to Payment"));
+	        String paymentWindow = getWindowHandels2();
+	        switchToParentWindow(paymentWindow);
+	        click(payment.changeBtn1);
+	        WebFlows.proceedWithPayment();
+	        Thread.sleep(2000);
+	        UIActions.closeCurrentWindow();
+	        switchToParentWindow(VirtualOfficeWindow);
+	        UIActions.closeCurrentWindow();
+	        switchToParentWindow(currentWindow);
+		    mouseHover(webLoading.closeIcon);
+            WebFlows.logoutOfApplication(); 
+		}
     }
 	
 	@Test(description = "Test06 - Verify User is able to Select virtual office in Mumbai", dataProvider = "MumbaiVirtualOfficeWorkspaces")
     @Description("This test verifies that User is able to Select virtual office in Mumbai")
     public void test06_VerifySelectVirtualOfficeInMumbai(String city , String location, String buildingName, String building ) throws InterruptedException
     {
-    
+		WebFlows.loadWebsite();
         WebFlows.loginToApplication();
 		scrollToElement(webLoading.workspaceBtn);
+		Verifications.elementIsVisible(webLoading.cityDropdown);
 		click(webLoading.cityDropdown);
 		click(webLoading.select(city));
 		click(webLoading.buildingsDropdown);
-		scrollToElement(webLoading.select(location));
 		click(webLoading.select(location));
-		scrollToElement(webLoading.select(buildingName));
 		click(webLoading.select(buildingName));
-		scrollToElement(webLoading.exploreBtn);
 		click(webLoading.exploreBtn);
 		String currentWindow = getWindowHandel();
-		click(webLoading.VirtualOfficeOptn);
-		click(webLoading.bookNowBtn);
-        Thread.sleep(4000);
-        String VirtualOfficeWindow = getWindowHandels();
-        switchToParentWindow(VirtualOfficeWindow);
-        
-        click(webLoading.select("Select Building"));
-        Verifications.elementIsVisible(webLoading.select(buildingName));
-        scrollToElement(webLoading.select(buildingName));
-        Thread.sleep(8000);
-        if(virtualOffice.nextBtn.isEnabled()) //next btn
-        {
-      			mouseHover(virtualOffice.nextBtn);
-        }
-        else
-        {
-        	click(webLoading.select(building));
-        	mouseHover(virtualOffice.nextBtn);
-        }
-        Thread.sleep(8000);
-        Verifications.elementIsVisible(webLoading.select("24 Months"));
-        if(virtualOffice.checkoutBtn.isEnabled()) //checkout btn
-        {
-        		click(webLoading.select("Checkout"));
-        }
-        else
-        {
-        	click(webLoading.select("24 Months"));
-        	mouseHover(virtualOffice.checkoutBtn);
-        }
-        Verifications.elementIsVisible(webLoading.select("Proceed to Payment"));
-        scrollToElement(webLoading.select("Proceed to Payment"));
-        click(webLoading.select("Proceed to Payment"));
-        String paymentWindow = getWindowHandels2();
-        switchToParentWindow(paymentWindow);
-        
-        click(payment.changeBtn1);
-        WebFlows.proceedWithPayment();
-        Thread.sleep(2000);
-        UIActions.closeCurrentWindow();
-        switchToParentWindow(VirtualOfficeWindow);
-        UIActions.closeCurrentWindow();
-        switchToParentWindow(currentWindow);
-        click(webLoading.closeIcon);
-        WebFlows.logoutOfApplication();
-        
-    }
+		scrollToElement(webLoading.VirtualOfficeOptn);
+		String virtualOfficeBtn = webLoading.VirtualOfficeOptn.getAttribute("class");
+		if(virtualOfficeBtn.contains("disabled"))
+		{
+			mouseHover(webLoading.closeIcon);
+			WebFlows.logoutOfApplication();
+		}
+		else
+		{
+			click(webLoading.VirtualOfficeOptn);
+			click(webLoading.bookNowBtn);
+	        Thread.sleep(4000);
+	        String VirtualOfficeWindow = getWindowHandels();
+	        switchToParentWindow(VirtualOfficeWindow);
+	        
+	        click(webLoading.select("Select Building"));
+	        Verifications.elementIsVisible(webLoading.select(location));
+	        scrollToElement(webLoading.select(location));
+	        if(virtualOffice.nextBtn.isEnabled()) //next btn
+	        {
+	      			mouseHover(virtualOffice.nextBtn);
+	        }
+	        else
+	        {
+	        	click(webLoading.select(location));
+	        	mouseHover(virtualOffice.nextBtn);
+	        }
+	        Verifications.elementIsVisible(webLoading.select("24 Months"));
+	        if(virtualOffice.checkoutBtn.isEnabled()) //checkout btn
+	        {
+	        		click(webLoading.select("Checkout"));
+	        }
+	        else
+	        {
+	        	click(webLoading.select("24 Months"));
+	        	mouseHover(virtualOffice.checkoutBtn);
+	        }
+	        Verifications.elementIsVisible(webLoading.select("Proceed to Payment"));
+	        scrollToElement(webLoading.select("Proceed to Payment"));
+	        click(webLoading.select("Proceed to Payment"));
+	        String paymentWindow = getWindowHandels2();
+	        switchToParentWindow(paymentWindow);
+	        click(payment.changeBtn1);
+	        WebFlows.proceedWithPayment();
+	        Thread.sleep(2000);
+	        UIActions.closeCurrentWindow();
+	        switchToParentWindow(VirtualOfficeWindow);
+	        UIActions.closeCurrentWindow();
+	        switchToParentWindow(currentWindow);
+		    mouseHover(webLoading.closeIcon);
+            WebFlows.logoutOfApplication(); 
+		}
+    }*/
 	
 	
 	@DataProvider(name="PuneVirtualOfficeWorkspaces")
 	public Object[][] puneVirtualOfficeWorkspaces()
 	{
 		return new Object[][] { 
-			//{"Pune","Kharadi","World Trade Center"}, //Virtula office not available
-			{"Pune","Magarpatta","Panchshil Futura","Futura, Magarpatta Road"}
+			{"Pune","Kharadi","World Trade Center"}, //Virtula office not available  
+			{"Pune","Magarpatta","Panchshil Futura"}
 			};
 		
 	}

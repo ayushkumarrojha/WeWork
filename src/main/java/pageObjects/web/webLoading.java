@@ -77,10 +77,11 @@ public class webLoading extends CommonOps{
     @FindBy(how = How.XPATH, using = "(//p[contains(text(),'Day pass')])[1]")
     public WebElement dayPassBtn;
     
-    @FindBy(how = How.XPATH, using = "//p[contains(text(),'Virtual Office')]")
-    public WebElement VirtualOfficeOptn;
+   // @FindBy(how = How.XPATH, using = "//p[contains(text(),'Virtual Office')]")
+   // public WebElement VirtualOfficeOptn;
   
-    
+    @FindBy(how = How.XPATH, using = "(//div[contains(@class,'MuiGrid-grid-md-3.7')])[4]")
+    public WebElement VirtualOfficeOptn;
     
     @FindBy(how = How.XPATH, using = "//button[contains(text(),'Book Now')]")
     public  WebElement bookNowBtn;
