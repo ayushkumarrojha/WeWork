@@ -38,6 +38,11 @@ public class DayPassPage  extends CommonOps
     @FindBy(how = How.XPATH, using = "//button[contains(text(),'Confirm & Pay')]")
     public WebElement confirmAndPayBtn;
     
+    @FindBy(how = How.XPATH, using = "//h4[contains(text(),'Day Pass at')]")
+    public WebElement dayPassHeader;
+    
+    
+  
   
   
 	

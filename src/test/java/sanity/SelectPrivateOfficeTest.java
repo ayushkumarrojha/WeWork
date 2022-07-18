@@ -1,6 +1,7 @@
 package sanity;
 
 import static extensions.UIActions.click;
+import static extensions.UIActions.mouseHover;
 import static extensions.UIActions.scrollToElement;
 import static extensions.UIActions.updateText;
 
@@ -8,6 +9,7 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
+import extensions.UIActions;
 import extensions.Verifications;
 import io.qameta.allure.Description;
 import utilities.CommonOps;
@@ -32,10 +34,12 @@ public class SelectPrivateOfficeTest extends CommonOps
 		updateText(webLoading.fullName, getData("name"));
 		updateText(webLoading.email, getData("email"));
 		updateText(webLoading.phnNumber, getData("phoneNumber"));
-		click(webLoading.plusIcon);
-		click(webLoading.calendarIcon);
-		click(webLoading.clickOnDate);
+		
+		scrollToElement(webLoading.plusIcon);
+		UIActions.selectNoOfPeople(2);
+		UIActions.selectDate("2024", "September", "26");
 		click(webLoading.continueBtn);
+		
 		String actualText = webLoading.thankyouText.getText();
 		Verifications.elementIsVisible(webLoading.thankyouText);
 		Verifications.verifyText(actualText, "Thank you for contacting WeWork");
@@ -50,7 +54,7 @@ public class SelectPrivateOfficeTest extends CommonOps
 			throws InterruptedException 
 	{
 		WebFlows.loadWebsite();
-		// WebFlows.loginToApplication();
+		WebFlows.loginToApplication();
 		scrollToElement(webLoading.workspaceBtn);
 		click(webLoading.cityDropdown);
 		click(webLoading.select(city));
@@ -58,21 +62,31 @@ public class SelectPrivateOfficeTest extends CommonOps
 		click(webLoading.select(location));
 		click(webLoading.select(buildingName));
 		click(webLoading.exploreBtn);
-		click(webLoading.privateOfficeOptn);
-		click(webLoading.bookNowBtn);
-		updateText(webLoading.username, getData("Username"));
-		updateText(webLoading.userEmail, getData("email"));
-		updateText(webLoading.userPhnNumber, getData("phoneNumber"));
-		click(webLoading.plusIcon);
-		click(webLoading.calendarIcon);
-		click(webLoading.date("30"));
-		click(webLoading.continueBtn);
-		String actualText = webLoading.thankyouText.getText();
-		Verifications.elementIsVisible(webLoading.thankyouText);
-		Verifications.verifyText(actualText, "Thank you for contacting WeWork");
-		click(webLoading.backToHomePageBtn);
-		Thread.sleep(4000);
-		// WebFlows.logoutOfApplication();
+		String privateOfficeBtn = webLoading.privateOfficeOptn.getAttribute("class");
+		if (privateOfficeBtn.contains("disabled")) 
+		{
+			mouseHover(webLoading.closeIcon);
+			WebFlows.logoutOfApplication();
+		} else 
+		{
+			click(webLoading.privateOfficeOptn);
+			click(webLoading.bookNowBtn);
+			updateText(webLoading.username, getData("Username"));
+			updateText(webLoading.userEmail, getData("email"));
+			updateText(webLoading.userPhnNumber, getData("phoneNumber"));
+			
+			scrollToElement(webLoading.plusIcon);
+			UIActions.selectNoOfPeople(2);
+			UIActions.selectDate("2024", "September", "26");
+			click(webLoading.continueBtn);
+			
+			String actualText = webLoading.thankyouText.getText();
+			Verifications.elementIsVisible(webLoading.thankyouText);
+			Verifications.verifyText(actualText, "Thank you for contacting WeWork");
+			click(webLoading.backToHomePageBtn);
+			Thread.sleep(4000);
+			WebFlows.logoutOfApplication();	
+		}
 
 	}
 
@@ -82,7 +96,7 @@ public class SelectPrivateOfficeTest extends CommonOps
 			throws InterruptedException 
 	{
 		WebFlows.loadWebsite();
-		// WebFlows.loginToApplication();
+		WebFlows.loginToApplication();
 		scrollToElement(webLoading.workspaceBtn);
 		click(webLoading.cityDropdown);
 		click(webLoading.select(city));
@@ -90,21 +104,31 @@ public class SelectPrivateOfficeTest extends CommonOps
 		click(webLoading.select(location));
 		click(webLoading.select(buildingName));
 		click(webLoading.exploreBtn);
-		click(webLoading.privateOfficeOptn);
-		click(webLoading.bookNowBtn);
-		updateText(webLoading.username, getData("Username"));
-		updateText(webLoading.userEmail, getData("email"));
-		updateText(webLoading.userPhnNumber, getData("phoneNumber"));
-		click(webLoading.plusIcon);
-		click(webLoading.calendarIcon);
-		click(webLoading.date("30"));
-		click(webLoading.continueBtn);
-		String actualText = webLoading.thankyouText.getText();
-		Verifications.elementIsVisible(webLoading.thankyouText);
-		Verifications.verifyText(actualText, "Thank you for contacting WeWork");
-		click(webLoading.backToHomePageBtn);
-		Thread.sleep(4000);
-		// WebFlows.logoutOfApplication();
+		String privateOfficeBtn = webLoading.privateOfficeOptn.getAttribute("class");
+		if (privateOfficeBtn.contains("disabled")) 
+		{
+			mouseHover(webLoading.closeIcon);
+			WebFlows.logoutOfApplication();
+		} else 
+		{
+			click(webLoading.privateOfficeOptn);
+			click(webLoading.bookNowBtn);
+			updateText(webLoading.username, getData("Username"));
+			updateText(webLoading.userEmail, getData("email"));
+			updateText(webLoading.userPhnNumber, getData("phoneNumber"));
+			
+			scrollToElement(webLoading.plusIcon);
+			UIActions.selectNoOfPeople(2);
+			UIActions.selectDate("2024", "September", "26");
+			click(webLoading.continueBtn);
+			
+			String actualText = webLoading.thankyouText.getText();
+			Verifications.elementIsVisible(webLoading.thankyouText);
+			Verifications.verifyText(actualText, "Thank you for contacting WeWork");
+			click(webLoading.backToHomePageBtn);
+			Thread.sleep(4000);
+			WebFlows.logoutOfApplication();	
+		}
 
 	}
 
@@ -114,7 +138,7 @@ public class SelectPrivateOfficeTest extends CommonOps
 			throws InterruptedException 
 	{
 		WebFlows.loadWebsite();
-		// WebFlows.loginToApplication();
+		WebFlows.loginToApplication();
 		scrollToElement(webLoading.workspaceBtn);
 		click(webLoading.cityDropdown);
 		click(webLoading.select(city));
@@ -122,21 +146,31 @@ public class SelectPrivateOfficeTest extends CommonOps
 		click(webLoading.select(location));
 		click(webLoading.select(buildingName));
 		click(webLoading.exploreBtn);
-		click(webLoading.privateOfficeOptn);
-		click(webLoading.bookNowBtn);
-		updateText(webLoading.username, getData("Username"));
-		updateText(webLoading.userEmail, getData("email"));
-		updateText(webLoading.userPhnNumber, getData("phoneNumber"));
-		click(webLoading.plusIcon);
-		click(webLoading.calendarIcon);
-		click(webLoading.date("30"));
-		click(webLoading.continueBtn);
-		String actualText = webLoading.thankyouText.getText();
-		Verifications.elementIsVisible(webLoading.thankyouText);
-		Verifications.verifyText(actualText, "Thank you for contacting WeWork");
-		click(webLoading.backToHomePageBtn);
-		Thread.sleep(4000);
-		// WebFlows.logoutOfApplication();
+		String privateOfficeBtn = webLoading.privateOfficeOptn.getAttribute("class");
+		if (privateOfficeBtn.contains("disabled")) 
+		{
+			mouseHover(webLoading.closeIcon);
+			WebFlows.logoutOfApplication();
+		} else 
+		{
+			click(webLoading.privateOfficeOptn);
+			click(webLoading.bookNowBtn);
+			updateText(webLoading.username, getData("Username"));
+			updateText(webLoading.userEmail, getData("email"));
+			updateText(webLoading.userPhnNumber, getData("phoneNumber"));
+			
+			scrollToElement(webLoading.plusIcon);
+			UIActions.selectNoOfPeople(2);
+			UIActions.selectDate("2024", "September", "26");
+			click(webLoading.continueBtn);
+			
+			String actualText = webLoading.thankyouText.getText();
+			Verifications.elementIsVisible(webLoading.thankyouText);
+			Verifications.verifyText(actualText, "Thank you for contacting WeWork");
+			click(webLoading.backToHomePageBtn);
+			Thread.sleep(4000);
+			WebFlows.logoutOfApplication();	
+		}
 
 	}
 
@@ -146,7 +180,7 @@ public class SelectPrivateOfficeTest extends CommonOps
 			throws InterruptedException 
 	{
 		WebFlows.loadWebsite();
-		// WebFlows.loginToApplication();
+		WebFlows.loginToApplication();
 		scrollToElement(webLoading.workspaceBtn);
 		click(webLoading.cityDropdown);
 		click(webLoading.select(city));
@@ -154,21 +188,31 @@ public class SelectPrivateOfficeTest extends CommonOps
 		click(webLoading.select(location));
 		click(webLoading.select(buildingName));
 		click(webLoading.exploreBtn);
-		click(webLoading.privateOfficeOptn);
-		click(webLoading.bookNowBtn);
-		updateText(webLoading.username, getData("Username"));
-		updateText(webLoading.userEmail, getData("email"));
-		updateText(webLoading.userPhnNumber, getData("phoneNumber"));
-		click(webLoading.plusIcon);
-		click(webLoading.calendarIcon);
-		click(webLoading.date("30"));
-		click(webLoading.continueBtn);
-		String actualText = webLoading.thankyouText.getText();
-		Verifications.elementIsVisible(webLoading.thankyouText);
-		Verifications.verifyText(actualText, "Thank you for contacting WeWork");
-		click(webLoading.backToHomePageBtn);
-		Thread.sleep(4000);
-		// WebFlows.logoutOfApplication();
+		String privateOfficeBtn = webLoading.privateOfficeOptn.getAttribute("class");
+		if (privateOfficeBtn.contains("disabled")) 
+		{
+			mouseHover(webLoading.closeIcon);
+			WebFlows.logoutOfApplication();
+		} else 
+		{
+			click(webLoading.privateOfficeOptn);
+			click(webLoading.bookNowBtn);
+			updateText(webLoading.username, getData("Username"));
+			updateText(webLoading.userEmail, getData("email"));
+			updateText(webLoading.userPhnNumber, getData("phoneNumber"));
+			
+			scrollToElement(webLoading.plusIcon);
+			UIActions.selectNoOfPeople(2);
+			UIActions.selectDate("2024", "September", "26");
+			click(webLoading.continueBtn);
+			
+			String actualText = webLoading.thankyouText.getText();
+			Verifications.elementIsVisible(webLoading.thankyouText);
+			Verifications.verifyText(actualText, "Thank you for contacting WeWork");
+			click(webLoading.backToHomePageBtn);
+			Thread.sleep(4000);
+			WebFlows.logoutOfApplication();	
+		}
 
 	}
 
@@ -178,32 +222,39 @@ public class SelectPrivateOfficeTest extends CommonOps
 			throws InterruptedException 
 	{
 		WebFlows.loadWebsite();
-		// WebFlows.loginToApplication();
+		WebFlows.loginToApplication();
 		scrollToElement(webLoading.workspaceBtn);
 		click(webLoading.cityDropdown);
 		click(webLoading.select(city));
 		click(webLoading.buildingsDropdown);
-		scrollToElement(webLoading.select(location));
 		click(webLoading.select(location));
-		scrollToElement(webLoading.select(buildingName));
 		click(webLoading.select(buildingName));
-		scrollToElement(webLoading.exploreBtn);
 		click(webLoading.exploreBtn);
-		click(webLoading.privateOfficeOptn);
-		click(webLoading.bookNowBtn);
-		updateText(webLoading.username, getData("Username"));
-		updateText(webLoading.userEmail, getData("email"));
-		updateText(webLoading.userPhnNumber, getData("phoneNumber"));
-		click(webLoading.plusIcon);
-		click(webLoading.calendarIcon);
-		click(webLoading.date("30"));
-		click(webLoading.continueBtn);
-		String actualText = webLoading.thankyouText.getText();
-		Verifications.elementIsVisible(webLoading.thankyouText);
-		Verifications.verifyText(actualText, "Thank you for contacting WeWork");
-		click(webLoading.backToHomePageBtn);
-		Thread.sleep(4000);
-		// WebFlows.logoutOfApplication();
+		String privateOfficeBtn = webLoading.privateOfficeOptn.getAttribute("class");
+		if (privateOfficeBtn.contains("disabled")) 
+		{
+			mouseHover(webLoading.closeIcon);
+			WebFlows.logoutOfApplication();
+		} else 
+		{
+			click(webLoading.privateOfficeOptn);
+			click(webLoading.bookNowBtn);
+			updateText(webLoading.username, getData("Username"));
+			updateText(webLoading.userEmail, getData("email"));
+			updateText(webLoading.userPhnNumber, getData("phoneNumber"));
+			
+			scrollToElement(webLoading.plusIcon);
+			UIActions.selectNoOfPeople(2);
+			UIActions.selectDate("2024", "September", "26");
+			click(webLoading.continueBtn);
+			
+			String actualText = webLoading.thankyouText.getText();
+			Verifications.elementIsVisible(webLoading.thankyouText);
+			Verifications.verifyText(actualText, "Thank you for contacting WeWork");
+			click(webLoading.backToHomePageBtn);
+			Thread.sleep(4000);
+			WebFlows.logoutOfApplication();	
+		}
 
 	}
 
@@ -212,6 +263,7 @@ public class SelectPrivateOfficeTest extends CommonOps
 	{		return new Object[][] 
 				{ 
 			     { "Pune", "Kharadi", "World Trade Center" },
+			     {"Bengaluru","Domlur","Cinnabar Hills, EGL"},
 				 {"Pune","Magarpatta","Panchshil Futura"}};
 	}
 

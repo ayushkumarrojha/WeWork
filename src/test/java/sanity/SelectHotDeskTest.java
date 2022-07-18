@@ -1,13 +1,19 @@
 package sanity;
 
 import static extensions.UIActions.click;
+import static extensions.UIActions.getWindowHandel;
+import static extensions.UIActions.getWindowHandels;
+import static extensions.UIActions.mouseHover;
 import static extensions.UIActions.scrollToElement;
+import static extensions.UIActions.switchToParentWindow;
 import static extensions.UIActions.updateText;
 
+import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
+import extensions.UIActions;
 import extensions.Verifications;
 import io.qameta.allure.Description;
 import utilities.CommonOps;
@@ -43,7 +49,7 @@ public class SelectHotDeskTest extends CommonOps
 		Verifications.verifyText(actualText, "Thank you for contacting WeWork");
 		click(webLoading.backToHomePageBtn);
 		WebFlows.logoutOfApplication();
-
+		
 	}
 
 	@Test(description = "Test02 - Verify User is able to select Hotdesk in Pune. (Scroll down in home page and select workspaces)", dataProvider = "PuneHotdeskWorkspaces")
@@ -57,24 +63,36 @@ public class SelectHotDeskTest extends CommonOps
 		click(webLoading.cityDropdown);
 		click(webLoading.select(city));
 		click(webLoading.buildingsDropdown);
+		scrollToElement(webLoading.select(location));
 		click(webLoading.select(location));
+		scrollToElement(webLoading.select(buildingName));
 		click(webLoading.select(buildingName));
+		scrollToElement(webLoading.exploreBtn);
 		click(webLoading.exploreBtn);
-		click(webLoading.hotDeskOptn);
-		click(webLoading.bookNowBtn);
-		updateText(webLoading.username, getData("Username"));
-		updateText(webLoading.userEmail, getData("email"));
-		updateText(webLoading.userPhnNumber, getData("phoneNumber"));
-		click(webLoading.plusIcon);
-		click(webLoading.calendarIcon);
-		click(webLoading.date("30"));
-		click(webLoading.continueBtn);
-		Verifications.elementIsVisible(webLoading.thankyouText);
-		String actualText = webLoading.thankyouText.getText();
-		Verifications.verifyText(actualText, "Thank you for contacting WeWork");
-		click(webLoading.backToHomePageBtn);
-		WebFlows.logoutOfApplication();
-
+		String hotdeskOptnBtn = webLoading.hotDeskOptn.getAttribute("class");
+		if (hotdeskOptnBtn.contains("disabled")) 
+		{
+			mouseHover(webLoading.closeIcon);
+			WebFlows.logoutOfApplication();
+		} else 
+		{
+			click(webLoading.hotDeskOptn);
+			click(webLoading.bookNowBtn);
+			updateText(webLoading.username, getData("Username"));
+			updateText(webLoading.userEmail, getData("email"));
+			updateText(webLoading.userPhnNumber, getData("phoneNumber"));
+			click(webLoading.plusIcon);
+			click(webLoading.calendarIcon);
+			click(webLoading.date("30"));
+			click(webLoading.continueBtn);
+			Verifications.elementIsVisible(webLoading.thankyouText);
+			String actualText = webLoading.thankyouText.getText();
+			Verifications.elementIsVisible(webLoading.thankyouText);
+			Verifications.verifyText(actualText, "Thank you for contacting WeWork");
+			click(webLoading.backToHomePageBtn);
+			Thread.sleep(4000);
+			WebFlows.logoutOfApplication();
+		}
 	}
 
 	@Test(description = "Test03 - Verify User is able to select Hotdesk in Hyderabad. (Scroll down in home page and select workspaces)", dataProvider = "HyderabadHotdeskWorkspaces")
@@ -88,24 +106,36 @@ public class SelectHotDeskTest extends CommonOps
 		click(webLoading.cityDropdown);
 		click(webLoading.select(city));
 		click(webLoading.buildingsDropdown);
+		scrollToElement(webLoading.select(location));
 		click(webLoading.select(location));
+		scrollToElement(webLoading.select(buildingName));
 		click(webLoading.select(buildingName));
+		scrollToElement(webLoading.exploreBtn);
 		click(webLoading.exploreBtn);
-		click(webLoading.hotDeskOptn);
-		click(webLoading.bookNowBtn);
-		updateText(webLoading.username, getData("Username"));
-		updateText(webLoading.userEmail, getData("email"));
-		updateText(webLoading.userPhnNumber, getData("phoneNumber"));
-		click(webLoading.plusIcon);
-		click(webLoading.calendarIcon);
-		click(webLoading.date("30"));
-		click(webLoading.continueBtn);
-		Verifications.elementIsVisible(webLoading.thankyouText);
-		String actualText = webLoading.thankyouText.getText();
-		Verifications.verifyText(actualText, "Thank you for contacting WeWork");
-		click(webLoading.backToHomePageBtn);
-		WebFlows.logoutOfApplication();
-
+		String hotdeskOptnBtn = webLoading.hotDeskOptn.getAttribute("class");
+		if (hotdeskOptnBtn.contains("disabled")) 
+		{
+			mouseHover(webLoading.closeIcon);
+			WebFlows.logoutOfApplication();
+		} else 
+		{
+			click(webLoading.hotDeskOptn);
+			click(webLoading.bookNowBtn);
+			updateText(webLoading.username, getData("Username"));
+			updateText(webLoading.userEmail, getData("email"));
+			updateText(webLoading.userPhnNumber, getData("phoneNumber"));
+			click(webLoading.plusIcon);
+			click(webLoading.calendarIcon);
+			click(webLoading.date("30"));
+			click(webLoading.continueBtn);
+			Verifications.elementIsVisible(webLoading.thankyouText);
+			String actualText = webLoading.thankyouText.getText();
+			Verifications.elementIsVisible(webLoading.thankyouText);
+			Verifications.verifyText(actualText, "Thank you for contacting WeWork");
+			click(webLoading.backToHomePageBtn);
+			Thread.sleep(4000);
+			WebFlows.logoutOfApplication();
+		}
 	}
 
 	@Test(description = "Test04 - Verify User is able to select Hotdesk in Delhi-NCR. (Scroll down in home page and select workspaces)", dataProvider = "DelhiNCRHotdeskWorkspaces")
@@ -114,71 +144,7 @@ public class SelectHotDeskTest extends CommonOps
 			throws InterruptedException 
 	{
 		WebFlows.loadWebsite();
-		// WebFlows.loginToApplication();
-		scrollToElement(webLoading.workspaceBtn);
-		click(webLoading.cityDropdown);
-		click(webLoading.select(city));
-		click(webLoading.buildingsDropdown);
-		click(webLoading.select(location));
-		click(webLoading.select(buildingName));
-		click(webLoading.exploreBtn);
-		click(webLoading.hotDeskOptn);
-		click(webLoading.bookNowBtn);
-		updateText(webLoading.username, getData("Username"));
-		updateText(webLoading.userEmail, getData("email"));
-		updateText(webLoading.userPhnNumber, getData("phoneNumber"));
-		click(webLoading.plusIcon);
-		click(webLoading.calendarIcon);
-		click(webLoading.date("30"));
-		click(webLoading.continueBtn);
-		Verifications.elementIsVisible(webLoading.thankyouText);
-		String actualText = webLoading.thankyouText.getText();
-		Verifications.verifyText(actualText, "Thank you for contacting WeWork");
-		click(webLoading.backToHomePageBtn);
-		// WebFlows.logoutOfApplication();
-
-	}
-
-	@Test(description = "Test05 - Verify User is able to select Hotdesk in Bengaluru. (Scroll down in home page and select workspaces)", dataProvider = "BengaluruHotdeskWorkspaces")
-	@Description("This test verifies that User is able to select Hotdesk in Bengaluru. (Scroll down in home page and select workspaces)")
-	public void test05_SelectHotdeskInBengaluru(String city, String location, String buildingName)
-			throws InterruptedException 
-	{
-		WebFlows.loadWebsite();
-		// WebFlows.loginToApplication();
-		scrollToElement(webLoading.workspaceBtn);
-		click(webLoading.cityDropdown);
-		click(webLoading.select(city));
-		click(webLoading.buildingsDropdown);
-		click(webLoading.select(location));
-		click(webLoading.select(buildingName));
-		click(webLoading.exploreBtn);
-		click(webLoading.hotDeskOptn);
-		click(webLoading.bookNowBtn);
-		updateText(webLoading.username, getData("Username"));
-		updateText(webLoading.userEmail, getData("email"));
-		updateText(webLoading.userPhnNumber, getData("phoneNumber"));
-		click(webLoading.plusIcon);
-		click(webLoading.calendarIcon);
-		click(webLoading.date("30"));
-		click(webLoading.continueBtn);
-		Verifications.elementIsVisible(webLoading.thankyouText);
-		String actualText = webLoading.thankyouText.getText();
-		Verifications.elementIsVisible(webLoading.thankyouText);
-		Verifications.verifyText(actualText, "Thank you for contacting WeWork");
-		click(webLoading.backToHomePageBtn);
-		Thread.sleep(4000);
-		// WebFlows.logoutOfApplication();
-
-	}
-
-	@Test(description = "Test06 - Verify User is able to select Hotdesk in Mumbai. (Scroll down in home page and select workspaces)", dataProvider = "MumbaiHotdeskWorkspaces")
-	@Description("This test verifies that User is able to select Hotdesk in Mumbai. (Scroll down in home page and select workspaces)")
-	public void test06_SelectHotdeskInMumbai(String city, String location, String buildingName)
-			throws InterruptedException 
-	{
-		WebFlows.loadWebsite();
-		// WebFlows.loginToApplication();
+		WebFlows.loginToApplication();
 		scrollToElement(webLoading.workspaceBtn);
 		click(webLoading.cityDropdown);
 		click(webLoading.select(city));
@@ -189,23 +155,118 @@ public class SelectHotDeskTest extends CommonOps
 		click(webLoading.select(buildingName));
 		scrollToElement(webLoading.exploreBtn);
 		click(webLoading.exploreBtn);
-		click(webLoading.hotDeskOptn);
-		click(webLoading.bookNowBtn);
-		updateText(webLoading.username, getData("Username"));
-		updateText(webLoading.userEmail, getData("email"));
-		updateText(webLoading.userPhnNumber, getData("phoneNumber"));
-		click(webLoading.plusIcon);
-		click(webLoading.calendarIcon);
-		click(webLoading.date("30"));
-		click(webLoading.continueBtn);
-		Verifications.elementIsVisible(webLoading.thankyouText);
-		String actualText = webLoading.thankyouText.getText();
-		Verifications.elementIsVisible(webLoading.thankyouText);
-		Verifications.verifyText(actualText, "Thank you for contacting WeWork");
-		click(webLoading.backToHomePageBtn);
-		Thread.sleep(4000);
-		// WebFlows.logoutOfApplication();
+		String hotdeskOptnBtn = webLoading.hotDeskOptn.getAttribute("class");
+		if (hotdeskOptnBtn.contains("disabled")) 
+		{
+			mouseHover(webLoading.closeIcon);
+			WebFlows.logoutOfApplication();
+		} else 
+		{
+			click(webLoading.hotDeskOptn);
+			click(webLoading.bookNowBtn);
+			updateText(webLoading.username, getData("Username"));
+			updateText(webLoading.userEmail, getData("email"));
+			updateText(webLoading.userPhnNumber, getData("phoneNumber"));
+			click(webLoading.plusIcon);
+			click(webLoading.calendarIcon);
+			click(webLoading.date("30"));
+			click(webLoading.continueBtn);
+			Verifications.elementIsVisible(webLoading.thankyouText);
+			String actualText = webLoading.thankyouText.getText();
+			Verifications.elementIsVisible(webLoading.thankyouText);
+			Verifications.verifyText(actualText, "Thank you for contacting WeWork");
+			click(webLoading.backToHomePageBtn);
+			Thread.sleep(4000);
+			WebFlows.logoutOfApplication();
+		}
+		
+	}
 
+	@Test(description = "Test05 - Verify User is able to select Hotdesk in Bengaluru. (Scroll down in home page and select workspaces)", dataProvider = "BengaluruHotdeskWorkspaces")
+	@Description("This test verifies that User is able to select Hotdesk in Bengaluru. (Scroll down in home page and select workspaces)")
+	public void test05_SelectHotdeskInBengaluru(String city, String location, String buildingName)
+			throws InterruptedException 
+	{
+		WebFlows.loadWebsite();
+		WebFlows.loginToApplication();
+		scrollToElement(webLoading.workspaceBtn);
+		click(webLoading.cityDropdown);
+		click(webLoading.select(city));
+		click(webLoading.buildingsDropdown);
+		scrollToElement(webLoading.select(location));
+		click(webLoading.select(location));
+		scrollToElement(webLoading.select(buildingName));
+		click(webLoading.select(buildingName));
+		scrollToElement(webLoading.exploreBtn);
+		click(webLoading.exploreBtn);
+		String hotdeskOptnBtn = webLoading.hotDeskOptn.getAttribute("class");
+		if (hotdeskOptnBtn.contains("disabled")) 
+		{
+			mouseHover(webLoading.closeIcon);
+			WebFlows.logoutOfApplication();
+		} else 
+		{
+			click(webLoading.hotDeskOptn);
+			click(webLoading.bookNowBtn);
+			updateText(webLoading.username, getData("Username"));
+			updateText(webLoading.userEmail, getData("email"));
+			updateText(webLoading.userPhnNumber, getData("phoneNumber"));
+			click(webLoading.plusIcon);
+			click(webLoading.calendarIcon);
+			click(webLoading.date("30"));
+			click(webLoading.continueBtn);
+			Verifications.elementIsVisible(webLoading.thankyouText);
+			String actualText = webLoading.thankyouText.getText();
+			Verifications.elementIsVisible(webLoading.thankyouText);
+			Verifications.verifyText(actualText, "Thank you for contacting WeWork");
+			click(webLoading.backToHomePageBtn);
+			Thread.sleep(4000);
+			WebFlows.logoutOfApplication();
+		}
+
+	}
+
+	@Test(description = "Test06 - Verify User is able to select Hotdesk in Mumbai. (Scroll down in home page and select workspaces)", dataProvider = "MumbaiHotdeskWorkspaces")
+	@Description("This test verifies that User is able to select Hotdesk in Mumbai. (Scroll down in home page and select workspaces)")
+	public void test06_SelectHotdeskInMumbai(String city, String location, String buildingName)
+			throws InterruptedException 
+	{
+		WebFlows.loadWebsite();
+		WebFlows.loginToApplication();
+		scrollToElement(webLoading.workspaceBtn);
+		click(webLoading.cityDropdown);
+		click(webLoading.select(city));
+		click(webLoading.buildingsDropdown);
+		scrollToElement(webLoading.select(location));
+		click(webLoading.select(location));
+		scrollToElement(webLoading.select(buildingName));
+		click(webLoading.select(buildingName));
+		scrollToElement(webLoading.exploreBtn);
+		click(webLoading.exploreBtn);
+		String hotdeskOptnBtn = webLoading.hotDeskOptn.getAttribute("class");
+		if (hotdeskOptnBtn.contains("disabled")) 
+		{
+			mouseHover(webLoading.closeIcon);
+			WebFlows.logoutOfApplication();
+		} else 
+		{
+			click(webLoading.hotDeskOptn);
+			click(webLoading.bookNowBtn);
+			updateText(webLoading.username, getData("Username"));
+			updateText(webLoading.userEmail, getData("email"));
+			updateText(webLoading.userPhnNumber, getData("phoneNumber"));
+			click(webLoading.plusIcon);
+			click(webLoading.calendarIcon);
+			click(webLoading.date("30"));
+			click(webLoading.continueBtn);
+			Verifications.elementIsVisible(webLoading.thankyouText);
+			String actualText = webLoading.thankyouText.getText();
+			Verifications.elementIsVisible(webLoading.thankyouText);
+			Verifications.verifyText(actualText, "Thank you for contacting WeWork");
+			click(webLoading.backToHomePageBtn);
+			Thread.sleep(4000);
+			WebFlows.logoutOfApplication();
+		}
 	}
 	
 	@DataProvider(name="PuneHotdeskWorkspaces")
@@ -257,8 +318,8 @@ public class SelectHotDeskTest extends CommonOps
 			
 			{"Bengaluru","Infantry Road","Prestige Central"},
 			
-			//{"Bengaluru","Domlur","Sunriver, EGL"}, //hotdesk not available
-			//{"Bengaluru","Domlur","Cinnabar Hills, EGL"}, //hotdesk not available
+			{"Bengaluru","Domlur","Sunriver, EGL"}, //hotdesk not available
+			{"Bengaluru","Domlur","Cinnabar Hills, EGL"}, //hotdesk not available
 			
 			{"Bengaluru","Bellandur","Embassy TechVillage"},
 			{"Bengaluru","Bellandur","Vaishnavi Signature"},

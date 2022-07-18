@@ -1,5 +1,6 @@
 package sanity;
 
+import extensions.UIActions;
 import extensions.Verifications;
 import io.qameta.allure.Description;
 import org.testng.annotations.Listeners;
@@ -65,20 +66,18 @@ public class WebAppTest extends CommonOps
         click(webLoading.exploreBtn);
         click(webLoading.hotDeskOptn);
         click(webLoading.bookNowBtn);
-        updateText(webLoading.name, getData("name"));
-        updateText(webLoading.addemail, getData("email"));
-        updateText(webLoading.phoneNumber, getData("phoneNumber"));
-        click(webLoading.plusIcon);
-        click(webLoading.calendarIcon);
-        click(webLoading.clickOnDate);
-        click(webLoading.continueBtn);
+        updateText(webLoading.username, getData("Username"));
+		updateText(webLoading.userEmail, getData("email"));
+		updateText(webLoading.userPhnNumber, getData("phoneNumber"));
+		scrollToElement(webLoading.plusIcon);
+		UIActions.selectNoOfPeople(3);
+		UIActions.selectDate("2024", "September", "26");
+		click(webLoading.continueBtn);
         String actualText = webLoading.thankyouText.getText();
         Verifications.verifyText(actualText,"Thank you for contacting WeWork");
         click(webLoading.backToHomePageBtn);
         WebFlows.logoutOfApplication();
     } 
-    
-        
     
 	@Test(description = "Test05 - Verify User is able to Select Enterprise (Day pass option)")
     @Description("This test verifies that User is able to Select Enterprise (Day pass option)")
@@ -127,9 +126,9 @@ public class WebAppTest extends CommonOps
     	click(webLoading.noOfPplDrpdwn);
     	click(webLoading.noOfPpl);
     	click(webLoading.exploreSolnBtn);
-    	updateText(webLoading.name, getData("Username"));
+    	updateText(webLoading.Name, getData("Username"));
         updateText(webLoading.workemail, getData("email"));
-        updateText(webLoading.phoneNumber, getData("phoneNumber"));
+        updateText(webLoading.phnNmbr, getData("phoneNumber"));
         scrollToElement(webLoading.getInTouchButton);
         click(webLoading.getInTouchButton);
         click(webLoading.closeIcon); 
@@ -154,7 +153,8 @@ public class WebAppTest extends CommonOps
         click(webLoading.iAmIntrestedInDrpdwn); 
         click(webLoading.events); 
         click(webLoading.calendarIcon);
-        click(webLoading.clickOnDate);
+        UIActions.selectDate("2024", "September", "26");
+       // click(webLoading.clickOnDate);
         mouseHover(webLoading.clockIcon);
         mouseHover(webLoading.hour);
         mouseHover(webLoading.minute);
@@ -181,10 +181,10 @@ public class WebAppTest extends CommonOps
     	updateText(webLoading.fullName, getData("name"));
         updateText(webLoading.email, getData("email"));
         updateText(webLoading.phnNumber, getData("phoneNumber"));
-        click(webLoading.plusIcon);
-        click(webLoading.calendarIcon);
-        click(webLoading.clickOnDate);
-        click(webLoading.continueBtn);
+		scrollToElement(webLoading.plusIcon);
+		UIActions.selectNoOfPeople(2);
+		UIActions.selectDate("2024", "September", "26");
+		click(webLoading.continueBtn);
         String actualText = webLoading.thankyouText.getText();
         Verifications.verifyText(actualText,"Thank you for contacting WeWork");
         click(webLoading.backToHomePageBtn);

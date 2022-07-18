@@ -1,13 +1,14 @@
 package sanity;
 
 import static extensions.UIActions.click;
+import static extensions.UIActions.mouseHover;
 import static extensions.UIActions.scrollToElement;
 import static extensions.UIActions.updateText;
-
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
+import extensions.UIActions;
 import extensions.Verifications;
 import io.qameta.allure.Description;
 import utilities.CommonOps;
@@ -31,21 +32,29 @@ public class SelectAllAccessWrkspaceTest extends CommonOps
 		click(webLoading.select(buildingName));
 		click(webLoading.exploreBtn);
 		click(webLoading.AllAccessOptn);
-		click(webLoading.bookNowBtn);
-		updateText(webLoading.username, getData("Username"));
-		updateText(webLoading.userEmail, getData("email"));
-		updateText(webLoading.userPhnNumber, getData("phoneNumber"));
-		click(webLoading.plusIcon);
-		click(webLoading.calendarIcon);
-		click(webLoading.date("30"));
-		click(webLoading.continueBtn);
-		String actualText = webLoading.thankyouText.getText();
-		Verifications.elementIsVisible(webLoading.thankyouText);
-		Verifications.verifyText(actualText, "Thank you for contacting WeWork");
+		String AllAccessOptnBtn = webLoading.AllAccessOptn.getAttribute("class");
+		if (AllAccessOptnBtn.contains("disabled")) {
+			mouseHover(webLoading.closeIcon);
+			WebFlows.logoutOfApplication();
+		} else 
+		{
+			click(webLoading.bookNowBtn);
+			updateText(webLoading.username, getData("Username"));
+			updateText(webLoading.userEmail, getData("email"));
+			updateText(webLoading.userPhnNumber, getData("phoneNumber"));
+			
+			scrollToElement(webLoading.plusIcon);
+			UIActions.selectNoOfPeople(2);
+			UIActions.selectDate("2024", "September", "26");
+			click(webLoading.continueBtn);
+			
+			String actualText = webLoading.thankyouText.getText();
+			Verifications.elementIsVisible(webLoading.thankyouText);
+			Verifications.verifyText(actualText, "Thank you for contacting WeWork");
+		}
 		click(webLoading.backToHomePageBtn);
 		Thread.sleep(4000);
 		// WebFlows.logoutOfApplication();
-
 	}
 
 	@Test(description = "Test02 - Verify User is able to select all access in Hyderabad. (Scroll down in home page and select workspaces)", dataProvider = "HyderabadAllAccessWorkspace")
@@ -63,17 +72,26 @@ public class SelectAllAccessWrkspaceTest extends CommonOps
 		click(webLoading.select(buildingName));
 		click(webLoading.exploreBtn);
 		click(webLoading.AllAccessOptn);
-		click(webLoading.bookNowBtn);
-		updateText(webLoading.username, getData("Username"));
-		updateText(webLoading.userEmail, getData("email"));
-		updateText(webLoading.userPhnNumber, getData("phoneNumber"));
-		click(webLoading.plusIcon);
-		click(webLoading.calendarIcon);
-		click(webLoading.date("30"));
-		click(webLoading.continueBtn);
-		String actualText = webLoading.thankyouText.getText();
-		Verifications.elementIsVisible(webLoading.thankyouText);
-		Verifications.verifyText(actualText, "Thank you for contacting WeWork");
+		String AllAccessOptnBtn = webLoading.AllAccessOptn.getAttribute("class");
+		if (AllAccessOptnBtn.contains("disabled")) {
+			mouseHover(webLoading.closeIcon);
+			WebFlows.logoutOfApplication();
+		} else 
+		{
+			click(webLoading.bookNowBtn);
+			updateText(webLoading.username, getData("Username"));
+			updateText(webLoading.userEmail, getData("email"));
+			updateText(webLoading.userPhnNumber, getData("phoneNumber"));
+			
+			scrollToElement(webLoading.plusIcon);
+			UIActions.selectNoOfPeople(2);
+			UIActions.selectDate("2024", "September", "26");
+			click(webLoading.continueBtn);
+			
+			String actualText = webLoading.thankyouText.getText();
+			Verifications.elementIsVisible(webLoading.thankyouText);
+			Verifications.verifyText(actualText, "Thank you for contacting WeWork");
+		}
 		click(webLoading.backToHomePageBtn);
 		Thread.sleep(4000);
 		// WebFlows.logoutOfApplication();
@@ -95,17 +113,26 @@ public class SelectAllAccessWrkspaceTest extends CommonOps
 		click(webLoading.select(buildingName));
 		click(webLoading.exploreBtn);
 		click(webLoading.AllAccessOptn);
-		click(webLoading.bookNowBtn);
-		updateText(webLoading.username, getData("Username"));
-		updateText(webLoading.userEmail, getData("email"));
-		updateText(webLoading.userPhnNumber, getData("phoneNumber"));
-		click(webLoading.plusIcon);
-		click(webLoading.calendarIcon);
-		click(webLoading.date("30"));
-		click(webLoading.continueBtn);
-		String actualText = webLoading.thankyouText.getText();
-		Verifications.elementIsVisible(webLoading.thankyouText);
-		Verifications.verifyText(actualText, "Thank you for contacting WeWork");
+		String AllAccessOptnBtn = webLoading.AllAccessOptn.getAttribute("class");
+		if (AllAccessOptnBtn.contains("disabled")) {
+			mouseHover(webLoading.closeIcon);
+			WebFlows.logoutOfApplication();
+		} else 
+		{
+			click(webLoading.bookNowBtn);
+			updateText(webLoading.username, getData("Username"));
+			updateText(webLoading.userEmail, getData("email"));
+			updateText(webLoading.userPhnNumber, getData("phoneNumber"));
+			
+			scrollToElement(webLoading.plusIcon);
+			UIActions.selectNoOfPeople(2);
+			UIActions.selectDate("2024", "September", "26");
+			click(webLoading.continueBtn);
+			
+			String actualText = webLoading.thankyouText.getText();
+			Verifications.elementIsVisible(webLoading.thankyouText);
+			Verifications.verifyText(actualText, "Thank you for contacting WeWork");
+		}
 		click(webLoading.backToHomePageBtn);
 		Thread.sleep(4000);
 		// WebFlows.logoutOfApplication();
@@ -127,21 +154,29 @@ public class SelectAllAccessWrkspaceTest extends CommonOps
 		click(webLoading.select(buildingName));
 		click(webLoading.exploreBtn);
 		click(webLoading.AllAccessOptn);
-		click(webLoading.bookNowBtn);
-		updateText(webLoading.username, getData("Username"));
-		updateText(webLoading.userEmail, getData("email"));
-		updateText(webLoading.userPhnNumber, getData("phoneNumber"));
-		click(webLoading.plusIcon);
-		click(webLoading.calendarIcon);
-		click(webLoading.date("30"));
-		click(webLoading.continueBtn);
-		String actualText = webLoading.thankyouText.getText();
-		Verifications.elementIsVisible(webLoading.thankyouText);
-		Verifications.verifyText(actualText, "Thank you for contacting WeWork");
+		String AllAccessOptnBtn = webLoading.AllAccessOptn.getAttribute("class");
+		if (AllAccessOptnBtn.contains("disabled")) {
+			mouseHover(webLoading.closeIcon);
+			WebFlows.logoutOfApplication();
+		} else 
+		{
+			click(webLoading.bookNowBtn);
+			updateText(webLoading.username, getData("Username"));
+			updateText(webLoading.userEmail, getData("email"));
+			updateText(webLoading.userPhnNumber, getData("phoneNumber"));
+			
+			scrollToElement(webLoading.plusIcon);
+			UIActions.selectNoOfPeople(2);
+			UIActions.selectDate("2024", "September", "26");
+			click(webLoading.continueBtn);
+			
+			String actualText = webLoading.thankyouText.getText();
+			Verifications.elementIsVisible(webLoading.thankyouText);
+			Verifications.verifyText(actualText, "Thank you for contacting WeWork");
+		}
 		click(webLoading.backToHomePageBtn);
 		Thread.sleep(4000);
 		// WebFlows.logoutOfApplication();
-
 	}
 
 	@Test(description = "Test05 - Verify User is able to select all access in Mumbai. (Scroll down in home page and select workspaces)", dataProvider = "MumbaiAllAccessWorkspace")
@@ -159,17 +194,26 @@ public class SelectAllAccessWrkspaceTest extends CommonOps
 		click(webLoading.select(buildingName));
 		click(webLoading.exploreBtn);
 		click(webLoading.AllAccessOptn);
-		click(webLoading.bookNowBtn);
-		updateText(webLoading.username, getData("Username"));
-		updateText(webLoading.userEmail, getData("email"));
-		updateText(webLoading.userPhnNumber, getData("phoneNumber"));
-		click(webLoading.plusIcon);
-		click(webLoading.calendarIcon);
-		click(webLoading.date("30"));
-		click(webLoading.continueBtn);
-		String actualText = webLoading.thankyouText.getText();
-		Verifications.elementIsVisible(webLoading.thankyouText);
-		Verifications.verifyText(actualText, "Thank you for contacting WeWork");
+		String AllAccessOptnBtn = webLoading.AllAccessOptn.getAttribute("class");
+		if (AllAccessOptnBtn.contains("disabled")) {
+			mouseHover(webLoading.closeIcon);
+			WebFlows.logoutOfApplication();
+		} else 
+		{
+			click(webLoading.bookNowBtn);
+			updateText(webLoading.username, getData("Username"));
+			updateText(webLoading.userEmail, getData("email"));
+			updateText(webLoading.userPhnNumber, getData("phoneNumber"));
+			
+			scrollToElement(webLoading.plusIcon);
+			UIActions.selectNoOfPeople(2);
+			UIActions.selectDate("2024", "September", "26");
+			click(webLoading.continueBtn);
+			
+			String actualText = webLoading.thankyouText.getText();
+			Verifications.elementIsVisible(webLoading.thankyouText);
+			Verifications.verifyText(actualText, "Thank you for contacting WeWork");
+		}
 		click(webLoading.backToHomePageBtn);
 		Thread.sleep(4000);
 		// WebFlows.logoutOfApplication();

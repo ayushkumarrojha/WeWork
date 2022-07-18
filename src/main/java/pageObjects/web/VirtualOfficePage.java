@@ -8,12 +8,18 @@ import utilities.CommonOps;
 
 public class VirtualOfficePage extends CommonOps
 {
-	
-	
 	 @FindBy(how = How.XPATH, using = "(//button[@type='submit'])[2]")
 	    public  WebElement nextBtn;
 	  
 	    @FindBy(how = How.XPATH, using = "//span[contains(text(),'Checkout')]")
 	    public  WebElement checkoutBtn;
+	    
+	    @FindBy(how = How.XPATH, using = "(//div[contains(@class,'jss801')])[1]")
+	    public  WebElement planfor6Months;
 	
+	    @FindBy(how = How.XPATH, using = "(//div[contains(@class,'jss801')])[2]")
+	    public  WebElement planfor12Months;
+	    
+	    @FindBy(how = How.XPATH, using = "(//div[contains(@class,'jss801')])[3]")
+	    public  WebElement planfor24Months;
 }

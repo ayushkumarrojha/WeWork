@@ -2,19 +2,21 @@ package extensions;
 
 import com.google.common.util.concurrent.Uninterruptibles;
 import io.qameta.allure.Step;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
+
 import utilities.CommonOps;
 
-import static extensions.UIActions.getWindowHandels333;
-import static extensions.UIActions.switchToParentWindow;
+import static extensions.UIActions.click;
 
 import java.util.Iterator;
+import java.util.List;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
@@ -89,8 +91,8 @@ public class UIActions extends CommonOps {
         Set<String> windows =driver.getWindowHandles();
         Iterator<String> window = windows.iterator();
         String parentWindow = window.next();
-        String childWindow = window.next();
-        return childWindow;
+        String childwindow1 = window.next();
+        return childwindow1;
         
     }
     
@@ -99,33 +101,11 @@ public class UIActions extends CommonOps {
         Set<String> windows =driver.getWindowHandles();
         Iterator<String> window = windows.iterator();
         String parentWindow = window.next();
-        String childWindow = window.next();
-        String childWindow2 = window.next();
-        return childWindow2;
-        
+        String childwindow1 = window.next();
+        String childwindow2 = window.next();
+        return childwindow2;
     }
     
-    @Step("Get Current Window Handel")
-    public static Iterator<String> getWindowHandels333(){
-        Set<String> windows =driver.getWindowHandles();
-        Iterator<String> window = windows.iterator();
-        return window;
-        
-    }
-    
-    @Step("Switch to Parent Window")
-    public static void switchToPaymentWindow() throws InterruptedException{
-    	Iterator<String> paymentWindow = getWindowHandels333();
-        if(paymentWindow.hasNext())
-        {
-      	  paymentWindow.next();
-      	  paymentWindow.next();
-      	  switchToParentWindow(paymentWindow.next());
-        }
-    }
-    
-    
-
     @Step("Get Current Window Handel")
     public static String getWindowHandel(){
         return driver.getWindowHandle();
@@ -152,9 +132,70 @@ public class UIActions extends CommonOps {
     	element.clear();
     }
     
+    @Step ("Select date in Calander UI")
+    public static void selectDate(String year, String month, String date) throws InterruptedException
+    {
+		webLoading.calendarIcon.click();
+		Verifications.elementIsVisible(webLoading.yearDropdown);
+		webLoading.yearDropdown.click();
+		Thread.sleep(1000);
+		int yearINT = Integer.parseInt(year);
+		
+		if(yearINT < 2022)
+			Assert.assertTrue(false, "Invalid year selection");
+		
+		List<WebElement> yearsList = driver.findElements(
+				By.xpath("//div[@class='PrivatePickersYear-root PrivatePickersYear-modeDesktop css-j9zntq']//button"));
+		Thread.sleep(3000);
+		for (int i = 0; i < yearsList.size(); i++) 
+		{
+			String currentyear = yearsList.get(i).getText();
+			if (currentyear.equalsIgnoreCase(year)) 
+			{
+				if (yearsList.get(i).isEnabled()) 
+				{
+					yearsList.get(i).click();
+					break;
+				}
+			}
+		}
+		while (!webLoading.monthName.getText().contains(month)) 
+		{
+			webLoading.rightArrowBtn.click();
+		}
+
+		List<WebElement> dates = driver.findElements(By.xpath("//button[contains(@class,'dayWithMargin')]"));
+		int count = dates.size();
+		for (int j = 0; j < count; j++) 
+		{
+			String currentDate = dates.get(j).getText();
+			if (currentDate.contains(date)) 
+			{
+				dates.get(j).click();
+				Thread.sleep(1000);
+				break;
+			}
+		}
+    			
+    }
+    
+    @Step ("Get current page title")
+    public static void selectNoOfPeople(int count)
+    {
+    	if(count == 1)
+    	{
+    		return;
+    	}
+    		
+    	for(int i=1;i<count;i++)
+    	{
+    		click(webLoading.plusIcon);
+    	}
+    	
+    }
+
     @Step ("Get current page title")
     public static void closeCurrentWindow(){
          driver.close();
     }
-
 }

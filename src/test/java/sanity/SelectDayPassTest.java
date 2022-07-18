@@ -44,7 +44,6 @@ public class SelectDayPassTest extends CommonOps
     	switchToParentWindow(currentWindow);
     	click(webLoading.closeIcon); 
     	WebFlows.logoutOfApplication();
-    	
     }
 	
 	@Test(description = "Test02 - Verify User is able to select day pass in Pune. (In  home page navigate to workspaces and select day pass)",dataProvider = "PuneDayPassWorkspaces")
@@ -61,22 +60,38 @@ public class SelectDayPassTest extends CommonOps
 		click(webLoading.select(buildingName));
 		click(webLoading.exploreBtn);
 		String currentWindow = getWindowHandel();
-		click(webLoading.dayPassBtn);
-		click(webLoading.bookNowBtn);
-		click(dayPass.selectDate("29"));
-        click(dayPass.continueBtn);
-        click(dayPass.skipAndPayBtn);
-        click(dayPass.confirmAndPayBtn);
-        String paymentWindow = getWindowHandels();
-        switchToParentWindow(paymentWindow);
-        Thread.sleep(2000);
-        WebFlows.proceedWithPayment();
-        UIActions.closeCurrentWindow();
-        switchToParentWindow(currentWindow);
-        Verifications.elementIsVisible(webLoading.closeIcon);
-        click(webLoading.closeIcon);
-        WebFlows.logoutOfApplication();
-       
+		String dayPassOptnBtn = webLoading.dayPassBtn.getAttribute("class");
+		if (dayPassOptnBtn.contains("disabled")) 
+		{
+			mouseHover(webLoading.closeIcon);
+			WebFlows.logoutOfApplication();
+		} else 
+		{
+			click(webLoading.dayPassBtn);
+			click(webLoading.bookNowBtn);
+			String text = dayPass.dayPassHeader.getText();
+			if(text.contains(buildingName))
+			{
+				Assert.assertTrue(true, "Building name is matching");
+				click(dayPass.selectDate("29"));
+		        click(dayPass.continueBtn);
+		        click(dayPass.skipAndPayBtn);
+		        click(dayPass.confirmAndPayBtn);
+		        String paymentWindow = getWindowHandels();
+		        switchToParentWindow(paymentWindow);
+		        Thread.sleep(2000);
+		        WebFlows.proceedWithPayment();
+		        UIActions.closeCurrentWindow();
+		        switchToParentWindow(currentWindow);
+		        Verifications.elementIsVisible(webLoading.closeIcon);
+		        click(webLoading.closeIcon);
+		        WebFlows.logoutOfApplication();
+			}
+			else
+			{
+				Assert.assertTrue(false, "Building name is not matching");
+			}
+		}
     }
 	
 	@Test(description = "Test03 - Verify User is able to select day pass in Hyderabad. (In  home page navigate to workspaces and select day pass)",dataProvider = "HyderabadDayPassWorkspaces")
@@ -93,21 +108,38 @@ public class SelectDayPassTest extends CommonOps
 		click(webLoading.select(buildingName));
 		click(webLoading.exploreBtn);
 		String currentWindow = getWindowHandel();
-		click(webLoading.dayPassBtn);
-		click(webLoading.bookNowBtn);
-		click(dayPass.selectDate("29"));
-        click(dayPass.continueBtn);
-        click(dayPass.skipAndPayBtn);
-        click(dayPass.confirmAndPayBtn);
-        String paymentWindow = getWindowHandels();
-        switchToParentWindow(paymentWindow);
-        Thread.sleep(2000);
-        WebFlows.proceedWithPayment();
-        UIActions.closeCurrentWindow();
-        switchToParentWindow(currentWindow);
-        Verifications.elementIsVisible(webLoading.closeIcon);
-        click(webLoading.closeIcon);
-        WebFlows.logoutOfApplication();
+		String dayPassOptnBtn = webLoading.dayPassBtn.getAttribute("class");
+		if (dayPassOptnBtn.contains("disabled")) 
+		{
+			mouseHover(webLoading.closeIcon);
+			WebFlows.logoutOfApplication();
+		} else 
+		{
+			click(webLoading.dayPassBtn);
+			click(webLoading.bookNowBtn);
+			String text = dayPass.dayPassHeader.getText();
+			if(text.contains(buildingName))
+			{
+				Assert.assertTrue(true, "Building name is matching");
+				click(dayPass.selectDate("29"));
+		        click(dayPass.continueBtn);
+		        click(dayPass.skipAndPayBtn);
+		        click(dayPass.confirmAndPayBtn);
+		        String paymentWindow = getWindowHandels();
+		        switchToParentWindow(paymentWindow);
+		        Thread.sleep(2000);
+		        WebFlows.proceedWithPayment();
+		        UIActions.closeCurrentWindow();
+		        switchToParentWindow(currentWindow);
+		        Verifications.elementIsVisible(webLoading.closeIcon);
+		        click(webLoading.closeIcon);
+		        WebFlows.logoutOfApplication();
+			}
+			else
+			{
+				Assert.assertTrue(false, "Building name is not matching");
+			}
+		}
 	      
     }
 	
@@ -125,21 +157,38 @@ public class SelectDayPassTest extends CommonOps
 		click(webLoading.select(buildingName));
 		click(webLoading.exploreBtn);
 		String currentWindow = getWindowHandel();
-		click(webLoading.dayPassBtn);
-		click(webLoading.bookNowBtn);
-		click(dayPass.selectDate("29"));
-        click(dayPass.continueBtn);
-        click(dayPass.skipAndPayBtn);
-        click(dayPass.confirmAndPayBtn);
-        String paymentWindow = getWindowHandels();
-        switchToParentWindow(paymentWindow);
-        Thread.sleep(2000);
-        WebFlows.proceedWithPayment();
-        UIActions.closeCurrentWindow();
-        switchToParentWindow(currentWindow);
-        Verifications.elementIsVisible(webLoading.closeIcon);
-        click(webLoading.closeIcon);
-        WebFlows.logoutOfApplication();
+		String dayPassOptnBtn = webLoading.dayPassBtn.getAttribute("class");
+		if (dayPassOptnBtn.contains("disabled")) 
+		{
+			mouseHover(webLoading.closeIcon);
+			WebFlows.logoutOfApplication();
+		} else 
+		{
+			click(webLoading.dayPassBtn);
+			click(webLoading.bookNowBtn);
+			String text = dayPass.dayPassHeader.getText();
+			if(text.contains(buildingName))
+			{
+				Assert.assertTrue(true, "Building name is matching");
+				click(dayPass.selectDate("29"));
+		        click(dayPass.continueBtn);
+		        click(dayPass.skipAndPayBtn);
+		        click(dayPass.confirmAndPayBtn);
+		        String paymentWindow = getWindowHandels();
+		        switchToParentWindow(paymentWindow);
+		        Thread.sleep(2000);
+		        WebFlows.proceedWithPayment();
+		        UIActions.closeCurrentWindow();
+		        switchToParentWindow(currentWindow);
+		        Verifications.elementIsVisible(webLoading.closeIcon);
+		        click(webLoading.closeIcon);
+		        WebFlows.logoutOfApplication();
+			}
+			else
+			{
+				Assert.assertTrue(false, "Building name is not matching");
+			}
+		}
 	      
     }
 	
@@ -157,21 +206,38 @@ public class SelectDayPassTest extends CommonOps
 		click(webLoading.select(buildingName));
 		click(webLoading.exploreBtn);
 		String currentWindow = getWindowHandel();
-		click(webLoading.dayPassBtn);
-		click(webLoading.bookNowBtn);
-		click(dayPass.selectDate("29"));
-        click(dayPass.continueBtn);
-        click(dayPass.skipAndPayBtn);
-        click(dayPass.confirmAndPayBtn);
-        String paymentWindow = getWindowHandels();
-        switchToParentWindow(paymentWindow);
-        Thread.sleep(2000);
-        WebFlows.proceedWithPayment();
-        UIActions.closeCurrentWindow();
-        switchToParentWindow(currentWindow);
-        Verifications.elementIsVisible(webLoading.closeIcon);
-        click(webLoading.closeIcon);
-        WebFlows.logoutOfApplication();
+		String dayPassOptnBtn = webLoading.dayPassBtn.getAttribute("class");
+		if (dayPassOptnBtn.contains("disabled")) 
+		{
+			mouseHover(webLoading.closeIcon);
+			WebFlows.logoutOfApplication();
+		} else 
+		{
+			click(webLoading.dayPassBtn);
+			click(webLoading.bookNowBtn);
+			String text = dayPass.dayPassHeader.getText();
+			if(text.contains(buildingName))
+			{
+				Assert.assertTrue(true, "Building name is matching");
+				click(dayPass.selectDate("29"));
+		        click(dayPass.continueBtn);
+		        click(dayPass.skipAndPayBtn);
+		        click(dayPass.confirmAndPayBtn);
+		        String paymentWindow = getWindowHandels();
+		        switchToParentWindow(paymentWindow);
+		        Thread.sleep(2000);
+		        WebFlows.proceedWithPayment();
+		        UIActions.closeCurrentWindow();
+		        switchToParentWindow(currentWindow);
+		        Verifications.elementIsVisible(webLoading.closeIcon);
+		        click(webLoading.closeIcon);
+		        WebFlows.logoutOfApplication();
+			}
+			else
+			{
+				Assert.assertTrue(false, "Building name is not matching");
+			}
+		}
 	      
     }
 	
@@ -182,8 +248,6 @@ public class SelectDayPassTest extends CommonOps
 		WebFlows.loadWebsite();
 		WebFlows.loginToApplication();
 		scrollToElement(webLoading.workspaceBtn);
-		click(webLoading.workspaceBtn);
-		scrollToElement(webLoading.cityDropdown);
 		click(webLoading.cityDropdown);
 		click(webLoading.select(city));
 		click(webLoading.buildingsDropdown);
@@ -191,22 +255,38 @@ public class SelectDayPassTest extends CommonOps
 		click(webLoading.select(buildingName));
 		click(webLoading.exploreBtn);
 		String currentWindow = getWindowHandel();
-		click(webLoading.dayPassBtn);
-		click(webLoading.bookNowBtn);
-		click(dayPass.selectDate("29"));
-        click(dayPass.continueBtn);
-        click(dayPass.skipAndPayBtn);
-        click(dayPass.confirmAndPayBtn);
-        String paymentWindow = getWindowHandels();
-        switchToParentWindow(paymentWindow);
-        Thread.sleep(2000);
-        WebFlows.proceedWithPayment();
-        UIActions.closeCurrentWindow();
-        switchToParentWindow(currentWindow);
-        Verifications.elementIsVisible(webLoading.closeIcon);
-        click(webLoading.closeIcon);
-        WebFlows.logoutOfApplication();
-	      
+		String dayPassOptnBtn = webLoading.dayPassBtn.getAttribute("class");
+		if (dayPassOptnBtn.contains("disabled")) 
+		{
+			mouseHover(webLoading.closeIcon);
+			WebFlows.logoutOfApplication();
+		} else 
+		{
+			click(webLoading.dayPassBtn);
+			click(webLoading.bookNowBtn);
+			String text = dayPass.dayPassHeader.getText();
+			if(text.contains(buildingName))
+			{
+				Assert.assertTrue(true, "Building name is matching");
+				click(dayPass.selectDate("29"));
+		        click(dayPass.continueBtn);
+		        click(dayPass.skipAndPayBtn);
+		        click(dayPass.confirmAndPayBtn);
+		        String paymentWindow = getWindowHandels();
+		        switchToParentWindow(paymentWindow);
+		        Thread.sleep(2000);
+		        WebFlows.proceedWithPayment();
+		        UIActions.closeCurrentWindow();
+		        switchToParentWindow(currentWindow);
+		        Verifications.elementIsVisible(webLoading.closeIcon);
+		        click(webLoading.closeIcon);
+		        WebFlows.logoutOfApplication();
+			}
+			else
+			{
+				Assert.assertTrue(false, "Building name is not matching");
+			}
+		} 
     }
 	
 	@Test(description = "Test07 - Verify User is able to select day pass with budnles for Pune",dataProvider = "PuneDayPassWorkspaces")
@@ -388,8 +468,6 @@ public class SelectDayPassTest extends CommonOps
 		
 		click(dashboard.select("Proceed to Pay"));
 		Thread.sleep(2000);
-		
-		
 		String paymentWindow = getWindowHandels();
         switchToParentWindow(paymentWindow);
         Thread.sleep(2000);
@@ -399,8 +477,6 @@ public class SelectDayPassTest extends CommonOps
         Verifications.elementIsVisible(webLoading.closeIcon);
         click(webLoading.closeIcon);
         WebFlows.logoutOfApplication();
-        
-        
     }
 	
 	@Test(description = "Test09 - Verify User is able to select day pass with budnles (In  home page navigate to workspaces and select day pass)",dataProvider = "PuneDayPassWorkspaces")
@@ -505,7 +581,7 @@ public class SelectDayPassTest extends CommonOps
 	{
 		return new Object[][] { 
 			{"Pune","Kharadi","World Trade Center"},
-			//{"Pune","Magarpatta","Panchshil Futura"}
+			{"Pune","Magarpatta","Panchshil Futura"}
 			};
 		
 	}
@@ -560,6 +636,7 @@ public class SelectDayPassTest extends CommonOps
 	{
 		return new Object[][] { 
 			{"Mumbai","Nariman Point","Express Towers"},
+			{"Bengaluru","Domlur","Sunriver, EGL"}, //Day pass not avilable
 			{"Mumbai","Goregaon East","Oberoi Commerz II"},
 			{"Mumbai","Goregaon East","NESCO IT Park"},
 			{"Mumbai","Vikhroli West","247 Park"},

@@ -64,30 +64,35 @@ public class webLoading extends CommonOps{
     
     @FindBy(how = How.XPATH, using = "//button[text()='Explore Solutions']")
     public WebElement exploreBtn;
-    
-    @FindBy(how = How.XPATH, using = "//p[contains(text(),'Hot desk')]")
-    public WebElement hotDeskOptn;
-    
-    @FindBy(how = How.XPATH, using = "//p[contains(text(),'private offices')]")
+
+    @FindBy(how = How.XPATH, using = "(//div[contains(@class,'MuiGrid-grid-md-3.7')])[1]")
     public WebElement privateOfficeOptn;
     
-    @FindBy(how = How.XPATH, using = "//p[contains(text(),'All Access')]")
+    @FindBy(how = How.XPATH, using = "(//div[contains(@class,'MuiGrid-grid-md-3.7')])[2]")
+    public WebElement hotDeskOptn;
+    
+    @FindBy(how = How.XPATH, using = "(//div[contains(@class,'MuiGrid-grid-md-3.7')])[3]")
     public WebElement AllAccessOptn;
     
-    @FindBy(how = How.XPATH, using = "(//p[contains(text(),'Day pass')])[1]")
+    @FindBy(how = How.XPATH, using = "(//div[contains(@class,'MuiGrid-grid-md-3.7')])[4]")
+    public WebElement VirtualOfficeOptn;
+    
+    @FindBy(how = How.XPATH, using = "(//div[contains(@class,'MuiGrid-grid-md-3.7')])[5]")
     public WebElement dayPassBtn;
     
    // @FindBy(how = How.XPATH, using = "//p[contains(text(),'Virtual Office')]")
    // public WebElement VirtualOfficeOptn;
   
-    @FindBy(how = How.XPATH, using = "(//div[contains(@class,'MuiGrid-grid-md-3.7')])[4]")
-    public WebElement VirtualOfficeOptn;
+    
     
     @FindBy(how = How.XPATH, using = "//button[contains(text(),'Book Now')]")
     public  WebElement bookNowBtn;
     
     @FindBy(how = How.XPATH, using = "(//input[@name='full_name'])[2]")
     public WebElement name;
+    
+    @FindBy(how = How.XPATH, using = "(//input[@placeholder='Full Name*'])")
+    public WebElement Name;
     
     @FindBy(how = How.XPATH, using = "(//input[@name='full_name'])[1]")
     public WebElement fullName;
@@ -104,6 +109,9 @@ public class webLoading extends CommonOps{
     @FindBy(how = How.XPATH, using = "(//input[@name='phone_number'])[2]")
     public WebElement phoneNumber;
     
+    @FindBy(how = How.XPATH, using = "(//input[@placeholder='Phone Number*'])")
+    public WebElement phnNmbr;
+    
     @FindBy(how = How.XPATH, using = "(//input[@name='phone_number'])[1]")
     public WebElement phnNumber;
     
@@ -112,6 +120,20 @@ public class webLoading extends CommonOps{
     
     @FindBy(how = How.XPATH, using = "//*[name()='svg'][@data-testid='CalendarIcon']")
     public WebElement calendarIcon;
+    
+    @FindBy(how = How.XPATH, using = "(//button[contains(@aria-label,'calendar view')])[2]")
+    public WebElement yearDropdown;
+    
+    @FindBy(how = How.XPATH, using = "//div[@class='PrivatePickersYear-root PrivatePickersYear-modeDesktop css-j9zntq']")
+    public WebElement yearsList;
+    
+    @FindBy(how = How.XPATH, using = "(//div[contains(@class,'Group-root css-1bx5ylf')])[1]")
+    public WebElement monthName;
+    
+    @FindBy(how = How.XPATH, using = "//button[@title='Next month']")
+    public WebElement rightArrowBtn;
+    
+  
     
     @FindBy(how = How.XPATH, using = "//button[text()='30']")
     public WebElement clickOnDate;
@@ -295,7 +317,9 @@ public class webLoading extends CommonOps{
     @FindBy(how = How.XPATH, using = "(//div[@class='total']) //span[2]")
     public  WebElement totalAmount;
     
+    @FindBy(how = How.XPATH, using = "//p[@class='form_title']")
+    public  WebElement subscriptionType;
     
-    
+  
   
 }

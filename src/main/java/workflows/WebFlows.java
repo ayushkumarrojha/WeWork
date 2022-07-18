@@ -129,7 +129,7 @@ public class WebFlows extends CommonOps
         updateText(payment.PINcode, getData("pincode"));
         clearTextBox(payment.phoneNumber);
         updateText(payment.phoneNumber, getData("phoneNumber"));
-        click(payment.saveInfoCheckbox);
+//        click(payment.saveInfoCheckbox);
 //        updateText(payment.coupon, getData("couponCode"));
 //        click(payment.applyBtn);
 //        String actualText = payment.couponValidationMsg.getText();

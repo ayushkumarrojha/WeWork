@@ -66,20 +66,23 @@ public class EnterpriseDayPassForTeamsTest extends CommonOps
     	click(webLoading.noOfPplDrpdwn);
     	click(webLoading.noOfPpl);
     	click(webLoading.exploreSolnBtn);
-    	click(webLoading.dayPassOptn);
-    	click(webLoading.getInTouchButton);
-    	updateText(getInTouch.fullName, getData("Username"));
-        updateText(getInTouch.workEmail, getData("email"));
-        updateText(getInTouch.phoneNumber, getData("phoneNumber"));
-        scrollToElement(getInTouch.companySizeDrpdwn);
-        click(getInTouch.companySizeDrpdwn);
-        click(getInTouch.CompanySize50);
-        scrollToElement(getInTouch.noRadioBtn);
-        mouseHover(getInTouch.noRadioBtn);
-        click(getInTouch.getInTouchButton);
-        Verifications.elementIsVisible(webLoading.FormSubbmittedMsg);
-        String actualText = webLoading.FormSubbmittedMsg.getText();
-        Verifications.verifyText(actualText,"Form Submitted Successfully");
+    	if(webLoading.dayPassOptn.isEnabled())
+    	{
+    		click(webLoading.dayPassOptn);
+        	click(webLoading.getInTouchButton);
+        	updateText(getInTouch.fullName, getData("Username"));
+            updateText(getInTouch.workEmail, getData("email"));
+            updateText(getInTouch.phoneNumber, getData("phoneNumber"));
+            scrollToElement(getInTouch.companySizeDrpdwn);
+            click(getInTouch.companySizeDrpdwn);
+            click(getInTouch.CompanySize50);
+            scrollToElement(getInTouch.noRadioBtn);
+            mouseHover(getInTouch.noRadioBtn);
+            click(getInTouch.getInTouchButton);
+            Verifications.elementIsVisible(webLoading.FormSubbmittedMsg);
+            String actualText = webLoading.FormSubbmittedMsg.getText();
+            Verifications.verifyText(actualText,"Form Submitted Successfully");
+    	}
         click(webLoading.closeIcon);
         WebFlows.logoutOfApplication();
     }
@@ -98,20 +101,23 @@ public class EnterpriseDayPassForTeamsTest extends CommonOps
     	click(webLoading.noOfPplDrpdwn);
     	click(webLoading.noOfPpl);
     	click(webLoading.exploreSolnBtn);
-    	click(webLoading.dayPassOptn);
-    	click(webLoading.getInTouchButton);
-    	updateText(getInTouch.fullName, getData("Username"));
-        updateText(getInTouch.workEmail, getData("email"));
-        updateText(getInTouch.phoneNumber, getData("phoneNumber"));
-        scrollToElement(getInTouch.companySizeDrpdwn);
-        click(getInTouch.companySizeDrpdwn);
-        click(getInTouch.CompanySize50);
-        scrollToElement(getInTouch.noRadioBtn);
-        mouseHover(getInTouch.noRadioBtn);
-        click(getInTouch.getInTouchButton);
-        Verifications.elementIsVisible(webLoading.FormSubbmittedMsg);
-        String actualText = webLoading.FormSubbmittedMsg.getText();
-        Verifications.verifyText(actualText,"Form Submitted Successfully");
+    	if(webLoading.dayPassOptn.isEnabled())
+    	{
+    		click(webLoading.dayPassOptn);
+        	click(webLoading.getInTouchButton);
+        	updateText(getInTouch.fullName, getData("Username"));
+            updateText(getInTouch.workEmail, getData("email"));
+            updateText(getInTouch.phoneNumber, getData("phoneNumber"));
+            scrollToElement(getInTouch.companySizeDrpdwn);
+            click(getInTouch.companySizeDrpdwn);
+            click(getInTouch.CompanySize50);
+            scrollToElement(getInTouch.noRadioBtn);
+            mouseHover(getInTouch.noRadioBtn);
+            click(getInTouch.getInTouchButton);
+            Verifications.elementIsVisible(webLoading.FormSubbmittedMsg);
+            String actualText = webLoading.FormSubbmittedMsg.getText();
+            Verifications.verifyText(actualText,"Form Submitted Successfully");
+    	}
         click(webLoading.closeIcon);
         WebFlows.logoutOfApplication();
     }
@@ -121,31 +127,32 @@ public class EnterpriseDayPassForTeamsTest extends CommonOps
     public void test04_SelectDayPassForTeamsInDelhi(String city , String buildingName) throws InterruptedException
     {	
 		WebFlows.loadWebsite();
-    	WebFlows.loadWebsite();
     	WebFlows.loginToApplication();
     	scrollToElement(webLoading.enterpriseBtn);
     	click(webLoading.enterpriseBtn);
-    	Verifications.elementIsVisible(webLoading.locationDropdown);
     	click(webLoading.locationDropdown);
     	click(webLoading.select(city));
     	click(webLoading.select(buildingName));
     	click(webLoading.noOfPplDrpdwn);
     	click(webLoading.noOfPpl);
     	click(webLoading.exploreSolnBtn);
-    	click(webLoading.dayPassOptn);
-    	click(webLoading.getInTouchButton);
-    	updateText(getInTouch.fullName, getData("Username"));
-        updateText(getInTouch.workEmail, getData("email"));
-        updateText(getInTouch.phoneNumber, getData("phoneNumber"));
-        scrollToElement(getInTouch.companySizeDrpdwn);
-        click(getInTouch.companySizeDrpdwn);
-        click(getInTouch.CompanySize50);
-        scrollToElement(getInTouch.noRadioBtn);
-        mouseHover(getInTouch.noRadioBtn);
-        click(getInTouch.getInTouchButton);
-        Verifications.elementIsVisible(webLoading.FormSubbmittedMsg);
-        String actualText = webLoading.FormSubbmittedMsg.getText();
-        Verifications.verifyText(actualText,"Form Submitted Successfully");
+    	if(webLoading.dayPassOptn.isEnabled())
+    	{
+    		click(webLoading.dayPassOptn);
+        	click(webLoading.getInTouchButton);
+        	updateText(getInTouch.fullName, getData("Username"));
+            updateText(getInTouch.workEmail, getData("email"));
+            updateText(getInTouch.phoneNumber, getData("phoneNumber"));
+            scrollToElement(getInTouch.companySizeDrpdwn);
+            click(getInTouch.companySizeDrpdwn);
+            click(getInTouch.CompanySize50);
+            scrollToElement(getInTouch.noRadioBtn);
+            mouseHover(getInTouch.noRadioBtn);
+            click(getInTouch.getInTouchButton);
+            Verifications.elementIsVisible(webLoading.FormSubbmittedMsg);
+            String actualText = webLoading.FormSubbmittedMsg.getText();
+            Verifications.verifyText(actualText,"Form Submitted Successfully");
+    	}
         click(webLoading.closeIcon);
         WebFlows.logoutOfApplication();
     }
@@ -164,20 +171,23 @@ public class EnterpriseDayPassForTeamsTest extends CommonOps
     	click(webLoading.noOfPplDrpdwn);
     	click(webLoading.noOfPpl);
     	click(webLoading.exploreSolnBtn);
-    	click(webLoading.dayPassOptn);
-    	click(webLoading.getInTouchButton);
-    	updateText(getInTouch.fullName, getData("Username"));
-        updateText(getInTouch.workEmail, getData("email"));
-        updateText(getInTouch.phoneNumber, getData("phoneNumber"));
-        scrollToElement(getInTouch.companySizeDrpdwn);
-        click(getInTouch.companySizeDrpdwn);
-        click(getInTouch.CompanySize50);
-        scrollToElement(getInTouch.noRadioBtn);
-        mouseHover(getInTouch.noRadioBtn);
-        click(getInTouch.getInTouchButton);
-        Verifications.elementIsVisible(webLoading.FormSubbmittedMsg);
-        String actualText = webLoading.FormSubbmittedMsg.getText();
-        Verifications.verifyText(actualText,"Form Submitted Successfully");
+    	if(webLoading.dayPassOptn.isEnabled())
+    	{
+    		click(webLoading.dayPassOptn);
+        	click(webLoading.getInTouchButton);
+        	updateText(getInTouch.fullName, getData("Username"));
+            updateText(getInTouch.workEmail, getData("email"));
+            updateText(getInTouch.phoneNumber, getData("phoneNumber"));
+            scrollToElement(getInTouch.companySizeDrpdwn);
+            click(getInTouch.companySizeDrpdwn);
+            click(getInTouch.CompanySize50);
+            scrollToElement(getInTouch.noRadioBtn);
+            mouseHover(getInTouch.noRadioBtn);
+            click(getInTouch.getInTouchButton);
+            Verifications.elementIsVisible(webLoading.FormSubbmittedMsg);
+            String actualText = webLoading.FormSubbmittedMsg.getText();
+            Verifications.verifyText(actualText,"Form Submitted Successfully");
+    	}
         click(webLoading.closeIcon);
         WebFlows.logoutOfApplication();
     }
@@ -196,20 +206,23 @@ public class EnterpriseDayPassForTeamsTest extends CommonOps
     	click(webLoading.noOfPplDrpdwn);
     	click(webLoading.noOfPpl);
     	click(webLoading.exploreSolnBtn);
-    	click(webLoading.dayPassOptn);
-    	click(webLoading.getInTouchButton);
-    	updateText(getInTouch.fullName, getData("Username"));
-        updateText(getInTouch.workEmail, getData("email"));
-        updateText(getInTouch.phoneNumber, getData("phoneNumber"));
-        scrollToElement(getInTouch.companySizeDrpdwn);
-        click(getInTouch.companySizeDrpdwn);
-        click(getInTouch.CompanySize50);
-        scrollToElement(getInTouch.noRadioBtn);
-        mouseHover(getInTouch.noRadioBtn);
-        click(getInTouch.getInTouchButton);
-        Verifications.elementIsVisible(webLoading.FormSubbmittedMsg);
-        String actualText = webLoading.FormSubbmittedMsg.getText();
-        Verifications.verifyText(actualText,"Form Submitted Successfully");
+    	if(webLoading.dayPassOptn.isEnabled())
+    	{
+    		click(webLoading.dayPassOptn);
+        	click(webLoading.getInTouchButton);
+        	updateText(getInTouch.fullName, getData("Username"));
+            updateText(getInTouch.workEmail, getData("email"));
+            updateText(getInTouch.phoneNumber, getData("phoneNumber"));
+            scrollToElement(getInTouch.companySizeDrpdwn);
+            click(getInTouch.companySizeDrpdwn);
+            click(getInTouch.CompanySize50);
+            scrollToElement(getInTouch.noRadioBtn);
+            mouseHover(getInTouch.noRadioBtn);
+            click(getInTouch.getInTouchButton);
+            Verifications.elementIsVisible(webLoading.FormSubbmittedMsg);
+            String actualText = webLoading.FormSubbmittedMsg.getText();
+            Verifications.verifyText(actualText,"Form Submitted Successfully");
+    	}
         click(webLoading.closeIcon);
         WebFlows.logoutOfApplication();
     }
