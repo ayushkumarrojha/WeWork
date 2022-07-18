@@ -57,9 +57,9 @@ public class SelectSubscriptionsTest extends CommonOps
 	{
 		return new Object[][] { 
 			{"Ready-to-move-in private offices","Know more","Private Office Space"},
-			{"Hot desk", "Book a workspace","Hot desk"},
+			{"Hot desk", "Book a workspace","Hot Desk"},
 			{"All Access","Book a workspace","All Access"},
-			{"Office suite","Enquire now","Office suite"}
+			{"Office suite","Enquire now","Office Suite"}
 			};
 		
 	}
