@@ -21,7 +21,7 @@ import workflows.WebFlows;
 @Listeners(utilities.Listeners.class)
 public class SelectDayPassTest extends CommonOps 
 {
-/*	@Test(description = "Test01 - Verify User is able to select day pass.(Navigate to header in home page and select Day Pass option from workspace dropdown)")
+	@Test(description = "Test01 - Verify User is able to select day pass.(Navigate to header in home page and select Day Pass option from workspace dropdown)")
     @Description("This test verifies that User is able to select day pass. (Navigate to header in home page and select Day Pass option from workspace dropdown)")
     public void test01_SelectDaypass() throws InterruptedException
     {
@@ -45,7 +45,7 @@ public class SelectDayPassTest extends CommonOps
     	switchToParentWindow(currentWindow);
     	click(webLoading.closeIcon); 
     	WebFlows.logoutOfApplication();
-    }*/
+    }
 	
 	@Test(description = "Test02 - Verify User is able to select day pass in Pune. (In  home page navigate to workspaces and select day pass)",dataProvider = "PuneDayPassWorkspaces")
     @Description("This test verifies that User is able to select day pass in Pune. (In  home page navigate to workspaces and select day pass)")
@@ -75,7 +75,7 @@ public class SelectDayPassTest extends CommonOps
 			if(text.contains(buildingName))
 			{
 				Assert.assertTrue(true, "Building name is matching");
-				UIActions.selectDate("August", "26");
+				UIActions.selectDate("August","26");
 		        click(dayPass.continueBtn);
 		        click(dayPass.skipAndPayBtn);
 		        click(dayPass.confirmAndPayBtn);
@@ -96,7 +96,7 @@ public class SelectDayPassTest extends CommonOps
 		}
     }
 	
-	/*@Test(description = "Test03 - Verify User is able to select day pass in Hyderabad. (In  home page navigate to workspaces and select day pass)",dataProvider = "HyderabadDayPassWorkspaces")
+	@Test(description = "Test03 - Verify User is able to select day pass in Hyderabad. (In  home page navigate to workspaces and select day pass)",dataProvider = "HyderabadDayPassWorkspaces")
     @Description("This test verifies that User is able to select day pass in Hyderabad. (In  home page navigate to workspaces and select day pass)")
     public void test03_SelectDayPassInHyderabad(String city , String location, String buildingName) throws InterruptedException
     {
@@ -123,7 +123,7 @@ public class SelectDayPassTest extends CommonOps
 			if(text.contains(buildingName))
 			{
 				Assert.assertTrue(true, "Building name is matching");
-				UIActions.selectDate("August", "26");
+				UIActions.selectDate("August","26");
 		        click(dayPass.continueBtn);
 		        click(dayPass.skipAndPayBtn);
 		        click(dayPass.confirmAndPayBtn);
@@ -172,7 +172,7 @@ public class SelectDayPassTest extends CommonOps
 			if(text.contains(buildingName))
 			{
 				Assert.assertTrue(true, "Building name is matching");
-				UIActions.selectDate("August", "26");
+				UIActions.selectDate("August","26");
 		        click(dayPass.continueBtn);
 		        click(dayPass.skipAndPayBtn);
 		        click(dayPass.confirmAndPayBtn);
@@ -221,7 +221,7 @@ public class SelectDayPassTest extends CommonOps
 			if(text.contains(buildingName))
 			{
 				Assert.assertTrue(true, "Building name is matching");
-				UIActions.selectDate("August", "26");
+				UIActions.selectDate("August","26");
 		        click(dayPass.continueBtn);
 		        click(dayPass.skipAndPayBtn);
 		        click(dayPass.confirmAndPayBtn);
@@ -253,8 +253,11 @@ public class SelectDayPassTest extends CommonOps
 		click(webLoading.cityDropdown);
 		click(webLoading.select(city));
 		click(webLoading.buildingsDropdown);
+		scrollToElement(webLoading.select(location));
 		click(webLoading.select(location));
+		scrollToElement(webLoading.select(buildingName));
 		click(webLoading.select(buildingName));
+		scrollToElement(webLoading.exploreBtn);
 		click(webLoading.exploreBtn);
 		String currentWindow = getWindowHandel();
 		String dayPassOptnBtn = webLoading.dayPassBtn.getAttribute("class");
@@ -270,7 +273,7 @@ public class SelectDayPassTest extends CommonOps
 			if(text.contains(buildingName))
 			{
 				Assert.assertTrue(true, "Building name is matching");
-				UIActions.selectDate("August", "26");
+				UIActions.selectDate("August","26");
 		        click(dayPass.continueBtn);
 		        click(dayPass.skipAndPayBtn);
 		        click(dayPass.confirmAndPayBtn);
@@ -291,7 +294,7 @@ public class SelectDayPassTest extends CommonOps
 		} 
     }
 	
-	@Test(description = "Test07 - Verify User is able to select day pass with budnles for Pune",dataProvider = "PuneDayPassWorkspaces")
+	/*@Test(description = "Test07 - Verify User is able to select day pass with budnles for Pune",dataProvider = "PuneDayPassWorkspaces")
     @Description("This test verifies that User is able to select day pass with budnles for Pune")
     public void test07_SelectDayPasswithBundlesforPune(String city , String location, String buildingName) throws InterruptedException
     {

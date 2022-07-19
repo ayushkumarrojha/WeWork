@@ -68,11 +68,11 @@ public class Verifications extends CommonOps {
         wait.until(ExpectedConditions.visibilityOf(elem));
     }
     
-    @Step("Verify Element Is Visible")
+    @Step("Verify Element Is present")
     public static boolean elementIsPresent(WebElement elem) {
-        wait.until(ExpectedConditions.visibilityOf(elem));
-        elem.isDisplayed();
-        return true;
+       // wait.until(ExpectedConditions.visibilityOf(elem));
+       boolean value=  elem.isDisplayed();
+        return value;
     }
 
     @Step("Verify Element Is Invisible")

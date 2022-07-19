@@ -136,9 +136,10 @@ public class UIActions extends CommonOps {
     public static void selectDate(String year, String month, String date) throws InterruptedException
     {
 		webLoading.calendarIcon.click();
+		Thread.sleep(1000);
 		Verifications.elementIsVisible(webLoading.yearDropdown);
 		webLoading.yearDropdown.click();
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		int yearINT = Integer.parseInt(year);
 		
 		if(yearINT < 2022)
@@ -228,7 +229,7 @@ public class UIActions extends CommonOps {
     
     }
     
-    @Step ("Get current page title")
+    @Step ("Clode current window")
     public static void closeCurrentWindow(){
          driver.close();
     }

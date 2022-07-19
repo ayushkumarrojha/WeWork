@@ -9,12 +9,16 @@ import static extensions.UIActions.scrollToElement;
 import static extensions.UIActions.switchToLoginWindow;
 import static extensions.UIActions.switchToParentWindow;
 import static extensions.UIActions.updateText;
+
+import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import extensions.UIActions;
 import extensions.Verifications;
 import io.qameta.allure.Description;
+import io.qameta.allure.Step;
 import utilities.CommonOps;
 import workflows.WebFlows;
 
@@ -22,7 +26,7 @@ import workflows.WebFlows;
 public class SelectVirtualOfficeTest extends CommonOps 
 {
 
-	@Test(description = "Test01 - Verify User is able to Select virtual office")
+/*	@Test(description = "Test01 - Verify User is able to Select virtual office")
     @Description("This test verifies that User is able to Select virtual office")
     public void test01_VerifySelectVirtualOfficeWithoutLogginIn() throws InterruptedException
     {
@@ -89,11 +93,11 @@ public class SelectVirtualOfficeTest extends CommonOps
 	        click(webLoading.closeIcon);
 	        WebFlows.logoutOfApplication();
 		}
-    }
+    }*/
 	
 	@Test(description = "Test02 - Verify User is able to Select virtual office in Pune", dataProvider = "PuneVirtualOfficeWorkspaces")
     @Description("This test verifies that User is able to Select virtual office in Pune")
-    public void test02_VerifySelectVirtualOfficeInPune(String city , String location, String buildingName ) throws InterruptedException
+    public void test02_VerifySelectVirtualOfficeInPune(String city , String location, String buildingName , String locNameInPaymentPage) throws InterruptedException
     {
 		WebFlows.loadWebsite();
 		WebFlows.loginToApplication();
@@ -134,29 +138,51 @@ public class SelectVirtualOfficeTest extends CommonOps
 	        	click(webLoading.select("24 Months"));
 	        	mouseHover(virtualOffice.checkoutBtn);
 	        }
-			Verifications.elementIsVisible(webLoading.select("Proceed to Payment"));
-			scrollToElement(webLoading.select("Proceed to Payment"));
-			click(webLoading.select("Proceed to Payment"));
-			String paymentWindow = getWindowHandels2();
-			switchToParentWindow(paymentWindow);
-			if(Verifications.elementIsPresent(payment.changeBtn1))
-			{
-				click(payment.changeBtn1);
+	        
+	        String locationInHeader = virtualOffice.verifyLocation(locNameInPaymentPage).getText();
+	        if(locationInHeader.contains(locNameInPaymentPage))
+	        {
+	        	Thread.sleep(2000);
+	        	Verifications.elementIsVisible(webLoading.select("Proceed to Payment"));
+				scrollToElement(webLoading.select("Proceed to Payment"));
+				click(webLoading.select("Proceed to Payment"));
+				String paymentWindow = getWindowHandels2();
+				switchToParentWindow(paymentWindow);
 				
-			}
-			WebFlows.proceedWithPayment();
-			Thread.sleep(2000);
-			UIActions.closeCurrentWindow();
-			switchToParentWindow(VirtualOfficeWindow);
-			UIActions.closeCurrentWindow();
-			switchToParentWindow(currentWindow);
-			mouseHover(webLoading.closeIcon);
-			WebFlows.logoutOfApplication();
+//				boolean value = payment.changeBtn1.isDisplayed();
+//				System.out.println(value);
+//				boolean value2 = payment.changeBtn1.isEnabled();
+//				System.out.println(value2);
+				
+//				if(Verifications.elementIsPresent(payment.changeBtn1))
+//				{
+//					click(payment.changeBtn1);
+//					
+//				}
+//				else
+//				{
+					WebFlows.proceedWithPayment();
+					Thread.sleep(2000);
+					UIActions.closeCurrentWindow();
+					switchToParentWindow(VirtualOfficeWindow);
+					UIActions.closeCurrentWindow();
+					switchToParentWindow(currentWindow);
+					mouseHover(webLoading.closeIcon);
+					WebFlows.logoutOfApplication();
+				//}
+	
+	        }
+	        else
+	        {
+	        	Assert.assertTrue("Location name mismatch in Payment window", false);
+	        }
+	        
+			
 		}
 		 
     }
 	
-	@Test(description = "Test03 - Verify User is able to Select virtual office in Hyderabad", dataProvider = "HyderabadVirtualOfficeWorkspaces")
+/*	@Test(description = "Test03 - Verify User is able to Select virtual office in Hyderabad", dataProvider = "HyderabadVirtualOfficeWorkspaces")
     @Description("This test verifies that User is able to Select virtual office in Hyderabad")
     public void test03_VerifySelectVirtualOfficeInHyderabad(String city , String location, String buildingName) throws InterruptedException
     {
@@ -284,7 +310,7 @@ public class SelectVirtualOfficeTest extends CommonOps
 	
 	@Test(description = "Test05 - Verify User is able to Select virtual office in Bengaluru", dataProvider = "BengaluruVirtualOfficeWorkspaces")
     @Description("This test verifies that User is able to Select virtual office in Bengaluru")
-    public void test05_VerifySelectVirtualOfficeInBengaluru(String city , String location, String buildingName) throws InterruptedException
+    public void test05_VerifySelectVirtualOfficeInBengaluru(String city , String location, String buildingName, String locNameInPaymentPage) throws InterruptedException
     {
 		WebFlows.loadWebsite();
 		WebFlows.loginToApplication();
@@ -310,9 +336,9 @@ public class SelectVirtualOfficeTest extends CommonOps
 			String VirtualOfficeWindow = getWindowHandels();
 			switchToParentWindow(VirtualOfficeWindow);
 			click(webLoading.select("Select Building"));
-			Verifications.elementIsVisible(webLoading.select(location));
-			scrollToElement(webLoading.select(location));
-			click(webLoading.select(location));
+			Verifications.elementIsVisible(webLoading.select(buildingName));
+			scrollToElement(webLoading.select(buildingName));
+			click(webLoading.select(buildingName));
 			mouseHover(virtualOffice.nextBtn);
 			Verifications.elementIsVisible(webLoading.select("24 Months"));
 	        if(virtualOffice.checkoutBtn.isEnabled()) 
@@ -324,24 +350,46 @@ public class SelectVirtualOfficeTest extends CommonOps
 	        	click(webLoading.select("24 Months"));
 	        	mouseHover(virtualOffice.checkoutBtn);
 	        }
-			Verifications.elementIsVisible(webLoading.select("Proceed to Payment"));
-			scrollToElement(webLoading.select("Proceed to Payment"));
-			click(webLoading.select("Proceed to Payment"));
-			String paymentWindow = getWindowHandels2();
-			switchToParentWindow(paymentWindow);
-			if(Verifications.elementIsPresent(payment.changeBtn1))
-			{
-				click(payment.changeBtn1);
-				
-			}
-			WebFlows.proceedWithPayment();
-			Thread.sleep(2000);
-			UIActions.closeCurrentWindow();
-			switchToParentWindow(VirtualOfficeWindow);
-			UIActions.closeCurrentWindow();
-			switchToParentWindow(currentWindow);
-			mouseHover(webLoading.closeIcon);
-			WebFlows.logoutOfApplication();
+	        
+	        String locationInHeader = virtualOffice.verifyLocation(locNameInPaymentPage).getText();
+	        System.out.println(locationInHeader);
+	        
+	        if(locationInHeader.contains(locNameInPaymentPage))
+	        {
+	        	System.out.println("inside loop");
+	        	Verifications.elementIsVisible(webLoading.select("Proceed to Payment"));
+				scrollToElement(webLoading.select("Proceed to Payment"));
+				click(webLoading.select("Proceed to Payment"));
+				String paymentWindow = getWindowHandels2();
+				switchToParentWindow(paymentWindow);
+
+				 String title =UIActions.getPageTitle();
+				 String url=  UIActions.getPageUrl();
+				     
+				 System.out.println("title is "+title);
+				 System.out.println("URL  is "+url);
+				 
+				if(Verifications.elementIsPresent(payment.changeBtn1))
+				{
+					click(payment.changeBtn1);
+					String title2 =UIActions.getPageTitle();
+					 String url2=  UIActions.getPageUrl();
+					     
+					 System.out.println("title2 is "+title2);
+					 System.out.println("URL2  is "+url2);
+					
+				}
+				WebFlows.proceedWithPayment();
+				Thread.sleep(2000);
+				UIActions.closeCurrentWindow();
+				switchToParentWindow(VirtualOfficeWindow);
+				UIActions.closeCurrentWindow();
+				switchToParentWindow(currentWindow);
+				mouseHover(webLoading.closeIcon);
+				WebFlows.logoutOfApplication();
+	        }
+	        
+			
 		}
     }
 	
@@ -406,15 +454,15 @@ public class SelectVirtualOfficeTest extends CommonOps
 			mouseHover(webLoading.closeIcon);
 			WebFlows.logoutOfApplication();
 		}
-    }
+    }*/
 	
 	
 	@DataProvider(name="PuneVirtualOfficeWorkspaces")
 	public Object[][] puneVirtualOfficeWorkspaces()
 	{
 		return new Object[][] { 
-			{"Pune","Kharadi","World Trade Center"}, //Virtula office not available  
-			{"Pune","Magarpatta","Panchshil Futura"}
+//			{"Pune","Kharadi","World Trade Center",""}, //Virtula office not available  
+			{"Pune","Magarpatta","Panchshil Futura","Futura"}
 			};
 		
 	}
@@ -447,20 +495,20 @@ public class SelectVirtualOfficeTest extends CommonOps
 	public Object[][] bengaluruVirtualOfficeWorkspaces()
 	{
 		return new Object[][] { 
-			{"Bengaluru","Koramangala","Prestige Atlanta"},
-			{"Bengaluru","Koramangala","Prestige Cube"},
-			{"Bengaluru","MG Road","The Pavilion"},
-			{"Bengaluru","MG Road","Galaxy"},
-			{"Bengaluru","MG Road","Embassy Quest"},
-			{"Bengaluru","Bannerghatta Main Rd","Salarpuria Symbiosis"},
-			{"Bengaluru","Infantry Road","Prestige Central"},
+			{"Bengaluru","Koramangala","Prestige Atlanta","Prestige Atlanta, Koramangala"}, 
+			{"Bengaluru","Koramangala","Prestige Cube","Prestige Cube, Koramangala"}, 
+			{"Bengaluru","MG Road","The Pavilion","The Pavilion, Church Street"}, 
+			{"Bengaluru","MG Road","Galaxy","Galaxy, Residency Road"}, 
+			{"Bengaluru","MG Road","Embassy Quest","Embassy Quest, Magrath Road"}, 
+			{"Bengaluru","Bannerghatta Main Rd","Salarpuria Symbiosis","Salarpuria Symbiosis, Bannerghatta Rd"}, 
+			{"Bengaluru","Infantry Road","Prestige Central","Prestige Central, Infantry Road"}, 
 			{"Bengaluru","Domlur","Sunriver, EGL"}, //Virtual office not avilable
-			{"Bengaluru","Domlur","Cinnabar Hills, EGL"}, //virtual office not avilable
-			{"Bengaluru","Bellandur","Embassy TechVillage"},
-			{"Bengaluru","Bellandur","Vaishnavi Signature"},
-			{"Bengaluru","Hebbal","RMZ Latitude Commercial"},
-			{"Bengaluru","Hebbal","Manyata NXT"},
-			{"Bengaluru","Mahadevapura","Salarpuria Magnifica"}
+			{"Bengaluru","Domlur","Cinnabar Hills, EGL","Embassy GolfLinks"}, //virtual office selection is not enabled, but loc is present in VO list
+			{"Bengaluru","Bellandur","Embassy TechVillage","Embassy TechVillage, Bellandur"}, //
+			{"Bengaluru","Bellandur","Vaishnavi Signature","Vaishnavi Signature, Bellandur"}, //
+			{"Bengaluru","Hebbal","RMZ Latitude Commercial","RMZ Latitude Commercial, Hebbal"}, //
+			{"Bengaluru","Hebbal","Manyata NXT","WeWork Manyata NXT"}, //
+			{"Bengaluru","Mahadevapura","Salarpuria Magnifica","Salarpuria Magnificia, Old Madras Rd"} //
 			};
 	}
 	

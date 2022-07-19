@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+<testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-07-19T12:09:14 IST" name="Web Suite" finished-at="2022-07-19T12:13:12 IST" duration-ms="237097">
+  <suite started-at="2022-07-19T15:21:17 IST" name="Web Suite" finished-at="2022-07-19T15:28:56 IST" duration-ms="459328">
     <groups>
     </groups>
-    <test started-at="2022-07-19T12:09:14 IST" name="Web Tests" finished-at="2022-07-19T12:13:12 IST" duration-ms="237097">
-      <class name="sanity.SelectDayPassTest">
-        <test-method is-config="true" signature="startSession(java.lang.String)[pri:0, instance:sanity.SelectDayPassTest@545b995e]" started-at="2022-07-19T12:09:15 IST" name="startSession" finished-at="2022-07-19T12:09:33 IST" duration-ms="18179" status="PASS">
+    <test started-at="2022-07-19T15:21:17 IST" name="Web Tests" finished-at="2022-07-19T15:28:56 IST" duration-ms="459328">
+      <class name="sanity.SelectSubscriptionsTest">
+        <test-method is-config="true" signature="startSession(java.lang.String)[pri:0, instance:sanity.SelectSubscriptionsTest@32c726ee]" started-at="2022-07-19T15:21:17 IST" name="startSession" finished-at="2022-07-19T15:21:33 IST" duration-ms="16211" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -18,83 +18,155 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- startSession -->
-        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:sanity.SelectDayPassTest@545b995e]" started-at="2022-07-19T12:09:33 IST" name="beforeMethod" finished-at="2022-07-19T12:09:33 IST" duration-ms="109" status="PASS">
+        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:sanity.SelectSubscriptionsTest@32c726ee]" started-at="2022-07-19T15:21:33 IST" name="beforeMethod" finished-at="2022-07-19T15:21:33 IST" duration-ms="88" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[public void sanity.SelectDayPassTest.test02_SelectDayPassInPune(java.lang.String,java.lang.String,java.lang.String) throws java.lang.InterruptedException]]>
+                <![CDATA[public void sanity.SelectSubscriptionsTest.test01_SelectSubscriptionsForDelhi(java.lang.String,java.lang.String,java.lang.String) throws java.lang.InterruptedException]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="test02_SelectDayPassInPune(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:sanity.SelectDayPassTest@545b995e]" started-at="2022-07-19T12:09:33 IST" name="test02_SelectDayPassInPune" description="Test02 - Verify User is able to select day pass in Pune. (In  home page navigate to workspaces and select day pass)" data-provider="PuneDayPassWorkspaces" finished-at="2022-07-19T12:10:59 IST" duration-ms="85905" status="PASS">
+        <test-method signature="test01_SelectSubscriptionsForDelhi(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:sanity.SelectSubscriptionsTest@32c726ee]" started-at="2022-07-19T15:21:33 IST" name="test01_SelectSubscriptionsForDelhi" description="Test01 - Verify User is able to select subscriptions" data-provider="Subscriptions" finished-at="2022-07-19T15:23:05 IST" duration-ms="91683" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Pune]]>
+                <![CDATA[Ready-to-move-in private offices]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[Kharadi]]>
+                <![CDATA[Know more]]>
               </value>
             </param>
             <param index="2">
               <value>
-                <![CDATA[World Trade Center]]>
+                <![CDATA[Private Office Space]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test02_SelectDayPassInPune -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:sanity.SelectDayPassTest@545b995e]" started-at="2022-07-19T12:10:59 IST" name="afterMethod" finished-at="2022-07-19T12:11:40 IST" duration-ms="40529" status="PASS">
+        </test-method> <!-- test01_SelectSubscriptionsForDelhi -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:sanity.SelectSubscriptionsTest@32c726ee]" started-at="2022-07-19T15:23:05 IST" name="afterMethod" finished-at="2022-07-19T15:23:08 IST" duration-ms="3325" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:sanity.SelectDayPassTest@545b995e]" started-at="2022-07-19T12:11:40 IST" name="beforeMethod" finished-at="2022-07-19T12:11:40 IST" duration-ms="10" status="PASS">
+        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:sanity.SelectSubscriptionsTest@32c726ee]" started-at="2022-07-19T15:23:08 IST" name="beforeMethod" finished-at="2022-07-19T15:23:08 IST" duration-ms="10" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[public void sanity.SelectDayPassTest.test02_SelectDayPassInPune(java.lang.String,java.lang.String,java.lang.String) throws java.lang.InterruptedException]]>
+                <![CDATA[public void sanity.SelectSubscriptionsTest.test01_SelectSubscriptionsForDelhi(java.lang.String,java.lang.String,java.lang.String) throws java.lang.InterruptedException]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="test02_SelectDayPassInPune(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:sanity.SelectDayPassTest@545b995e]" started-at="2022-07-19T12:11:40 IST" name="test02_SelectDayPassInPune" description="Test02 - Verify User is able to select day pass in Pune. (In  home page navigate to workspaces and select day pass)" data-provider="PuneDayPassWorkspaces" finished-at="2022-07-19T12:13:06 IST" duration-ms="86434" status="PASS">
+        <test-method signature="test01_SelectSubscriptionsForDelhi(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:sanity.SelectSubscriptionsTest@32c726ee]" started-at="2022-07-19T15:23:08 IST" name="test01_SelectSubscriptionsForDelhi" description="Test01 - Verify User is able to select subscriptions" data-provider="Subscriptions" finished-at="2022-07-19T15:24:53 IST" duration-ms="104157" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Pune]]>
+                <![CDATA[Hot desk]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[Magarpatta]]>
+                <![CDATA[Book a workspace]]>
               </value>
             </param>
             <param index="2">
               <value>
-                <![CDATA[Panchshil Futura]]>
+                <![CDATA[Hot Desk]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test02_SelectDayPassInPune -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:sanity.SelectDayPassTest@545b995e]" started-at="2022-07-19T12:13:07 IST" name="afterMethod" finished-at="2022-07-19T12:13:12 IST" duration-ms="4716" status="PASS">
+        </test-method> <!-- test01_SelectSubscriptionsForDelhi -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:sanity.SelectSubscriptionsTest@32c726ee]" started-at="2022-07-19T15:24:53 IST" name="afterMethod" finished-at="2022-07-19T15:24:57 IST" duration-ms="3703" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="closeSession()[pri:0, instance:sanity.SelectDayPassTest@545b995e]" started-at="2022-07-19T12:13:12 IST" name="closeSession" finished-at="2022-07-19T12:13:12 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:sanity.SelectSubscriptionsTest@32c726ee]" started-at="2022-07-19T15:24:57 IST" name="beforeMethod" finished-at="2022-07-19T15:24:57 IST" duration-ms="9" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void sanity.SelectSubscriptionsTest.test01_SelectSubscriptionsForDelhi(java.lang.String,java.lang.String,java.lang.String) throws java.lang.InterruptedException]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="test01_SelectSubscriptionsForDelhi(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:sanity.SelectSubscriptionsTest@32c726ee]" started-at="2022-07-19T15:24:57 IST" name="test01_SelectSubscriptionsForDelhi" description="Test01 - Verify User is able to select subscriptions" data-provider="Subscriptions" finished-at="2022-07-19T15:26:52 IST" duration-ms="115198" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[All Access]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Book a workspace]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[All Access]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test01_SelectSubscriptionsForDelhi -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:sanity.SelectSubscriptionsTest@32c726ee]" started-at="2022-07-19T15:26:52 IST" name="afterMethod" finished-at="2022-07-19T15:26:56 IST" duration-ms="3420" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:sanity.SelectSubscriptionsTest@32c726ee]" started-at="2022-07-19T15:26:56 IST" name="beforeMethod" finished-at="2022-07-19T15:26:56 IST" duration-ms="10" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void sanity.SelectSubscriptionsTest.test01_SelectSubscriptionsForDelhi(java.lang.String,java.lang.String,java.lang.String) throws java.lang.InterruptedException]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="test01_SelectSubscriptionsForDelhi(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:sanity.SelectSubscriptionsTest@32c726ee]" started-at="2022-07-19T15:26:56 IST" name="test01_SelectSubscriptionsForDelhi" description="Test01 - Verify User is able to select subscriptions" data-provider="Subscriptions" finished-at="2022-07-19T15:28:52 IST" duration-ms="116321" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Office suite]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Enquire now]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Office Suite]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test01_SelectSubscriptionsForDelhi -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:sanity.SelectSubscriptionsTest@32c726ee]" started-at="2022-07-19T15:28:53 IST" name="afterMethod" finished-at="2022-07-19T15:28:56 IST" duration-ms="3300" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="closeSession()[pri:0, instance:sanity.SelectSubscriptionsTest@32c726ee]" started-at="2022-07-19T15:28:56 IST" name="closeSession" finished-at="2022-07-19T15:28:56 IST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeSession -->
-      </class> <!-- sanity.SelectDayPassTest -->
+      </class> <!-- sanity.SelectSubscriptionsTest -->
     </test> <!-- Web Tests -->
   </suite> <!-- Web Suite -->
 </testng-results>

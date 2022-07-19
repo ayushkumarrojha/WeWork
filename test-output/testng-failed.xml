@@ -9,7 +9,7 @@
     <classes>
       <class name="sanity.SelectDayPassTest">
         <methods>
-          <include name="test02_SelectDayPassInPune" invocation-numbers="0 1"/>
+          <include name="test06_SelectDayPassInMumbai" invocation-numbers="0"/>
           <include name="beforeMethod"/>
           <include name="afterMethod"/>
           <include name="closeSession"/>
