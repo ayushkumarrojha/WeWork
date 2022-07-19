@@ -20,7 +20,7 @@
             <class name="sanity.SelectConferenceRoomTest" />
             <class name="sanity.EnterpriseDayPassForTeamsTest" />
             -->
-           <class name="sanity.SelectSubscriptionsTest" /> 
+           
            <class name="sanity.SelectHotDeskTest" /> 
            <class name="sanity.SelectAllAccessWrkspaceTest" /> 
            
