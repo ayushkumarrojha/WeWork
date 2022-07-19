@@ -4,8 +4,6 @@ import static extensions.UIActions.click;
 import static extensions.UIActions.scrollToElement;
 import static extensions.UIActions.updateText;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.core.Logger;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Listeners;
@@ -16,7 +14,7 @@ import extensions.Verifications;
 import io.qameta.allure.Description;
 import utilities.CommonOps;
 import workflows.WebFlows;
-import org.apache.logging.log4j.*;
+
 @Listeners(utilities.Listeners.class)
 public class SelectSubscriptionsTest extends CommonOps 
 {
