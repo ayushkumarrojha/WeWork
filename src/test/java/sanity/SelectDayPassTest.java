@@ -20,7 +20,7 @@ import workflows.WebFlows;
 @Listeners(utilities.Listeners.class)
 public class SelectDayPassTest extends CommonOps 
 {
-	@Test(description = "Test01 - Verify User is able to select day pass.(Navigate to header in home page and select Day Pass option from workspace dropdown)")
+/*	@Test(description = "Test01 - Verify User is able to select day pass.(Navigate to header in home page and select Day Pass option from workspace dropdown)")
     @Description("This test verifies that User is able to select day pass. (Navigate to header in home page and select Day Pass option from workspace dropdown)")
     public void test01_SelectDaypass() throws InterruptedException
     {
@@ -44,7 +44,7 @@ public class SelectDayPassTest extends CommonOps
     	switchToParentWindow(currentWindow);
     	click(webLoading.closeIcon); 
     	WebFlows.logoutOfApplication();
-    }
+    }*/
 	
 	@Test(description = "Test02 - Verify User is able to select day pass in Pune. (In  home page navigate to workspaces and select day pass)",dataProvider = "PuneDayPassWorkspaces")
     @Description("This test verifies that User is able to select day pass in Pune. (In  home page navigate to workspaces and select day pass)")
@@ -73,7 +73,7 @@ public class SelectDayPassTest extends CommonOps
 			if(text.contains(buildingName))
 			{
 				Assert.assertTrue(true, "Building name is matching");
-				click(dayPass.selectDate("29"));
+				UIActions.selectDate("August", "26");
 		        click(dayPass.continueBtn);
 		        click(dayPass.skipAndPayBtn);
 		        click(dayPass.confirmAndPayBtn);
@@ -94,7 +94,7 @@ public class SelectDayPassTest extends CommonOps
 		}
     }
 	
-	@Test(description = "Test03 - Verify User is able to select day pass in Hyderabad. (In  home page navigate to workspaces and select day pass)",dataProvider = "HyderabadDayPassWorkspaces")
+	/*@Test(description = "Test03 - Verify User is able to select day pass in Hyderabad. (In  home page navigate to workspaces and select day pass)",dataProvider = "HyderabadDayPassWorkspaces")
     @Description("This test verifies that User is able to select day pass in Hyderabad. (In  home page navigate to workspaces and select day pass)")
     public void test03_SelectDayPassInHyderabad(String city , String location, String buildingName) throws InterruptedException
     {
@@ -121,7 +121,7 @@ public class SelectDayPassTest extends CommonOps
 			if(text.contains(buildingName))
 			{
 				Assert.assertTrue(true, "Building name is matching");
-				click(dayPass.selectDate("29"));
+				UIActions.selectDate("August", "26");
 		        click(dayPass.continueBtn);
 		        click(dayPass.skipAndPayBtn);
 		        click(dayPass.confirmAndPayBtn);
@@ -170,7 +170,7 @@ public class SelectDayPassTest extends CommonOps
 			if(text.contains(buildingName))
 			{
 				Assert.assertTrue(true, "Building name is matching");
-				click(dayPass.selectDate("29"));
+				UIActions.selectDate("August", "26");
 		        click(dayPass.continueBtn);
 		        click(dayPass.skipAndPayBtn);
 		        click(dayPass.confirmAndPayBtn);
@@ -219,7 +219,7 @@ public class SelectDayPassTest extends CommonOps
 			if(text.contains(buildingName))
 			{
 				Assert.assertTrue(true, "Building name is matching");
-				click(dayPass.selectDate("29"));
+				UIActions.selectDate("August", "26");
 		        click(dayPass.continueBtn);
 		        click(dayPass.skipAndPayBtn);
 		        click(dayPass.confirmAndPayBtn);
@@ -268,7 +268,7 @@ public class SelectDayPassTest extends CommonOps
 			if(text.contains(buildingName))
 			{
 				Assert.assertTrue(true, "Building name is matching");
-				click(dayPass.selectDate("29"));
+				UIActions.selectDate("August", "26");
 		        click(dayPass.continueBtn);
 		        click(dayPass.skipAndPayBtn);
 		        click(dayPass.confirmAndPayBtn);
@@ -574,7 +574,7 @@ public class SelectDayPassTest extends CommonOps
 	        click(webLoading.closeIcon);
 	        WebFlows.logoutOfApplication();
 	        
-    }
+    }*/
 	
 	@DataProvider(name="PuneDayPassWorkspaces")
 	public Object[][] puneDayPassWorkspaces()
@@ -621,8 +621,8 @@ public class SelectDayPassTest extends CommonOps
 			{"Bengaluru","MG Road","Embassy Quest"},
 			{"Bengaluru","Bannerghatta Main Rd","Salarpuria Symbiosis"},
 			{"Bengaluru","Infantry Road","Prestige Central"},
-			//{"Bengaluru","Domlur","Sunriver, EGL"}, Day pass not avilable
-			//{"Bengaluru","Domlur","Cinnabar Hills, EGL"}, Day pass not avilable
+			{"Bengaluru","Domlur","Sunriver, EGL"}, //Day pass not avilable
+			{"Bengaluru","Domlur","Cinnabar Hills, EGL"}, //Day pass not avilable
 			{"Bengaluru","Bellandur","Embassy TechVillage"},
 			{"Bengaluru","Bellandur","Vaishnavi Signature"},
 			{"Bengaluru","Hebbal","RMZ Latitude Commercial"},

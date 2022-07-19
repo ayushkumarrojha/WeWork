@@ -194,6 +194,40 @@ public class UIActions extends CommonOps {
     	
     }
 
+    @Step ("Select date in Calander UI")
+    public static void selectDate(String month, String date) throws InterruptedException
+    {
+    	while (!webLoading.monthName.getText().contains(month)) 
+		{
+			webLoading.rightArrowBtn.click();
+		}
+    	
+		List<WebElement> dates = driver.findElements(By.xpath("//button[contains(@class,'dayWithMargin')]"));
+		int count = dates.size();
+		for (int j = 0; j < count; j++) 
+		{
+			String currentDate = dates.get(j).getText();
+			if (currentDate.contains(date)) 
+			{
+				String attributeValue = dates.get(j).getAttribute("class");
+				if(attributeValue.contains("Mui-disabled"))
+				{
+					System.out.println("Please select weeekdays");
+					
+				}
+				else
+				{
+					dates.get(j).click();
+					Thread.sleep(1000);
+					break;
+				}
+				
+			}
+		}
+		
+    
+    }
+    
     @Step ("Get current page title")
     public static void closeCurrentWindow(){
          driver.close();
