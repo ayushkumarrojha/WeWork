@@ -59,7 +59,7 @@ public class SelectHotDeskTest extends CommonOps
     	}
 	}
 
-	@Test(description = "Test02 - Verify User is able to select Hotdesk in Pune. (Scroll down in home page and select workspaces)", dataProvider = "PuneHotdeskWorkspaces")
+/*	@Test(description = "Test02 - Verify User is able to select Hotdesk in Pune. (Scroll down in home page and select workspaces)", dataProvider = "PuneHotdeskWorkspaces")
 	@Description("This test verifies that User is able to select Hotdesk in Pune. (Scroll down in home page and select workspaces)")
 	public void test02_SelectHotdeskInPune(String city, String location, String buildingName)
 			throws InterruptedException 
@@ -301,7 +301,7 @@ public class SelectHotDeskTest extends CommonOps
 	    	}
 			
 		}
-	}
+	}*/
 	
 	@DataProvider(name="PuneHotdeskWorkspaces")
 	public Object[][] puneHotdeskWorkspaces()

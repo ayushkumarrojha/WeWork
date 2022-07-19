@@ -7,15 +7,15 @@
   <test thread-count="5" name="Web Tests(failed)">
     <parameter name="PlatformName" value="web"/>
     <classes>
-      <class name="sanity.SelectSubscriptionsTest">
+      <class name="sanity.SelectDayPassTest">
         <methods>
+          <include name="test02_SelectDayPassInPune" invocation-numbers="0 1"/>
           <include name="beforeMethod"/>
           <include name="afterMethod"/>
           <include name="closeSession"/>
-          <include name="test01_SelectSubscriptionsForDelhi" invocation-numbers="0"/>
           <include name="startSession"/>
         </methods>
-      </class> <!-- sanity.SelectSubscriptionsTest -->
+      </class> <!-- sanity.SelectDayPassTest -->
     </classes>
   </test> <!-- Web Tests(failed) -->
 </suite> <!-- Failed suite [Web Suite] -->

@@ -13,6 +13,7 @@
            <class name="sanity.SelectAllAccessWrkspaceTest" /> 
            <class name="sanity.SelectPrivateOfficeTest" /> 
            
+             <class name="sanity.SelectDayPassTest" />
            
             <class name="sanity.WebAppTest" /> 
             <class name="sanity.SelectVirtualOfficeTest" />
@@ -21,7 +22,7 @@
             <class name="sanity.EnterpriseDayPassForTeamsTest" />
             -->
            
-           <class name="sanity.SelectDayPassTest" />
+         <class name="sanity.SelectHotDeskTest" /> 
             
             
         </classes>

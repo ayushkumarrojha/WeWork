@@ -14,6 +14,7 @@ import org.testng.annotations.Test;
 import extensions.UIActions;
 import extensions.Verifications;
 import io.qameta.allure.Description;
+import io.qameta.allure.Step;
 import utilities.CommonOps;
 import workflows.WebFlows;
 
@@ -48,6 +49,7 @@ public class SelectDayPassTest extends CommonOps
 	
 	@Test(description = "Test02 - Verify User is able to select day pass in Pune. (In  home page navigate to workspaces and select day pass)",dataProvider = "PuneDayPassWorkspaces")
     @Description("This test verifies that User is able to select day pass in Pune. (In  home page navigate to workspaces and select day pass)")
+	@Step("")
     public void test02_SelectDayPassInPune(String city , String location, String buildingName) throws InterruptedException
     {
 		WebFlows.loadWebsite();
