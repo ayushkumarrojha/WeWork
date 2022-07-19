@@ -1,5 +1,5 @@
 # Default ignored files
 /shelf/
 /workspace.xml
-/allure-report
-/test-output
+allure-report
+test-output
