@@ -49,7 +49,7 @@ public class SelectDayPassTest extends CommonOps
 	
 	@Test(description = "Test02 - Verify User is able to select day pass in Pune. (In  home page navigate to workspaces and select day pass)",dataProvider = "PuneDayPassWorkspaces")
     @Description("This test verifies that User is able to select day pass in Pune. (In  home page navigate to workspaces and select day pass)")
-	@Step("")
+	@Step("Test steps")
     public void test02_SelectDayPassInPune(String city , String location, String buildingName) throws InterruptedException
     {
 		WebFlows.loadWebsite();
