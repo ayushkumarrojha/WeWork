@@ -5,6 +5,10 @@ import static extensions.UIActions.mouseHover;
 import static extensions.UIActions.scrollToElement;
 import static extensions.UIActions.updateText;
 
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.How;
+import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
@@ -31,15 +35,13 @@ public class SelectPrivateOfficeTest extends CommonOps
 		click(webLoading.buildingDropdown);
 		click(webLoading.select("Blue One Square"));
 		click(webLoading.select("Know more"));
-		updateText(webLoading.fullName, getData("name"));
-		updateText(webLoading.email, getData("email"));
-		updateText(webLoading.phnNumber, getData("phoneNumber"));
-		
+		updateText(webLoading.nameField, getData("name"));
+		updateText(webLoading.emailField, getData("email"));
+		updateText(webLoading.phonenNumberField, getData("phoneNumber"));
 		scrollToElement(webLoading.plusIcon);
 		UIActions.selectNoOfPeople(2);
 		UIActions.selectDate("2024", "September", "26");
 		click(webLoading.continueBtn);
-		
 		String actualText = webLoading.thankyouText.getText();
 		Verifications.elementIsVisible(webLoading.thankyouText);
 		Verifications.verifyText(actualText, "Thank you for contacting WeWork");
@@ -69,25 +71,32 @@ public class SelectPrivateOfficeTest extends CommonOps
 			WebFlows.logoutOfApplication();
 		} else 
 		{
+			
 			click(webLoading.privateOfficeOptn);
 			click(webLoading.bookNowBtn);
-			updateText(webLoading.username, getData("Username"));
-			updateText(webLoading.userEmail, getData("email"));
-			updateText(webLoading.userPhnNumber, getData("phoneNumber"));
 			
-			scrollToElement(webLoading.plusIcon);
-			UIActions.selectNoOfPeople(2);
-			UIActions.selectDate("2024", "September", "26");
-			click(webLoading.continueBtn);
-			
-			String actualText = webLoading.thankyouText.getText();
-			Verifications.elementIsVisible(webLoading.thankyouText);
-			Verifications.verifyText(actualText, "Thank you for contacting WeWork");
-			click(webLoading.backToHomePageBtn);
-			Thread.sleep(4000);
-			WebFlows.logoutOfApplication();	
+			String subscriptionType = webLoading.workspaceTitle.getText();
+	    	if(subscriptionType.equals("Private Office"))
+	    	{
+	    		updateText(webLoading.username, getData("Username"));
+				updateText(webLoading.userEmail, getData("email"));
+				updateText(webLoading.userPhnNumber, getData("phoneNumber"));
+				scrollToElement(webLoading.plusIcon);
+				UIActions.selectNoOfPeople(4);
+				UIActions.selectDate("2024", "September", "26");
+				click(webLoading.continueBtn);
+				Verifications.elementIsVisible(webLoading.thankyouText);
+				String actualText = webLoading.thankyouText.getText();
+				Verifications.elementIsVisible(webLoading.thankyouText);
+				Verifications.verifyText(actualText, "Thank you for contacting WeWork");
+				click(webLoading.backToHomePageBtn);
+				WebFlows.logoutOfApplication();
+	    	}
+	    	else
+	    	{
+	    		Assert.assertTrue(false, "Subscription type mismatch");
+	    	}
 		}
-
 	}
 
 	@Test(description = "Test03 - Verify User is able to select private office in Hyderabad. (Scroll down in home page and select workspaces)", dataProvider = "HyderabadPrivateOfficeWorkspaces")
@@ -111,25 +120,32 @@ public class SelectPrivateOfficeTest extends CommonOps
 			WebFlows.logoutOfApplication();
 		} else 
 		{
+			
 			click(webLoading.privateOfficeOptn);
 			click(webLoading.bookNowBtn);
-			updateText(webLoading.username, getData("Username"));
-			updateText(webLoading.userEmail, getData("email"));
-			updateText(webLoading.userPhnNumber, getData("phoneNumber"));
 			
-			scrollToElement(webLoading.plusIcon);
-			UIActions.selectNoOfPeople(2);
-			UIActions.selectDate("2024", "September", "26");
-			click(webLoading.continueBtn);
-			
-			String actualText = webLoading.thankyouText.getText();
-			Verifications.elementIsVisible(webLoading.thankyouText);
-			Verifications.verifyText(actualText, "Thank you for contacting WeWork");
-			click(webLoading.backToHomePageBtn);
-			Thread.sleep(4000);
-			WebFlows.logoutOfApplication();	
+			String subscriptionType = webLoading.workspaceTitle.getText();
+	    	if(subscriptionType.equals("Private Office"))
+	    	{
+	    		updateText(webLoading.username, getData("Username"));
+				updateText(webLoading.userEmail, getData("email"));
+				updateText(webLoading.userPhnNumber, getData("phoneNumber"));
+				scrollToElement(webLoading.plusIcon);
+				UIActions.selectNoOfPeople(4);
+				UIActions.selectDate("2024", "September", "26");
+				click(webLoading.continueBtn);
+				Verifications.elementIsVisible(webLoading.thankyouText);
+				String actualText = webLoading.thankyouText.getText();
+				Verifications.elementIsVisible(webLoading.thankyouText);
+				Verifications.verifyText(actualText, "Thank you for contacting WeWork");
+				click(webLoading.backToHomePageBtn);
+				WebFlows.logoutOfApplication();
+	    	}
+	    	else
+	    	{
+	    		Assert.assertTrue(false, "Subscription type mismatch");
+	    	}
 		}
-
 	}
 
 	@Test(description = "Test04 - Verify User is able to select private office in Delhi. (Scroll down in home page and select workspaces)", dataProvider = "DelhiNCRPrivateOfficeWorkspaces")
@@ -153,25 +169,32 @@ public class SelectPrivateOfficeTest extends CommonOps
 			WebFlows.logoutOfApplication();
 		} else 
 		{
+			
 			click(webLoading.privateOfficeOptn);
 			click(webLoading.bookNowBtn);
-			updateText(webLoading.username, getData("Username"));
-			updateText(webLoading.userEmail, getData("email"));
-			updateText(webLoading.userPhnNumber, getData("phoneNumber"));
 			
-			scrollToElement(webLoading.plusIcon);
-			UIActions.selectNoOfPeople(2);
-			UIActions.selectDate("2024", "September", "26");
-			click(webLoading.continueBtn);
-			
-			String actualText = webLoading.thankyouText.getText();
-			Verifications.elementIsVisible(webLoading.thankyouText);
-			Verifications.verifyText(actualText, "Thank you for contacting WeWork");
-			click(webLoading.backToHomePageBtn);
-			Thread.sleep(4000);
-			WebFlows.logoutOfApplication();	
+			String subscriptionType = webLoading.workspaceTitle.getText();
+	    	if(subscriptionType.equals("Private Office"))
+	    	{
+	    		updateText(webLoading.username, getData("Username"));
+				updateText(webLoading.userEmail, getData("email"));
+				updateText(webLoading.userPhnNumber, getData("phoneNumber"));
+				scrollToElement(webLoading.plusIcon);
+				UIActions.selectNoOfPeople(4);
+				UIActions.selectDate("2024", "September", "26");
+				click(webLoading.continueBtn);
+				Verifications.elementIsVisible(webLoading.thankyouText);
+				String actualText = webLoading.thankyouText.getText();
+				Verifications.elementIsVisible(webLoading.thankyouText);
+				Verifications.verifyText(actualText, "Thank you for contacting WeWork");
+				click(webLoading.backToHomePageBtn);
+				WebFlows.logoutOfApplication();
+	    	}
+	    	else
+	    	{
+	    		Assert.assertTrue(false, "Subscription type mismatch");
+	    	}
 		}
-
 	}
 
 	@Test(description = "Test05 - Verify User is able to select private office in Bengaluru. (Scroll down in home page and select workspaces)", dataProvider = "BengaluruPrivateOfficeWorkspaces")
@@ -195,23 +218,31 @@ public class SelectPrivateOfficeTest extends CommonOps
 			WebFlows.logoutOfApplication();
 		} else 
 		{
+			
 			click(webLoading.privateOfficeOptn);
 			click(webLoading.bookNowBtn);
-			updateText(webLoading.username, getData("Username"));
-			updateText(webLoading.userEmail, getData("email"));
-			updateText(webLoading.userPhnNumber, getData("phoneNumber"));
 			
-			scrollToElement(webLoading.plusIcon);
-			UIActions.selectNoOfPeople(2);
-			UIActions.selectDate("2024", "September", "26");
-			click(webLoading.continueBtn);
-			
-			String actualText = webLoading.thankyouText.getText();
-			Verifications.elementIsVisible(webLoading.thankyouText);
-			Verifications.verifyText(actualText, "Thank you for contacting WeWork");
-			click(webLoading.backToHomePageBtn);
-			Thread.sleep(4000);
-			WebFlows.logoutOfApplication();	
+			String subscriptionType = webLoading.workspaceTitle.getText();
+	    	if(subscriptionType.equals("Private Office"))
+	    	{
+	    		updateText(webLoading.username, getData("Username"));
+				updateText(webLoading.userEmail, getData("email"));
+				updateText(webLoading.userPhnNumber, getData("phoneNumber"));
+				scrollToElement(webLoading.plusIcon);
+				UIActions.selectNoOfPeople(4);
+				UIActions.selectDate("2024", "September", "26");
+				click(webLoading.continueBtn);
+				Verifications.elementIsVisible(webLoading.thankyouText);
+				String actualText = webLoading.thankyouText.getText();
+				Verifications.elementIsVisible(webLoading.thankyouText);
+				Verifications.verifyText(actualText, "Thank you for contacting WeWork");
+				click(webLoading.backToHomePageBtn);
+				WebFlows.logoutOfApplication();
+	    	}
+	    	else
+	    	{
+	    		Assert.assertTrue(false, "Subscription type mismatch");
+	    	}
 		}
 
 	}
@@ -227,8 +258,11 @@ public class SelectPrivateOfficeTest extends CommonOps
 		click(webLoading.cityDropdown);
 		click(webLoading.select(city));
 		click(webLoading.buildingsDropdown);
+		scrollToElement(webLoading.select(location));
 		click(webLoading.select(location));
+		scrollToElement(webLoading.select(buildingName));
 		click(webLoading.select(buildingName));
+		scrollToElement(webLoading.exploreBtn);
 		click(webLoading.exploreBtn);
 		String privateOfficeBtn = webLoading.privateOfficeOptn.getAttribute("class");
 		if (privateOfficeBtn.contains("disabled")) 
@@ -237,23 +271,31 @@ public class SelectPrivateOfficeTest extends CommonOps
 			WebFlows.logoutOfApplication();
 		} else 
 		{
+			
 			click(webLoading.privateOfficeOptn);
 			click(webLoading.bookNowBtn);
-			updateText(webLoading.username, getData("Username"));
-			updateText(webLoading.userEmail, getData("email"));
-			updateText(webLoading.userPhnNumber, getData("phoneNumber"));
 			
-			scrollToElement(webLoading.plusIcon);
-			UIActions.selectNoOfPeople(2);
-			UIActions.selectDate("2024", "September", "26");
-			click(webLoading.continueBtn);
-			
-			String actualText = webLoading.thankyouText.getText();
-			Verifications.elementIsVisible(webLoading.thankyouText);
-			Verifications.verifyText(actualText, "Thank you for contacting WeWork");
-			click(webLoading.backToHomePageBtn);
-			Thread.sleep(4000);
-			WebFlows.logoutOfApplication();	
+			String subscriptionType = webLoading.workspaceTitle.getText();
+	    	if(subscriptionType.equals("Private Office"))
+	    	{
+	    		updateText(webLoading.username, getData("Username"));
+				updateText(webLoading.userEmail, getData("email"));
+				updateText(webLoading.userPhnNumber, getData("phoneNumber"));
+				scrollToElement(webLoading.plusIcon);
+				UIActions.selectNoOfPeople(4);
+				UIActions.selectDate("2024", "September", "26");
+				click(webLoading.continueBtn);
+				Verifications.elementIsVisible(webLoading.thankyouText);
+				String actualText = webLoading.thankyouText.getText();
+				Verifications.elementIsVisible(webLoading.thankyouText);
+				Verifications.verifyText(actualText, "Thank you for contacting WeWork");
+				click(webLoading.backToHomePageBtn);
+				WebFlows.logoutOfApplication();
+	    	}
+	    	else
+	    	{
+	    		Assert.assertTrue(false, "Subscription type mismatch");
+	    	}
 		}
 
 	}
@@ -263,50 +305,62 @@ public class SelectPrivateOfficeTest extends CommonOps
 	{		return new Object[][] 
 				{ 
 			     { "Pune", "Kharadi", "World Trade Center" },
-			     {"Bengaluru","Domlur","Cinnabar Hills, EGL"},
 				 {"Pune","Magarpatta","Panchshil Futura"}};
 	}
 
 	@DataProvider(name = "HyderabadPrivateOfficeWorkspaces")
 	public Object[][] hyderabadPrivateOfficeWorkspaces() {
-		return new Object[][] { { "Hyderabad", "Financial District", "Rajapushpa Summit" },
+		return new Object[][] { 
+				{ "Hyderabad", "Financial District", "Rajapushpa Summit" },
 				{ "Hyderabad", "Hitec City", "Krishe Emerald" } };
 
 	}
 
 	@DataProvider(name = "DelhiNCRPrivateOfficeWorkspaces")
 	public Object[][] delhiNCRPrivateOfficeWorkspaces() {
-		return new Object[][] { { "Delhi-NCR", "Sector 15 Gurgaon", "32nd Milestone" },
-				{ "Delhi-NCR", "Cybercity", "DLF Forum" }, { "Delhi-NCR", "Noida Sector 16", "Berger Delhi One" },
+		return new Object[][] { 
+				{ "Delhi-NCR", "Sector 15 Gurgaon", "32nd Milestone" },
+				{ "Delhi-NCR", "Cybercity", "DLF Forum" }, 
+				{ "Delhi-NCR", "Noida Sector 16", "Berger Delhi One" },
 				{ "Delhi-NCR", "Bristol Chowk", "Platina Tower" },
 				{ "Delhi-NCR", "Golf Course Road", "Two Horizon Centre" },
-				{ "Delhi-NCR", "Udyog Vihar", "Blue One Square" }, { "Delhi-NCR", "Udyog Vihar", "Vi-John Tower" } };
+				{ "Delhi-NCR", "Udyog Vihar", "Blue One Square" }, 
+				{ "Delhi-NCR", "Udyog Vihar", "Vi-John Tower" } };
 	}
 
 	@DataProvider(name = "BengaluruPrivateOfficeWorkspaces")
 	public Object[][] bengaluruPrivateOfficeWorkspaces() {
-		return new Object[][] { { "Bengaluru", "Koramangala", "Prestige Atlanta" },
+		return new Object[][] { 
+				{ "Bengaluru", "Koramangala", "Prestige Atlanta" },
 				{ "Bengaluru", "Koramangala", "Prestige Cube" },
-				{ "Bengaluru", "MG Road", "The Pavilion" }, { "Bengaluru", "MG Road", "Galaxy" },
+				{ "Bengaluru", "MG Road", "The Pavilion" }, 
+				{ "Bengaluru", "MG Road", "Galaxy" },
 				{ "Bengaluru", "MG Road", "Embassy Quest" },
 				{ "Bengaluru", "Bannerghatta Main Rd", "Salarpuria Symbiosis" },
 				{ "Bengaluru", "Infantry Road", "Prestige Central" },
 				{ "Bengaluru", "Domlur", "Sunriver, EGL" }, 
-			    //{"Bengaluru","Domlur","Cinnabar Hills, EGL"}, //private office not available
+			    { "Bengaluru","Domlur","Cinnabar Hills, EGL"}, //private office not available
 				{ "Bengaluru", "Bellandur", "Embassy TechVillage" },
 				{ "Bengaluru", "Bellandur", "Vaishnavi Signature" },
-				{ "Bengaluru", "Hebbal", "RMZ Latitude Commercial" }, { "Bengaluru", "Hebbal", "Manyata NXT" },
+				{ "Bengaluru", "Hebbal", "RMZ Latitude Commercial" }, 
+				{ "Bengaluru", "Hebbal", "Manyata NXT" },
 				{ "Bengaluru", "Mahadevapura", "Salarpuria Magnifica" } };
 	}
 
 	@DataProvider(name = "MumbaiPrivateOfficeWorkspaces")
 	public Object[][] mumbaiPrivateOfficeWorkspaces() {
-		return new Object[][] { { "Mumbai", "Nariman Point", "Express Towers" },
-				{ "Mumbai", "Goregaon East", "Oberoi Commerz II" }, { "Mumbai", "Goregaon East", "NESCO IT Park" },
-				{ "Mumbai", "Vikhroli West", "247 Park" }, { "Mumbai", "Thane", "Zenia" },
-				{ "Mumbai", "Andheri East", "Vijay Diamond" }, { "Mumbai", "Andheri East", "Raheja Platinum" },
-				{ "Mumbai", "Powai", "Chromium" }, { "Mumbai", "Navi Mumbai", "Seawoods Grand Central" },
-				{ "Mumbai", "Malad", "Spectrum Tower" }, { "Mumbai", "Worli", "Vaswani Chambers" },
+		return new Object[][] { 
+				{ "Mumbai", "Nariman Point", "Express Towers" },
+				{ "Mumbai", "Goregaon East", "Oberoi Commerz II" }, 
+				{ "Mumbai", "Goregaon East", "NESCO IT Park" },
+				{ "Mumbai", "Vikhroli West", "247 Park" }, 
+				{ "Mumbai", "Thane", "Zenia" },
+				{ "Mumbai", "Andheri East", "Vijay Diamond" }, 
+				{ "Mumbai", "Andheri East", "Raheja Platinum" },
+				{ "Mumbai", "Powai", "Chromium" }, 
+				{ "Mumbai", "Navi Mumbai", "Seawoods Grand Central" },
+				{ "Mumbai", "Malad", "Spectrum Tower" }, 
+				{ "Mumbai", "Worli", "Vaswani Chambers" },
 				{ "Mumbai", "BKC", "Enam Sambhav" } };
 
 	}

@@ -29,27 +29,34 @@ public class SelectHotDeskTest extends CommonOps
 	{
 		WebFlows.loadWebsite();
 		WebFlows.loginToApplication();
-		Thread.sleep(4000);
+		
 		click(webLoading.workspaceDrpdwn);
 		click(webLoading.opt("Hot desk"));
-		click(webLoading.loctnDropdown2);
-		click(webLoading.select("Mumbai"));
-		click(webLoading.buildingDropdown);
-		click(webLoading.select("Zenia"));
-		click(webLoading.select("Book a workspace"));
-		updateText(webLoading.fullName, getData("name"));
-		updateText(webLoading.email, getData("email"));
-		updateText(webLoading.phnNumber, getData("phoneNumber"));
-		click(webLoading.plusIcon);
-		click(webLoading.calendarIcon);
-		click(webLoading.clickOnDate);
-		click(webLoading.continueBtn);
-		Verifications.elementIsVisible(webLoading.thankyouText);
-		String actualText = webLoading.thankyouText.getText();
-		Verifications.verifyText(actualText, "Thank you for contacting WeWork");
-		click(webLoading.backToHomePageBtn);
-		WebFlows.logoutOfApplication();
-		
+		String subscriptionType = webLoading.subscriptionType.getText();
+    	if(subscriptionType.contains("Hot Desk"))
+    	{
+    		click(webLoading.loctnDropdown2);
+    		click(webLoading.select("Mumbai"));
+    		click(webLoading.buildingDropdown);
+    		click(webLoading.select("Zenia"));
+    		click(webLoading.select("Book a workspace"));
+    		updateText(webLoading.nameField, getData("Username"));
+    		updateText(webLoading.emailField, getData("email"));
+    		updateText(webLoading.phonenNumberField, getData("phoneNumber"));
+            scrollToElement(webLoading.plusIcon);
+    		UIActions.selectNoOfPeople(3);
+    		UIActions.selectDate("2024", "September", "26");
+            click(webLoading.continueBtn);
+    		Verifications.elementIsVisible(webLoading.thankyouText);
+    		String actualText = webLoading.thankyouText.getText();
+    		Verifications.verifyText(actualText, "Thank you for contacting WeWork");
+    		click(webLoading.backToHomePageBtn);
+    		WebFlows.logoutOfApplication();
+    	}
+    	else
+    	{
+    		Assert.assertTrue(false, "Subscription type mismatch");
+    	}
 	}
 
 	@Test(description = "Test02 - Verify User is able to select Hotdesk in Pune. (Scroll down in home page and select workspaces)", dataProvider = "PuneHotdeskWorkspaces")
@@ -63,11 +70,8 @@ public class SelectHotDeskTest extends CommonOps
 		click(webLoading.cityDropdown);
 		click(webLoading.select(city));
 		click(webLoading.buildingsDropdown);
-		scrollToElement(webLoading.select(location));
 		click(webLoading.select(location));
-		scrollToElement(webLoading.select(buildingName));
 		click(webLoading.select(buildingName));
-		scrollToElement(webLoading.exploreBtn);
 		click(webLoading.exploreBtn);
 		String hotdeskOptnBtn = webLoading.hotDeskOptn.getAttribute("class");
 		if (hotdeskOptnBtn.contains("disabled")) 
@@ -78,20 +82,28 @@ public class SelectHotDeskTest extends CommonOps
 		{
 			click(webLoading.hotDeskOptn);
 			click(webLoading.bookNowBtn);
-			updateText(webLoading.username, getData("Username"));
-			updateText(webLoading.userEmail, getData("email"));
-			updateText(webLoading.userPhnNumber, getData("phoneNumber"));
-			click(webLoading.plusIcon);
-			click(webLoading.calendarIcon);
-			click(webLoading.date("30"));
-			click(webLoading.continueBtn);
-			Verifications.elementIsVisible(webLoading.thankyouText);
-			String actualText = webLoading.thankyouText.getText();
-			Verifications.elementIsVisible(webLoading.thankyouText);
-			Verifications.verifyText(actualText, "Thank you for contacting WeWork");
-			click(webLoading.backToHomePageBtn);
-			Thread.sleep(4000);
-			WebFlows.logoutOfApplication();
+			String subscriptionType = webLoading.workspaceTitle.getText();
+	    	if(subscriptionType.equals("Hot Desk"))
+	    	{
+				updateText(webLoading.username, getData("Username"));
+				updateText(webLoading.userEmail, getData("email"));
+				updateText(webLoading.userPhnNumber, getData("phoneNumber"));
+				scrollToElement(webLoading.plusIcon);
+				UIActions.selectNoOfPeople(4);
+				UIActions.selectDate("2024", "September", "26");
+				click(webLoading.continueBtn);
+				Verifications.elementIsVisible(webLoading.thankyouText);
+				String actualText = webLoading.thankyouText.getText();
+				Verifications.elementIsVisible(webLoading.thankyouText);
+				Verifications.verifyText(actualText, "Thank you for contacting WeWork");
+				click(webLoading.backToHomePageBtn);
+				WebFlows.logoutOfApplication();
+	    	}
+	    	else
+	    	{
+	    		Assert.assertTrue(false, "Subscription type mismatch");
+	    	}
+			
 		}
 	}
 
@@ -106,11 +118,8 @@ public class SelectHotDeskTest extends CommonOps
 		click(webLoading.cityDropdown);
 		click(webLoading.select(city));
 		click(webLoading.buildingsDropdown);
-		scrollToElement(webLoading.select(location));
 		click(webLoading.select(location));
-		scrollToElement(webLoading.select(buildingName));
 		click(webLoading.select(buildingName));
-		scrollToElement(webLoading.exploreBtn);
 		click(webLoading.exploreBtn);
 		String hotdeskOptnBtn = webLoading.hotDeskOptn.getAttribute("class");
 		if (hotdeskOptnBtn.contains("disabled")) 
@@ -121,20 +130,28 @@ public class SelectHotDeskTest extends CommonOps
 		{
 			click(webLoading.hotDeskOptn);
 			click(webLoading.bookNowBtn);
-			updateText(webLoading.username, getData("Username"));
-			updateText(webLoading.userEmail, getData("email"));
-			updateText(webLoading.userPhnNumber, getData("phoneNumber"));
-			click(webLoading.plusIcon);
-			click(webLoading.calendarIcon);
-			click(webLoading.date("30"));
-			click(webLoading.continueBtn);
-			Verifications.elementIsVisible(webLoading.thankyouText);
-			String actualText = webLoading.thankyouText.getText();
-			Verifications.elementIsVisible(webLoading.thankyouText);
-			Verifications.verifyText(actualText, "Thank you for contacting WeWork");
-			click(webLoading.backToHomePageBtn);
-			Thread.sleep(4000);
-			WebFlows.logoutOfApplication();
+			String subscriptionType = webLoading.workspaceTitle.getText();
+	    	if(subscriptionType.equals("Hot Desk"))
+	    	{
+				updateText(webLoading.username, getData("Username"));
+				updateText(webLoading.userEmail, getData("email"));
+				updateText(webLoading.userPhnNumber, getData("phoneNumber"));
+				scrollToElement(webLoading.plusIcon);
+				UIActions.selectNoOfPeople(4);
+				UIActions.selectDate("2024", "September", "26");
+				click(webLoading.continueBtn);
+				Verifications.elementIsVisible(webLoading.thankyouText);
+				String actualText = webLoading.thankyouText.getText();
+				Verifications.elementIsVisible(webLoading.thankyouText);
+				Verifications.verifyText(actualText, "Thank you for contacting WeWork");
+				click(webLoading.backToHomePageBtn);
+				WebFlows.logoutOfApplication();
+	    	}
+	    	else
+	    	{
+	    		Assert.assertTrue(false, "Subscription type mismatch");
+	    	}
+			
 		}
 	}
 
@@ -149,11 +166,8 @@ public class SelectHotDeskTest extends CommonOps
 		click(webLoading.cityDropdown);
 		click(webLoading.select(city));
 		click(webLoading.buildingsDropdown);
-		scrollToElement(webLoading.select(location));
 		click(webLoading.select(location));
-		scrollToElement(webLoading.select(buildingName));
 		click(webLoading.select(buildingName));
-		scrollToElement(webLoading.exploreBtn);
 		click(webLoading.exploreBtn);
 		String hotdeskOptnBtn = webLoading.hotDeskOptn.getAttribute("class");
 		if (hotdeskOptnBtn.contains("disabled")) 
@@ -164,22 +178,29 @@ public class SelectHotDeskTest extends CommonOps
 		{
 			click(webLoading.hotDeskOptn);
 			click(webLoading.bookNowBtn);
-			updateText(webLoading.username, getData("Username"));
-			updateText(webLoading.userEmail, getData("email"));
-			updateText(webLoading.userPhnNumber, getData("phoneNumber"));
-			click(webLoading.plusIcon);
-			click(webLoading.calendarIcon);
-			click(webLoading.date("30"));
-			click(webLoading.continueBtn);
-			Verifications.elementIsVisible(webLoading.thankyouText);
-			String actualText = webLoading.thankyouText.getText();
-			Verifications.elementIsVisible(webLoading.thankyouText);
-			Verifications.verifyText(actualText, "Thank you for contacting WeWork");
-			click(webLoading.backToHomePageBtn);
-			Thread.sleep(4000);
-			WebFlows.logoutOfApplication();
+			String subscriptionType = webLoading.workspaceTitle.getText();
+	    	if(subscriptionType.equals("Hot Desk"))
+	    	{
+				updateText(webLoading.username, getData("Username"));
+				updateText(webLoading.userEmail, getData("email"));
+				updateText(webLoading.userPhnNumber, getData("phoneNumber"));
+				scrollToElement(webLoading.plusIcon);
+				UIActions.selectNoOfPeople(4);
+				UIActions.selectDate("2024", "September", "26");
+				click(webLoading.continueBtn);
+				Verifications.elementIsVisible(webLoading.thankyouText);
+				String actualText = webLoading.thankyouText.getText();
+				Verifications.elementIsVisible(webLoading.thankyouText);
+				Verifications.verifyText(actualText, "Thank you for contacting WeWork");
+				click(webLoading.backToHomePageBtn);
+				WebFlows.logoutOfApplication();
+	    	}
+	    	else
+	    	{
+	    		Assert.assertTrue(false, "Subscription type mismatch");
+	    	}
+			
 		}
-		
 	}
 
 	@Test(description = "Test05 - Verify User is able to select Hotdesk in Bengaluru. (Scroll down in home page and select workspaces)", dataProvider = "BengaluruHotdeskWorkspaces")
@@ -193,11 +214,8 @@ public class SelectHotDeskTest extends CommonOps
 		click(webLoading.cityDropdown);
 		click(webLoading.select(city));
 		click(webLoading.buildingsDropdown);
-		scrollToElement(webLoading.select(location));
 		click(webLoading.select(location));
-		scrollToElement(webLoading.select(buildingName));
 		click(webLoading.select(buildingName));
-		scrollToElement(webLoading.exploreBtn);
 		click(webLoading.exploreBtn);
 		String hotdeskOptnBtn = webLoading.hotDeskOptn.getAttribute("class");
 		if (hotdeskOptnBtn.contains("disabled")) 
@@ -208,20 +226,28 @@ public class SelectHotDeskTest extends CommonOps
 		{
 			click(webLoading.hotDeskOptn);
 			click(webLoading.bookNowBtn);
-			updateText(webLoading.username, getData("Username"));
-			updateText(webLoading.userEmail, getData("email"));
-			updateText(webLoading.userPhnNumber, getData("phoneNumber"));
-			click(webLoading.plusIcon);
-			click(webLoading.calendarIcon);
-			click(webLoading.date("30"));
-			click(webLoading.continueBtn);
-			Verifications.elementIsVisible(webLoading.thankyouText);
-			String actualText = webLoading.thankyouText.getText();
-			Verifications.elementIsVisible(webLoading.thankyouText);
-			Verifications.verifyText(actualText, "Thank you for contacting WeWork");
-			click(webLoading.backToHomePageBtn);
-			Thread.sleep(4000);
-			WebFlows.logoutOfApplication();
+			String subscriptionType = webLoading.workspaceTitle.getText();
+	    	if(subscriptionType.equals("Hot Desk"))
+	    	{
+				updateText(webLoading.username, getData("Username"));
+				updateText(webLoading.userEmail, getData("email"));
+				updateText(webLoading.userPhnNumber, getData("phoneNumber"));
+				scrollToElement(webLoading.plusIcon);
+				UIActions.selectNoOfPeople(4);
+				UIActions.selectDate("2024", "September", "26");
+				click(webLoading.continueBtn);
+				Verifications.elementIsVisible(webLoading.thankyouText);
+				String actualText = webLoading.thankyouText.getText();
+				Verifications.elementIsVisible(webLoading.thankyouText);
+				Verifications.verifyText(actualText, "Thank you for contacting WeWork");
+				click(webLoading.backToHomePageBtn);
+				WebFlows.logoutOfApplication();
+	    	}
+	    	else
+	    	{
+	    		Assert.assertTrue(false, "Subscription type mismatch");
+	    	}
+			
 		}
 
 	}
@@ -252,20 +278,28 @@ public class SelectHotDeskTest extends CommonOps
 		{
 			click(webLoading.hotDeskOptn);
 			click(webLoading.bookNowBtn);
-			updateText(webLoading.username, getData("Username"));
-			updateText(webLoading.userEmail, getData("email"));
-			updateText(webLoading.userPhnNumber, getData("phoneNumber"));
-			click(webLoading.plusIcon);
-			click(webLoading.calendarIcon);
-			click(webLoading.date("30"));
-			click(webLoading.continueBtn);
-			Verifications.elementIsVisible(webLoading.thankyouText);
-			String actualText = webLoading.thankyouText.getText();
-			Verifications.elementIsVisible(webLoading.thankyouText);
-			Verifications.verifyText(actualText, "Thank you for contacting WeWork");
-			click(webLoading.backToHomePageBtn);
-			Thread.sleep(4000);
-			WebFlows.logoutOfApplication();
+			String subscriptionType = webLoading.workspaceTitle.getText();
+	    	if(subscriptionType.equals("Hot Desk"))
+	    	{
+				updateText(webLoading.username, getData("Username"));
+				updateText(webLoading.userEmail, getData("email"));
+				updateText(webLoading.userPhnNumber, getData("phoneNumber"));
+				scrollToElement(webLoading.plusIcon);
+				UIActions.selectNoOfPeople(4);
+				UIActions.selectDate("2024", "September", "26");
+				click(webLoading.continueBtn);
+				Verifications.elementIsVisible(webLoading.thankyouText);
+				String actualText = webLoading.thankyouText.getText();
+				Verifications.elementIsVisible(webLoading.thankyouText);
+				Verifications.verifyText(actualText, "Thank you for contacting WeWork");
+				click(webLoading.backToHomePageBtn);
+				WebFlows.logoutOfApplication();
+	    	}
+	    	else
+	    	{
+	    		Assert.assertTrue(false, "Subscription type mismatch");
+	    	}
+			
 		}
 	}
 	
@@ -297,8 +331,6 @@ public class SelectHotDeskTest extends CommonOps
 			{"Delhi-NCR","Cybercity","DLF Forum"},
 			{"Delhi-NCR","Noida Sector 16","Berger Delhi One"},
 			{"Delhi-NCR","Bristol Chowk","Platina Tower"},
-			{"Delhi-NCR","Golf Course Road","Two Horizon Centre"},
-			{"Delhi-NCR","Udyog Vihar","Blue One Square"},
 			{"Delhi-NCR","Udyog Vihar","Vi-John Tower"}
 			};
 	}

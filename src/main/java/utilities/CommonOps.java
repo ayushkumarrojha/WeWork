@@ -5,6 +5,8 @@ import io.appium.java_client.remote.MobileCapabilityType;
 import io.appium.java_client.windows.WindowsDriver;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import io.restassured.RestAssured;
+
+
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -25,7 +27,7 @@ import java.io.File;
 import java.lang.reflect.Method;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
-
+import org.apache.logging.log4j.*;
 
 public class CommonOps extends Base {
 
@@ -242,9 +244,8 @@ public class CommonOps extends Base {
         }
     }
 
-   
-
-    public static void waitForLoad() {
+    public static void waitForLoad() 
+    {
         new WebDriverWait(driver, 30).until((ExpectedCondition<Boolean>) wd ->
                 ((JavascriptExecutor) wd).executeScript("return document.readyState").equals("complete"));
     }

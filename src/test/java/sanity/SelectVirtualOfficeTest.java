@@ -40,6 +40,7 @@ public class SelectVirtualOfficeTest extends CommonOps
 		if(virtualOfficeBtn.contains("disabled"))
 		{
 			mouseHover(webLoading.closeIcon);
+			WebFlows.logoutOfApplication();
 		}
 		else
 		{

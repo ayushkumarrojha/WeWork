@@ -320,6 +320,9 @@ public class webLoading extends CommonOps{
     @FindBy(how = How.XPATH, using = "//p[@class='form_title']")
     public  WebElement subscriptionType;
     
+    @FindBy(how = How.XPATH, using = "(//p[@class='title'])[3]")
+    public  WebElement workspaceTitle;
   
+    
   
 }
