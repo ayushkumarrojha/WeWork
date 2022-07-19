@@ -2,12 +2,12 @@
 <testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-07-19T11:24:02 IST" name="Web Suite" finished-at="2022-07-19T11:27:56 IST" duration-ms="233790">
+  <suite started-at="2022-07-19T12:09:14 IST" name="Web Suite" finished-at="2022-07-19T12:13:12 IST" duration-ms="237097">
     <groups>
     </groups>
-    <test started-at="2022-07-19T11:24:02 IST" name="Web Tests" finished-at="2022-07-19T11:27:56 IST" duration-ms="233790">
+    <test started-at="2022-07-19T12:09:14 IST" name="Web Tests" finished-at="2022-07-19T12:13:12 IST" duration-ms="237097">
       <class name="sanity.SelectDayPassTest">
-        <test-method is-config="true" signature="startSession(java.lang.String)[pri:0, instance:sanity.SelectDayPassTest@545b995e]" started-at="2022-07-19T11:24:02 IST" name="startSession" finished-at="2022-07-19T11:24:24 IST" duration-ms="21848" status="PASS">
+        <test-method is-config="true" signature="startSession(java.lang.String)[pri:0, instance:sanity.SelectDayPassTest@545b995e]" started-at="2022-07-19T12:09:15 IST" name="startSession" finished-at="2022-07-19T12:09:33 IST" duration-ms="18179" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -18,7 +18,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- startSession -->
-        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:sanity.SelectDayPassTest@545b995e]" started-at="2022-07-19T11:24:24 IST" name="beforeMethod" finished-at="2022-07-19T11:24:24 IST" duration-ms="90" status="PASS">
+        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:sanity.SelectDayPassTest@545b995e]" started-at="2022-07-19T12:09:33 IST" name="beforeMethod" finished-at="2022-07-19T12:09:33 IST" duration-ms="109" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -29,7 +29,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="test02_SelectDayPassInPune(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:sanity.SelectDayPassTest@545b995e]" started-at="2022-07-19T11:24:25 IST" name="test02_SelectDayPassInPune" description="Test02 - Verify User is able to select day pass in Pune. (In  home page navigate to workspaces and select day pass)" data-provider="PuneDayPassWorkspaces" finished-at="2022-07-19T11:26:03 IST" duration-ms="98516" status="PASS">
+        <test-method signature="test02_SelectDayPassInPune(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:sanity.SelectDayPassTest@545b995e]" started-at="2022-07-19T12:09:33 IST" name="test02_SelectDayPassInPune" description="Test02 - Verify User is able to select day pass in Pune. (In  home page navigate to workspaces and select day pass)" data-provider="PuneDayPassWorkspaces" finished-at="2022-07-19T12:10:59 IST" duration-ms="85905" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -50,11 +50,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test02_SelectDayPassInPune -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:sanity.SelectDayPassTest@545b995e]" started-at="2022-07-19T11:26:04 IST" name="afterMethod" finished-at="2022-07-19T11:26:11 IST" duration-ms="7061" status="PASS">
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:sanity.SelectDayPassTest@545b995e]" started-at="2022-07-19T12:10:59 IST" name="afterMethod" finished-at="2022-07-19T12:11:40 IST" duration-ms="40529" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:sanity.SelectDayPassTest@545b995e]" started-at="2022-07-19T11:26:11 IST" name="beforeMethod" finished-at="2022-07-19T11:26:11 IST" duration-ms="12" status="PASS">
+        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:sanity.SelectDayPassTest@545b995e]" started-at="2022-07-19T12:11:40 IST" name="beforeMethod" finished-at="2022-07-19T12:11:40 IST" duration-ms="10" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -65,7 +65,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="test02_SelectDayPassInPune(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:sanity.SelectDayPassTest@545b995e]" started-at="2022-07-19T11:26:11 IST" name="test02_SelectDayPassInPune" description="Test02 - Verify User is able to select day pass in Pune. (In  home page navigate to workspaces and select day pass)" data-provider="PuneDayPassWorkspaces" finished-at="2022-07-19T11:27:51 IST" duration-ms="100140" status="PASS">
+        <test-method signature="test02_SelectDayPassInPune(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:sanity.SelectDayPassTest@545b995e]" started-at="2022-07-19T12:11:40 IST" name="test02_SelectDayPassInPune" description="Test02 - Verify User is able to select day pass in Pune. (In  home page navigate to workspaces and select day pass)" data-provider="PuneDayPassWorkspaces" finished-at="2022-07-19T12:13:06 IST" duration-ms="86434" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -86,11 +86,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test02_SelectDayPassInPune -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:sanity.SelectDayPassTest@545b995e]" started-at="2022-07-19T11:27:51 IST" name="afterMethod" finished-at="2022-07-19T11:27:56 IST" duration-ms="4686" status="PASS">
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:sanity.SelectDayPassTest@545b995e]" started-at="2022-07-19T12:13:07 IST" name="afterMethod" finished-at="2022-07-19T12:13:12 IST" duration-ms="4716" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="closeSession()[pri:0, instance:sanity.SelectDayPassTest@545b995e]" started-at="2022-07-19T11:27:56 IST" name="closeSession" finished-at="2022-07-19T11:27:56 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="closeSession()[pri:0, instance:sanity.SelectDayPassTest@545b995e]" started-at="2022-07-19T12:13:12 IST" name="closeSession" finished-at="2022-07-19T12:13:12 IST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeSession -->
