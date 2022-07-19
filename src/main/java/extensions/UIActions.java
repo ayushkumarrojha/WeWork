@@ -213,12 +213,12 @@ public class UIActions extends CommonOps {
 				if(attributeValue.contains("Mui-disabled"))
 				{
 					System.out.println("Please select weeekdays");
-					
+					break;
 				}
 				else
 				{
 					dates.get(j).click();
-					Thread.sleep(1000);
+					Thread.sleep(2000);
 					break;
 				}
 				
